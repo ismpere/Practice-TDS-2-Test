@@ -1,4 +1,4 @@
-package test.uva.tds.pr2.equipo05;
+package uva.tds.pr2.equipo05;
 
 import static org.junit.Assert.*;
 
