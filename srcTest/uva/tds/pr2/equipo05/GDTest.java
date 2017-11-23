@@ -11,8 +11,8 @@ public class GDTest {
 	public void testInicializaGDValido() {
 		GD gd1 = new GD(-180.00, 180.00);
 		
-		assertEquals(gd1.getLatitud(), -180.00);
-		assertEquals(gd1.getLongitud(), 180.00);
+		assertEquals(gd1.getLatitud(), -180.00, 0.01);
+		assertEquals(gd1.getLongitud(), 180.00, 0.01);
 	}
 
 }
