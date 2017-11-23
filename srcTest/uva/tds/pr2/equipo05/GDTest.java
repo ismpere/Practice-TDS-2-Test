@@ -5,11 +5,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-/**
- * Implementacion de la clase test para GD
- * @author ismpere
- * @author martorb
- */
 public class GDTest {
 
 	@Test
