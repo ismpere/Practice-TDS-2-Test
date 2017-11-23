@@ -23,6 +23,15 @@ public class GDTest {
 		assertEquals(GD.getDistanciaEntre(gd1, gd2), 200.00, 0.01); //TODO Es un valor aleatorio, comprobar al implementar
 	}
 	
+	@Test (expected = IllegalArgumentException.class)
+	public void testInicializaGDNoValidoLatitudNulo(){
+		GD gd1 = new GD((Double)null, 179.99);
+	}
+	@Test (expected = IllegalArgumentException.class)
+	public void testInicializaGDNoValidoLongitudNulo(){
+		GD gd1 = new GD(-179.99, (Double)null);
+	}
+	
 	@Test (expected = AssertionError.class)
 	public void testInicializaGDNoValidoLatitudInferior(){
 		GD gd1 = new GD(-180.00, 179.99);
@@ -40,6 +49,20 @@ public class GDTest {
 	@Test (expected = AssertionError.class)
 	public void testInicializaGDNoValidoLongitudSuperior(){
 		GD gd1 = new GD(179.99, 180.00);
+	}
+	@Test (expected = IllegalArgumentException.class)
+	public void testCalculaDistanciaEntreDosGDNoValidoPrimeroNulo(){
+		GD gd1 = null;
+		GD gd2 = new GD(179.99, -179.99);
+		
+		GD.getDistanciaEntre(gd1, gd2);
+	}
+	@Test (expected = IllegalArgumentException.class)
+	public void testCalculaDistanciaEntreDosGDNoValidoSegundoNulo(){
+		GD gd1 = new GD(-179.99, 179.99);
+		GD gd2 = null;
+		
+		GD.getDistanciaEntre(gd1, gd2);
 	}
 	
 
