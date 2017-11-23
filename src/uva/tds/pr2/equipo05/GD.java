@@ -14,5 +14,15 @@ public class GD{
 	public GD(double latitud, double longitud) {
 		// TODO Auto-generated constructor stub
 	}
+
+	public double getLatitud() {
+		// TODO Auto-generated method stub
+		return (Double) null;
+	}
+
+	public double getLongitud() {
+		// TODO Auto-generated method stub
+		return (Double) null;
+	}
 	
 }
