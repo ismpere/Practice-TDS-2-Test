@@ -10,6 +10,7 @@ public class GD{
 	 * Cosntructor por defecto de GD
 	 * @param latitud
 	 * @param longitud
+	 * @throws IllegalArgumentException si latitud==null || longitud ==null
 	 */
 	public GD(double latitud, double longitud) {
 		// TODO Auto-generated constructor stub
@@ -35,6 +36,7 @@ public class GD{
 	 * @param gd1
 	 * @param gd2
 	 * @return distancia en metros
+	 * @throws IllegalArgumentException si gd1==null || gd2==null
 	 */
 	public static double getDistanciaEntre(GD gd1, GD gd2) {
 		// TODO Auto-generated method stub
