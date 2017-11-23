@@ -30,6 +30,12 @@ public class GD{
 		// TODO Auto-generated method stub
 		return (Double) null;
 	}
+	/**
+	 * Devuelve la distancia entre dos GD en metros
+	 * @param gd1
+	 * @param gd2
+	 * @return distancia en metros
+	 */
 	public static double getDistanciaEntre(GD gd1, GD gd2) {
 		// TODO Auto-generated method stub
 		return (Double) null;
