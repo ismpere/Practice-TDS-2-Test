@@ -1,14 +1,23 @@
 package uva.tds.pr2.equipo05;
 
+import uva.tds.pr2.equipo05.GD;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * Implementacion de la clase test para GD
+ * @author ismpere
+ * @author martorb
+ */
 public class GDTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testInicializaGDValido() {
+		GD gd1 = new GD(-180.00, 180.00);
+		
+		assertEquals(gd1.getLatitud(), -180.00);
+		assertEquals(gd1.getLongitud(), 180.00);
 	}
 
 }
