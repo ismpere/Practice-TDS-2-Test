@@ -30,5 +30,9 @@ public class GD{
 		// TODO Auto-generated method stub
 		return (Double) null;
 	}
+	public static double getDistanciaEntre(GD gd1, GD gd2) {
+		// TODO Auto-generated method stub
+		return (Double) null;
+	}
 	
 }
