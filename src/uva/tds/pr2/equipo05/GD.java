@@ -14,12 +14,18 @@ public class GD{
 	public GD(double latitud, double longitud) {
 		// TODO Auto-generated constructor stub
 	}
-
+	/**
+	 * Devuelve la latitud de la direccion
+	 * @return latitud
+	 */
 	public double getLatitud() {
 		// TODO Auto-generated method stub
 		return (Double) null;
 	}
-
+	/**
+	 * Devuelve la longitud de la direccion
+	 * @return longitud
+	 */
 	public double getLongitud() {
 		// TODO Auto-generated method stub
 		return (Double) null;
