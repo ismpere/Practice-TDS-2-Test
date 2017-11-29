@@ -58,6 +58,24 @@ public class GDTest {
 	public void testInicializaGDNoValidoLongitudSuperior(){
 		GD gd1 = new GD(179.99, 180.00);
 	}
+	@Test (expected = AssertionError.class)
+	public void testSetLatitudNoValidoLatitudInferior(){
+		GD gd1 = new GD(-179.99, 179.99);
+		
+		gd1.setLatitud(-180.00);
+	}
+	@Test (expected = AssertionError.class)
+	public void testSetLatitudNoValidoLatitudSuperior(){
+		GD gd1 = new GD(-179.99, 179.99);
+		
+		gd1.setLatitud(180.00);
+	}
+	@Test (expected = IllegalArgumentException.class)
+	public void testSetLatitudNoValidoLatitudNulo(){
+		GD gd1 = new GD(-179.99, 179.99);
+		
+		gd1.setLatitud((Double)null);
+	}
 	@Test (expected = IllegalArgumentException.class)
 	public void testCalculaDistanciaEntreDosGDNoValidoPrimeroNulo(){
 		GD gd1 = null;
