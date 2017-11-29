@@ -40,7 +40,7 @@ public class GD{
 	 */
 	public static double getDistanciaEntre(GD gd1, GD gd2) {
 		// TODO Auto-generated method stub
-		return (Double) null;
+		return 0.0;
 	}
 	
 }
