@@ -2,12 +2,16 @@ package uva.tds.pr2.equipo05;
 
 import uva.tds.pr2.equipo05.GD;
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
+/**
+ * Implementacion de la clase de Test para GD
+ * @author ismpere
+ * @author martorb
+ */
 public class GDTest {
 	
 	private final double ERROR_ADMISIBLE = 0.01;
+	
 	@Test
 	public void testInicializaGDValido() {
 		GD gd1 = new GD(-179.99, 179.99);
@@ -48,12 +52,10 @@ public class GDTest {
 	public void testInicializaGDNoValidoLongitudNulo(){
 		GD gd1 = new GD(-179.99, (Double)null);
 	}
-	
 	@Test (expected = AssertionError.class)
 	public void testInicializaGDNoValidoLatitudInferior(){
 		GD gd1 = new GD(-180.00, 179.99);
 	}
-	
 	@Test (expected = AssertionError.class)
 	public void testInicializaGDNoValidoLatitudSuperior(){
 		GD gd1 = new GD(180.00, 179.99);
@@ -62,7 +64,6 @@ public class GDTest {
 	public void testInicializaGDNoValidoLongitudInferior(){
 		GD gd1 = new GD(-179.99, -180.00);
 	}
-	
 	@Test (expected = AssertionError.class)
 	public void testInicializaGDNoValidoLongitudSuperior(){
 		GD gd1 = new GD(179.99, 180.00);
@@ -117,6 +118,4 @@ public class GDTest {
 		
 		GD.getDistanciaEntre(gd1, gd2);
 	}
-	
-
 }
