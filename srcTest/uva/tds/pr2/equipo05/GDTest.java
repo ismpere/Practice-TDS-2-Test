@@ -23,6 +23,14 @@ public class GDTest {
 		assertEquals(GD.getDistanciaEntre(gd1, gd2), 200.00, 0.01); //TODO Es un valor aleatorio, comprobar al implementar
 	}
 	
+	@Test
+	public void testSetLatitudSetLongitudValido(){
+		GD gd1 = new GD(-179.99, 179.99);
+		
+		gd1.setLatitud(-178.99);
+		gd1.setLongitud(178.99);
+	}
+	
 	@Test (expected = IllegalArgumentException.class)
 	public void testInicializaGDNoValidoLatitudNulo(){
 		GD gd1 = new GD((Double)null, 179.99);
