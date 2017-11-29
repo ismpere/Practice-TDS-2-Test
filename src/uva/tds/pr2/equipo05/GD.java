@@ -21,7 +21,7 @@ public class GD{
 	 */
 	public double getLatitud() {
 		// TODO Auto-generated method stub
-		return (Double) null;
+		return 0.0;
 	}
 	/**
 	 * Devuelve la longitud de la direccion
@@ -29,7 +29,7 @@ public class GD{
 	 */
 	public double getLongitud() {
 		// TODO Auto-generated method stub
-		return (Double) null;
+		return 0.0;
 	}
 	/**
 	 * Devuelve la distancia entre dos GD en metros
