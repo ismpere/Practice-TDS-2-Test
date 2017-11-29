@@ -13,8 +13,8 @@ public class GDTest {
 		GD gd1 = new GD(-179.99, 179.99);
 		
 		assertNotNull(gd1);
-		assertEquals(gd1.getLatitud(), -179.99, ERROR_ADMISIBLE);
-		assertEquals(gd1.getLongitud(), 179.99, ERROR_ADMISIBLE);
+		assertEquals(-179.99, gd1.getLatitud(), ERROR_ADMISIBLE);
+		assertEquals(179.99, gd1.getLongitud(), ERROR_ADMISIBLE);
 	}
 	
 	@Test
@@ -24,7 +24,7 @@ public class GDTest {
 		
 		assertNotNull(gd1);
 		assertNotNull(gd2);
-		assertEquals(GD.getDistanciaEntre(gd1, gd2), 200.00, ERROR_ADMISIBLE); //TODO Es un valor aleatorio, comprobar al implementar
+		assertEquals(200.00, GD.getDistanciaEntre(gd1, gd2), ERROR_ADMISIBLE); //TODO Es un valor aleatorio, comprobar al implementar
 	}
 	
 	@Test
