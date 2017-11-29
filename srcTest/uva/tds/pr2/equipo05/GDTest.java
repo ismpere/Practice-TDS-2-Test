@@ -6,13 +6,15 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class GDTest {
-
+	
+	private final double ERROR_ADMISIBLE = 0.01;
 	@Test
 	public void testInicializaGDValido() {
 		GD gd1 = new GD(-179.99, 179.99);
 		
-		assertEquals(gd1.getLatitud(), -179.99, 0.01);
-		assertEquals(gd1.getLongitud(), 179.99, 0.01);
+		assertNotNull(gd1);
+		assertEquals(gd1.getLatitud(), -179.99, ERROR_ADMISIBLE);
+		assertEquals(gd1.getLongitud(), 179.99, ERROR_ADMISIBLE);
 	}
 	
 	@Test
@@ -20,7 +22,9 @@ public class GDTest {
 		GD gd1 = new GD(-179.99, 179.99);
 		GD gd2 = new GD(179.99, -179.99);
 		
-		assertEquals(GD.getDistanciaEntre(gd1, gd2), 200.00, 0.01); //TODO Es un valor aleatorio, comprobar al implementar
+		assertNotNull(gd1);
+		assertNotNull(gd2);
+		assertEquals(GD.getDistanciaEntre(gd1, gd2), 200.00, ERROR_ADMISIBLE); //TODO Es un valor aleatorio, comprobar al implementar
 	}
 	
 	@Test
@@ -29,6 +33,7 @@ public class GDTest {
 		
 		gd1.setLatitud(-178.99);
 		gd1.setLongitud(178.99);
+		
 	}
 	
 	@Test (expected = IllegalArgumentException.class)
