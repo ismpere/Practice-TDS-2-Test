@@ -43,11 +43,19 @@ public class GD{
 		// TODO Auto-generated method stub
 		return 0.0;
 	}
-	public void setLatitud(double d) {
+	/**
+	 * Cambia la latitud de la direccion 
+	 * @param latitud
+	 */
+	public void setLatitud(double latitud) {
 		// TODO Auto-generated method stub
 		
 	}
-	public void setLongitud(double d) {
+	/**
+	 * Cambia la longitud de la direccion
+	 * @param longitud
+	 */
+	public void setLongitud(double longitud) {
 		// TODO Auto-generated method stub
 		
 	}
