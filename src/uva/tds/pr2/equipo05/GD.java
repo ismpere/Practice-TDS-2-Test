@@ -6,6 +6,7 @@ package uva.tds.pr2.equipo05;
  * @author martorb
  */
 public class GD{
+	protected double latitud, longitud;
 	/**
 	 * Cosntructor por defecto de GD
 	 * @param latitud
@@ -41,6 +42,14 @@ public class GD{
 	public static double getDistanciaEntre(GD gd1, GD gd2) {
 		// TODO Auto-generated method stub
 		return 0.0;
+	}
+	public void setLatitud(double d) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setLongitud(double d) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
