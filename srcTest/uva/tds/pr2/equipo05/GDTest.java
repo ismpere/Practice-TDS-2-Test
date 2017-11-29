@@ -34,6 +34,10 @@ public class GDTest {
 		gd1.setLatitud(-178.99);
 		gd1.setLongitud(178.99);
 		
+		assertNotNull(gd1);
+		assertEquals(-178.99, gd1.getLatitud(), ERROR_ADMISIBLE);
+		assertEquals(178.99, gd1.getLongitud(), ERROR_ADMISIBLE);
+		
 	}
 	
 	@Test (expected = IllegalArgumentException.class)
