@@ -15,9 +15,9 @@ public class LineaTest {
 
 	@Before
     public void setUp() throws Exception {
-        p1 = new Parada("1", gd1);
-        p2 = new Parada("2", gd2);
-        p3 = new Parada("3", gd3);
+        p1 = new Parada("a", gd1);
+        p2 = new Parada("b", gd2);
+        p3 = new Parada("c", gd3);
     }
      
     @After
@@ -34,7 +34,8 @@ public class LineaTest {
 		
 		assertNotNull(l1);
 		assertEquals("1", l1.getId());
-		assertEquals(p, l1.getParadas());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p2, l1.getParadaFin());
+		assertArrayEquals(p, l1.getParadas());
 	}
-
 }
