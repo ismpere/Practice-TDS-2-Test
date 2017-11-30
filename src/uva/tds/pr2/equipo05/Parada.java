@@ -41,5 +41,10 @@ public class Parada{
 		// TODO Auto-generated method stub
 		
 	}
+
+	public void setGD(GD gd2) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
