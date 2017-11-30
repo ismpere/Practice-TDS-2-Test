@@ -33,7 +33,10 @@ public class Parada{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	/**
+	 * Cambia el id de la parada
+	 * @param id
+	 */
 	public void setId(int id) {
 		// TODO Auto-generated method stub
 		
