@@ -31,5 +31,13 @@ public class Linea{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	public Parada getParadaInicio() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public Parada getParadaFin() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
