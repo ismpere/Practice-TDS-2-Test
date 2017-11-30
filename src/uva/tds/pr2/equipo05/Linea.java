@@ -31,10 +31,18 @@ public class Linea{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	/**
+	 * Devuelve la parada inicial de la linea
+	 * @return inicio
+	 */
 	public Parada getParadaInicio() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	/**
+	 * Devuelve la parada final de la linea
+	 * @return fin
+	 */
 	public Parada getParadaFin() {
 		// TODO Auto-generated method stub
 		return null;
