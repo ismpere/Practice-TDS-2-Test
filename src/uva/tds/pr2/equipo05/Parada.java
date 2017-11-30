@@ -49,5 +49,10 @@ public class Parada{
 		// TODO Auto-generated method stub
 		
 	}
+
+	public static double getDistanciaEntre(Parada p1, Parada p2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 }
