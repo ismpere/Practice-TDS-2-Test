@@ -5,7 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
+/**
+ * Implementacion de la clase de test de Parada
+ * @author ismael
+ * @author martorb
+ */
 public class ParadaTest {
 	
 	private static final double ERROR_ADMISIBLE = 0.01;
