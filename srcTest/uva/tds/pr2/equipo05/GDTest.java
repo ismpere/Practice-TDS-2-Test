@@ -10,7 +10,7 @@ import org.junit.Test;
  */
 public class GDTest {
 	
-	private final double ERROR_ADMISIBLE = 0.01;
+	private static final double ERROR_ADMISIBLE = 0.01;
 	
 	@Test
 	public void testInicializaGDValido() {
