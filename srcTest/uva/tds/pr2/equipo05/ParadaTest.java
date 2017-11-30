@@ -51,4 +51,15 @@ public class ParadaTest {
 		assertEquals(2,p1.getId());
 		assertEquals(gd2,p1.getGD());
 	}
+	
+	@Test(expected = AssertionError.class)
+	public void testInicializaParadaNoValidoIdCero(){
+		Parada p1 = new Parada(0, gd1);
+	}
+	
+	@Test(expected = AssertionError.class)
+	public void testInicializaParadaNoValidoIdNegativo(){
+		Parada p1 = new Parada(-1, gd1);
+	}
+	
 }
