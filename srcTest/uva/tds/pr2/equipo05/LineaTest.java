@@ -40,7 +40,7 @@ public class LineaTest {
 	}
 	
 	@Test
-	public void testAñadeParadaValido(){
+	public void testAñadeParadaSetIdValido(){
 		Parada p[] = {p1,p2,p3};
 		Linea l1 = new Linea("1", p);
 		
