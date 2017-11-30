@@ -48,15 +48,6 @@ public class Linea{
 		return null;
 	}
 	/**
-	 * Devuelve si la parada contiene o no una parada
-	 * @param p4
-	 * @return esta
-	 */
-	public boolean contains(Parada p4) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	/**
 	 * Añade una nueva parada a la Linea
 	 * @param p
 	 * @param i
