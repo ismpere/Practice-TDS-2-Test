@@ -26,9 +26,11 @@ public class GDTest {
 		GD gd1 = new GD(-179.99, 179.99);
 		GD gd2 = new GD(179.99, -179.99);
 		
+		double distancia = GD.getDistanciaEntre(gd1, gd2);
+		
 		assertNotNull(gd1);
 		assertNotNull(gd2);
-		assertEquals(200.00, GD.getDistanciaEntre(gd1, gd2), ERROR_ADMISIBLE); //TODO Es un valor aleatorio, comprobar al implementar
+		assertEquals(200.00, distancia, ERROR_ADMISIBLE); //TODO Es un valor aleatorio, comprobar al implementar
 	}
 	
 	@Test
