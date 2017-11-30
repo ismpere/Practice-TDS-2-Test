@@ -56,10 +56,13 @@ public class ParadaTest {
 	public void testInicializaParadaNoValidoIdCero(){
 		Parada p1 = new Parada(0, gd1);
 	}
-	
 	@Test(expected = AssertionError.class)
 	public void testInicializaParadaNoValidoIdNegativo(){
 		Parada p1 = new Parada(-1, gd1);
+	}
+	@Test(expected = AssertionError.class)
+	public void testInicializaParadaNoValidoGDNulo(){
+		Parada p1 = new Parada(1, null);
 	}
 	
 }
