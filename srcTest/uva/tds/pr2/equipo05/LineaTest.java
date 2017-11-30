@@ -2,9 +2,9 @@ package uva.tds.pr2.equipo05;
 
 import static org.junit.Assert.*;
 
+import org.junit.Test;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
 
 public class LineaTest {
 	
@@ -35,7 +35,26 @@ public class LineaTest {
 		assertNotNull(l1);
 		assertEquals("1", l1.getId());
 		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p2, l1.getParadaFin());
+		assertEquals(p3, l1.getParadaFin());
 		assertArrayEquals(p, l1.getParadas());
+	}
+	
+	@Test
+	public void testAñadeParadaValido(){
+		Parada p[] = {p1,p2,p3};
+		Linea l1 = new Linea("1", p);
+		
+		GD gd4 = new GD(-150.00, 150.00);
+		Parada p4 = new Parada("d", gd4);
+		if(!l1.contains(p4)){
+			l1.addLinea(p4);
+		}
+		
+		Parada pa2[] = {p1, p2, p3, p4};
+		assertNotNull(l1);
+		assertEquals("1", l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p4, l1.getParadaFin());
+		assertArrayEquals(pa2, l1.getParadas());
 	}
 }
