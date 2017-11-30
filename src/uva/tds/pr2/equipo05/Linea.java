@@ -47,11 +47,21 @@ public class Linea{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	/**
+	 * Devuelve si la parada contiene o no una parada
+	 * @param p4
+	 * @return esta
+	 */
 	public boolean contains(Parada p4) {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	public void addParada(Parada p4, int i) {
+	/**
+	 * Añade una nueva parada a la Linea
+	 * @param p
+	 * @param i
+	 */
+	public void addParada(Parada p, int i) {
 		// TODO Auto-generated method stub
 		
 	}
