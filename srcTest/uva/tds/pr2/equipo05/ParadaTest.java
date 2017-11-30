@@ -39,4 +39,16 @@ public class ParadaTest {
 		assertEquals(2,p1.getId());
 		assertEquals(gd1,p1.getGD());
 	}
+	
+	@Test
+	public void testSetGDValido(){
+		Parada p1= new Parada(1, gd1);
+		GD gd2 = new GD(179.99, -179.99);
+		
+		p1.setGD(gd2);
+		
+		assertNotNull(p1);
+		assertEquals(2,p1.getId());
+		assertEquals(gd2,p1.getGD());
+	}
 }
