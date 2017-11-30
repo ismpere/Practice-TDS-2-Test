@@ -56,5 +56,13 @@ public class Linea{
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * Cambia el identificador de la linea
+	 * @param id
+	 */
+	public void setId(String id) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
