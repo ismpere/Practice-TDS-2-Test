@@ -89,14 +89,14 @@ public class ParadaTest {
 		p1 = new Parada(1, gd1);
 		Parada p2 = null;
 		
-		double distancia = Parada.getDistanciaEntre(p1, p2);
+		Parada.getDistanciaEntre(p1, p2);
 	}
 	@Test(expected = IllegalArgumentException.class)
 	public void testCalculaDistanciaEntreParadasSegundaNulo(){
 		p1 = new Parada(1, gd1);
 		Parada p2 = null;
 		
-		double distancia = Parada.getDistanciaEntre(p2, p1);
+		Parada.getDistanciaEntre(p2, p1);
 	}
 	
 }
