@@ -63,7 +63,7 @@ public class ParadaTest {
 		
 		assertNotNull(p1);
 		assertNotNull(p2);
-		assertEquals(200.00, GD.getDistanciaEntre(p1, p2), ERROR_ADMISIBLE); //TODO Es un valor aleatorio, comprobar al implementar
+		assertEquals(200.00, Parada.getDistanciaEntre(p1, p2), ERROR_ADMISIBLE); //TODO Es un valor aleatorio, comprobar al implementar
 	}
 	
 	@Test(expected = AssertionError.class)
