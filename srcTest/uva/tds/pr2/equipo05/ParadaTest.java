@@ -13,7 +13,7 @@ public class ParadaTest {
 		
 		assertNotNull(p1);
 		assertEquals(1,p1.getId());
-		assertEquals(gd1,getGD());
+		assertEquals(gd1,p1.getGD());
 	}
 	
 	@Test
