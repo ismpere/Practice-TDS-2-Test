@@ -41,8 +41,11 @@ public class Parada{
 		// TODO Auto-generated method stub
 		
 	}
-
-	public void setGD(GD gd2) {
+	/**
+	 * Cambia la posicion de la parada
+	 * @param gd1
+	 */
+	public void setGD(GD gd1) {
 		// TODO Auto-generated method stub
 		
 	}
