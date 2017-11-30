@@ -33,7 +33,8 @@ public class LineaTest {
 		Linea l1 = new Linea("1", p);
 		
 		assertNotNull(l1);
-		assertEquals(p, l1.getLineas());
+		assertEquals("1", l1.getId());
+		assertEquals(p, l1.getParadas());
 	}
 
 }
