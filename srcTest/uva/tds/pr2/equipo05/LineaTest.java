@@ -47,7 +47,7 @@ public class LineaTest {
 		GD gd4 = new GD(-150.00, 150.00);
 		Parada p4 = new Parada("d", gd4);
 		if(!l1.contains(p4)){
-			l1.addLinea(p4);
+			l1.addParada(p4, 4);
 		}
 		
 		Parada pa2[] = {p1, p2, p3, p4};
