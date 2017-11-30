@@ -15,12 +15,20 @@ public class Parada{
 	public Parada(int id, GD gd1) {
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	/**
+	 * Devuelve identificador de la parada
+	 * @return Id
+	 */
 	public int getId() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
+	/**
+	 * Devuelve la posición de la parada
+	 * @return gd
+	 */
 	public GD getGD() {
 		// TODO Auto-generated method stub
 		return null;
