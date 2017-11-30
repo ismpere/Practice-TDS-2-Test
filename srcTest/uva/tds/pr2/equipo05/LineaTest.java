@@ -46,13 +46,13 @@ public class LineaTest {
 		
 		GD gd4 = new GD(-150.00, 150.00);
 		Parada p4 = new Parada("d", gd4);
-		if(!l1.contains(p4)){
-			l1.addParada(p4, 4);
-		}
+		
+		l1.addParada(p4, 4);
+		l1.setId("2");
 		
 		Parada pa2[] = {p1, p2, p3, p4};
 		assertNotNull(l1);
-		assertEquals("1", l1.getId());
+		assertEquals("2", l1.getId());
 		assertEquals(p1, l1.getParadaInicio());
 		assertEquals(p4, l1.getParadaFin());
 		assertArrayEquals(pa2, l1.getParadas());
