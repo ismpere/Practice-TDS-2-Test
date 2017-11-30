@@ -11,8 +11,9 @@ public class ParadaTest {
 		GD gd1= new GD (-179.99,179.99);
 		Parada p1= new Parada(1, gd1);
 		
-		
-		fail("Not yet implemented");
+		assertNotNull(p1);
+		assertEquals(1,p1.getId());
+		assertEquals(gd1,getGD());
 	}
 	
 	@Test
