@@ -61,9 +61,11 @@ public class ParadaTest {
 		GD gd2 = new GD(179.99, -179.99);
 		Parada p2 = new Parada(2, gd2);
 		
+		double distancia = Parada.getDistanciaEntre(p1, p2);
+		
 		assertNotNull(p1);
 		assertNotNull(p2);
-		assertEquals(200.00, Parada.getDistanciaEntre(p1, p2), ERROR_ADMISIBLE); //TODO Es un valor aleatorio, comprobar al implementar
+		assertEquals(200.00, distancia, ERROR_ADMISIBLE); //TODO Es un valor aleatorio, comprobar al implementar
 	}
 	
 	@Test(expected = AssertionError.class)
@@ -74,9 +76,23 @@ public class ParadaTest {
 	public void testInicializaParadaNoValidoIdNegativo(){
 		p1 = new Parada(-1, gd1);
 	}
-	@Test(expected = AssertionError.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void testInicializaParadaNoValidoGDNulo(){
 		p1 = new Parada(1, null);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testCalculaDistanciaEntreParadasPrimeraNulo(){
+		p1 = new Parada(1, gd1);
+		Parada p2 = null;
+		
+		double distancia = Parada.getDistanciaEntre(p1, p2);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testCalculaDistanciaEntreParadasSegundaNulo(){
+		p1 = new Parada(1, gd1);
+		Parada p2 = null;
+		
+		double distancia = Parada.getDistanciaEntre(p2, p1);
 	}
 	
 }
