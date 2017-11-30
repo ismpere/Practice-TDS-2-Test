@@ -12,7 +12,7 @@ public class Parada{
 	 * @param id
 	 * @param gd1
 	 */
-	public Parada(int id, GD gd1) {
+	public Parada(String id, GD gd1) {
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -20,9 +20,9 @@ public class Parada{
 	 * Devuelve identificador de la parada
 	 * @return Id
 	 */
-	public int getId() {
+	public String getId() {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
 
 	/**
@@ -37,7 +37,7 @@ public class Parada{
 	 * Cambia el id de la parada
 	 * @param id
 	 */
-	public void setId(int id) {
+	public void setId(String id) {
 		// TODO Auto-generated method stub
 		
 	}

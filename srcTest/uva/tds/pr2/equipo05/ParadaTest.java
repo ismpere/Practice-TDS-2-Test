@@ -29,7 +29,7 @@ public class ParadaTest {
 
 	@Test
 	public void testInicializaParadasValido() {
-		p1 = new Parada(1, gd1);
+		p1 = new Parada("1", gd1);
 		
 		assertNotNull(p1);
 		assertEquals(1,p1.getId());
@@ -38,9 +38,9 @@ public class ParadaTest {
 	
 	@Test
 	public void testSetIDValido(){
-		p1 = new Parada(1, gd1);
+		p1 = new Parada("1", gd1);
 		
-		p1.setId(2);
+		p1.setId("2");
 		
 		assertNotNull(p1);
 		assertEquals(2,p1.getId());
@@ -49,7 +49,7 @@ public class ParadaTest {
 	
 	@Test
 	public void testSetGDValido(){
-		p1 = new Parada(1, gd1);
+		p1 = new Parada("1", gd1);
 		GD gd2 = new GD(179.99, -179.99);
 		
 		p1.setGD(gd2);
@@ -61,9 +61,9 @@ public class ParadaTest {
 	
 	@Test
 	public void testCalculaDistanciaEntreParadasGDValido(){
-		p1 = new Parada(1, gd1);
+		p1 = new Parada("1", gd1);
 		GD gd2 = new GD(179.99, -179.99);
-		Parada p2 = new Parada(2, gd2);
+		Parada p2 = new Parada("2", gd2);
 		
 		double distancia = Parada.getDistanciaEntre(p1, p2);
 		
@@ -73,27 +73,31 @@ public class ParadaTest {
 	}
 	
 	@Test(expected = AssertionError.class)
-	public void testInicializaParadaNoValidoIdCero(){
-		p1 = new Parada(0, gd1);
+	public void testInicializaParadaNoValidoIdVacio(){
+		p1 = new Parada("", gd1);
 	}
 	@Test(expected = AssertionError.class)
-	public void testInicializaParadaNoValidoIdNegativo(){
-		p1 = new Parada(-1, gd1);
+	public void testInicializaParadaNoValidoIdGrande(){
+		p1 = new Parada("Tengo-+Veinte-Letras", gd1);
+	}
+	@Test(expected = AssertionError.class)
+	public void testInicializaParadaNoValidoIdNulo(){
+		p1 = new Parada(null, gd1);
 	}
 	@Test(expected = IllegalArgumentException.class)
 	public void testInicializaParadaNoValidoGDNulo(){
-		p1 = new Parada(1, null);
+		p1 = new Parada("1", null);
 	}
 	@Test(expected = IllegalArgumentException.class)
 	public void testCalculaDistanciaEntreParadasPrimeraNulo(){
-		p1 = new Parada(1, gd1);
+		p1 = new Parada("1", gd1);
 		Parada p2 = null;
 		
 		Parada.getDistanciaEntre(p1, p2);
 	}
 	@Test(expected = IllegalArgumentException.class)
 	public void testCalculaDistanciaEntreParadasSegundaNulo(){
-		p1 = new Parada(1, gd1);
+		p1 = new Parada("1", gd1);
 		Parada p2 = null;
 		
 		Parada.getDistanciaEntre(p2, p1);
