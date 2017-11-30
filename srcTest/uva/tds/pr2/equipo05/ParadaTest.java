@@ -9,6 +9,7 @@ import org.junit.Test;
 public class ParadaTest {
 	
 	private GD gd1;
+	private Parada p1;
 	
 	@Before
     public void setUp() throws Exception {
@@ -18,11 +19,12 @@ public class ParadaTest {
     @After
     public void tearDown() throws Exception {
         gd1 = null;
+        p1 = null;
     }
 
 	@Test
 	public void testInicializaParadasValido() {
-		Parada p1= new Parada(1, gd1);
+		p1 = new Parada(1, gd1);
 		
 		assertNotNull(p1);
 		assertEquals(1,p1.getId());
@@ -31,7 +33,7 @@ public class ParadaTest {
 	
 	@Test
 	public void testSetIDValido(){
-		Parada p1= new Parada(1, gd1);
+		p1 = new Parada(1, gd1);
 		
 		p1.setId(2);
 		
@@ -42,7 +44,7 @@ public class ParadaTest {
 	
 	@Test
 	public void testSetGDValido(){
-		Parada p1= new Parada(1, gd1);
+		p1 = new Parada(1, gd1);
 		GD gd2 = new GD(179.99, -179.99);
 		
 		p1.setGD(gd2);
@@ -54,15 +56,15 @@ public class ParadaTest {
 	
 	@Test(expected = AssertionError.class)
 	public void testInicializaParadaNoValidoIdCero(){
-		Parada p1 = new Parada(0, gd1);
+		p1 = new Parada(0, gd1);
 	}
 	@Test(expected = AssertionError.class)
 	public void testInicializaParadaNoValidoIdNegativo(){
-		Parada p1 = new Parada(-1, gd1);
+		p1 = new Parada(-1, gd1);
 	}
 	@Test(expected = AssertionError.class)
 	public void testInicializaParadaNoValidoGDNulo(){
-		Parada p1 = new Parada(1, null);
+		p1 = new Parada(1, null);
 	}
 	
 }
