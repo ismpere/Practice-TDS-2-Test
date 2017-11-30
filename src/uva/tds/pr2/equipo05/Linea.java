@@ -47,5 +47,13 @@ public class Linea{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	public boolean contains(Parada p4) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	public void addParada(Parada p4, int i) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
