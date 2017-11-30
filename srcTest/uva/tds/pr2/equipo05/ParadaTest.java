@@ -8,6 +8,7 @@ import org.junit.Test;
 
 public class ParadaTest {
 	
+	private static final double ERROR_ADMISIBLE = 0.01;
 	private GD gd1;
 	private Parada p1;
 	
@@ -52,6 +53,17 @@ public class ParadaTest {
 		assertNotNull(p1);
 		assertEquals(2,p1.getId());
 		assertEquals(gd2,p1.getGD());
+	}
+	
+	@Test
+	public void testCalculaDistanciaEntreParadasGDValido(){
+		p1 = new Parada(1, gd1);
+		GD gd2 = new GD(179.99, -179.99);
+		Parada p2 = new Parada(2, gd2);
+		
+		assertNotNull(p1);
+		assertNotNull(p2);
+		assertEquals(200.00, GD.getDistanciaEntre(p1, p2), ERROR_ADMISIBLE); //TODO Es un valor aleatorio, comprobar al implementar
 	}
 	
 	@Test(expected = AssertionError.class)
