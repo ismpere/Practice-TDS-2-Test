@@ -31,6 +31,9 @@ public class LineaTest {
 	public void testInicializaLineaValido() {
 		Parada p[] = {p1,p2,p3};
 		Linea l1 = new Linea("1", p);
+		
+		assertNotNull(l1);
+		assertEquals(p, l1.getLineas());
 	}
 
 }
