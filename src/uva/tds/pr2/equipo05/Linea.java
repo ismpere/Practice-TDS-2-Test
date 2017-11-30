@@ -15,12 +15,18 @@ public class Linea{
 	public Linea(String id, Parada[] p) {
 		// TODO Auto-generated constructor stub
 	}
-
+	/**
+	 * Devuelve el identificador de la linea
+	 * @return id
+	 */
 	public String getId() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	/**
+	 * Devuelve las paradas de la linea
+	 * @return paradas
+	 */
 	public Parada[] getParadas() {
 		// TODO Auto-generated method stub
 		return null;
