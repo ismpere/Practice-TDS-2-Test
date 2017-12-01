@@ -40,6 +40,19 @@ public class LineaTDDTest {
 	}
 	
 	@Test
+	public void testSetIdValido(){
+		Linea l1 = new Linea(1, p);
+		
+		l1.setId(2);
+		
+		assertNotNull(l1);
+		assertEquals(2, l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(p, l1.getParadas());
+	}
+	
+	@Test
 	public void testSetParadaInicioValido(){
 		Linea l1 = new Linea(1, p);
 		
@@ -136,7 +149,7 @@ public class LineaTDDTest {
 		assertNotNull(l1);
 		assertNotNull(pa2);
 		assertTrue(l1.existeParadasCercanas(gd4));
-		assertTrue(pa2.length==1);
+		assertEquals(1, pa2.length);
 		assertEquals(p2, pa2[0]);
 		assertEquals(1, l1.getId());
 		assertEquals(p1, l1.getParadaInicio());
@@ -151,7 +164,7 @@ public class LineaTDDTest {
 		GD gd4 = new GD(-150.00, 150.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
 		Parada p4 = new Parada("d", gd4);
 		GD gd5 = new GD(-140.00, 140.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
-		Parada p5 = new Parada("d", gd4);
+		Parada p5 = new Parada("d", gd5);
 		
 		Parada pa3[] = {p2, p4, p5};
 		Linea l2 = new Linea(2, pa3);
@@ -162,7 +175,7 @@ public class LineaTDDTest {
 		assertNotNull(l2);
 		assertNotNull(pa2);
 		assertTrue(l1.existeCorrespondencia(l2));
-		assertTrue(pa2.length==1);
+		assertEquals(1, pa2.length);
 		assertEquals(p2, pa2[0]);
 		assertEquals(1, l1.getId());
 		assertEquals(p1, l1.getParadaInicio());
@@ -177,7 +190,7 @@ public class LineaTDDTest {
 		GD gd4 = new GD(-150.00, 150.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
 		Parada p4 = new Parada("d", gd4);
 		GD gd5 = new GD(-140.00, 140.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
-		Parada p5 = new Parada("d", gd4);
+		Parada p5 = new Parada("d", gd5);
 		
 		Parada pa3[] = {p2, p4, p5};
 		Linea l2 = new Linea(2, pa3);
@@ -188,7 +201,7 @@ public class LineaTDDTest {
 		assertNotNull(l2);
 		assertNotNull(pa2);
 		assertTrue(l1.existeTransbordoDirecto(l2));
-		assertTrue(pa2.length==1);
+		assertEquals(1, pa2.length);
 		assertEquals(p2, pa2[0]);
 		assertEquals(1, l1.getId());
 		assertEquals(p1, l1.getParadaInicio());
