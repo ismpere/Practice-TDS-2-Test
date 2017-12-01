@@ -38,5 +38,23 @@ public class LineaBlackBoxTest {
     	Parada p[] = {p1, p2};
     	Linea l1 = new Linea(1, p);
     }
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void testInicializaNoValidoParadaInicioNulo(){
+    	Parada p[] = {null, p1, p2};
+    	Linea l1 = new Linea(1, p);
+    }
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void testInicializaNoValidoParadaFinNulo(){
+    	Parada p[] = {p1, p2, null};
+    	Linea l1 = new Linea(1, p);
+    }
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void testInicializaNoValidoParadaIntermediaNulo(){
+    	Parada p[] = {p1, null, p2};
+    	Linea l1 = new Linea(1, p);
+    }
 
 }
