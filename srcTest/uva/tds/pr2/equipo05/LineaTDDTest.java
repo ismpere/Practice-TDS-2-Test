@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.junit.After;
 import org.junit.Before;
 
-public class LineaTest {
+public class LineaTDDTest {
 	
 	private GD gd1 = new GD (-179.99,179.99);
 	private GD gd2 = new GD (-178.99,178.99);
@@ -119,6 +119,51 @@ public class LineaTest {
 		l1.removeParadaIntermedia(p4);
 		
 		assertNotNull(l1);
+		assertEquals(1, l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(p, l1.getParadas());
+	}
+	
+	@Test
+	public void testGetParadasCercanasValido(){
+		Linea l1 = new Linea(1, p);
+		
+		GD gd4 = new GD(-150.00, 150.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		
+		Parada pa2[] = l1.getParadasCercanas(gd4);
+		
+		assertNotNull(l1);
+		assertNotNull(pa2);
+		assertTrue(l1.existeParadasCercanas(gd4));
+		assertTrue(pa2.length==1);
+		assertEquals(p2, pa2[0]);
+		assertEquals(1, l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(p, l1.getParadas());
+	}
+	
+	@Test
+	public void testGetParadasConCorrespondenciaValido(){
+		Linea l1 = new Linea(1, p);
+		
+		GD gd4 = new GD(-150.00, 150.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		Parada p4 = new Parada("d", gd4);
+		GD gd5 = new GD(-140.00, 140.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		Parada p5 = new Parada("d", gd4);
+		
+		Parada pa3[] = {p2, p4, p5};
+		Linea l2 = new Linea(2, pa3);
+		
+		Parada pa2[] = l1.getParadasConCorrespondencia(l2);
+		
+		assertNotNull(l1);
+		assertNotNull(l2);
+		assertNotNull(pa2);
+		assertTrue(l1.existeCorrespondencia(l2));
+		assertTrue(pa2.length==1);
+		assertEquals(p2, pa2[0]);
 		assertEquals(1, l1.getId());
 		assertEquals(p1, l1.getParadaInicio());
 		assertEquals(p3, l1.getParadaFin());
