@@ -109,9 +109,27 @@ public class Linea{
 	/**
 	 * Devuelve si hay parads cercanas de esa linea a una direccion
 	 * @param gd
-	 * @return existen
+	 * @return existenParadasCercanas
 	 */
 	public boolean existeParadasCercanas(GD gd) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	/**
+	 * Devuelve las paradas con correspondencia de this con l
+	 * @param l
+	 * @return paradas
+	 */
+	public Parada[] getParadasConCorrespondencia(Linea l) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	/**
+	 * Devuelve si hay o no correspondencia de this con l
+	 * @param l
+	 * @return hayCorrespondencia
+	 */
+	public boolean existeCorrespondencia(Linea l) {
 		// TODO Auto-generated method stub
 		return false;
 	}
