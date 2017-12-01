@@ -64,5 +64,9 @@ public class Linea{
 		// TODO Auto-generated method stub
 		
 	}
+	public Parada getParadaAt(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
