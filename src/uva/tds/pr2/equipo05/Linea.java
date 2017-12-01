@@ -64,5 +64,21 @@ public class Linea{
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * Cambia la parada ininio de la linea
+	 * @param p
+	 */
+	public void setParadaInicio(Parada p) {
+		// TODO Auto-generated method stub
+		
+	}
+	/**
+	 * Cambia la parada fin de la linea
+	 * @param p
+	 */
+	public void setParadaFin(Parada p) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
