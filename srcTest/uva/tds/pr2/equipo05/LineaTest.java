@@ -40,7 +40,7 @@ public class LineaTest {
 	}
 	
 	@Test
-	public void testAñadeParadaAlPrincipioValido(){
+	public void testSetParadaInicioValido(){
 		Linea l1 = new Linea("1", p);
 		
 		GD gd4 = new GD(-150.00, 150.00);
@@ -57,7 +57,7 @@ public class LineaTest {
 	}
 	
 	@Test
-	public void testAñadeParadaAlFinalValido(){
+	public void testSetParadaFinValido(){
 		Linea l1 = new Linea("1", p);
 		
 		GD gd4 = new GD(-150.00, 150.00);
@@ -105,5 +105,23 @@ public class LineaTest {
 		assertEquals(p1, l1.getParadaInicio());
 		assertEquals(p3, l1.getParadaFin());
 		assertArrayEquals(pa2, l1.getParadas());
+	}
+	
+	@Test
+	public void testEliminaParadaValido(){
+		GD gd4 = new GD(-150.00, 150.00);
+		Parada p4 = new Parada("d", gd4);
+		
+		Parada pa2[] = {p1, p2, p4, p3};
+		
+		Linea l1 = new Linea("1", pa2);
+		
+		l1.removeParada(p4);
+		
+		assertNotNull(l1);
+		assertEquals("1", l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(p, l1.getParadas());
 	}
 }
