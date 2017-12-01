@@ -25,7 +25,6 @@ public class LineaBlackBoxTest {
         p1 = null;	
         p2 = null;	
         p3 = null;
-        p = null;
     }
     
     @Test (expected = IllegalArgumentException.class)
@@ -55,6 +54,23 @@ public class LineaBlackBoxTest {
     public void testInicializaNoValidoParadaIntermediaNulo(){
     	Parada p[] = {p1, null, p2};
     	Linea l1 = new Linea(1, p);
+    }
+    @Test (expected = AssertionError.class)
+    public void testsetParadaInicioNoValidoDemasiadoLejos(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	GD gd4 = new GD(-100.00, 100.00);
+    	Parada p4 = new Parada("d", gd4);
+    	
+    	l1.setParadaInicio(p4);
+    }
+    @Test (expected = IllegalArgumentException.class)
+    public void testsetParadaInicioNoValidoNulo(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	l1.setParadaInicio(null);
     }
 
 }
