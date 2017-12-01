@@ -18,6 +18,7 @@ public class LineaTest {
         p1 = new Parada("a", gd1);
         p2 = new Parada("b", gd2);
         p3 = new Parada("c", gd3);
+        Parada p[] = {p1, p2, p3};
     }
      
     @After
@@ -25,11 +26,11 @@ public class LineaTest {
         p1 = null;	
         p2 = null;	
         p3 = null;
+        p = null;
     }
 	
 	@Test
 	public void testInicializaLineaValido() {
-		Parada p[] = {p1,p2,p3};
 		Linea l1 = new Linea("1", p);
 		
 		assertNotNull(l1);
@@ -41,7 +42,6 @@ public class LineaTest {
 	
 	@Test
 	public void testAñadeParadaAlPrincipioValido(){
-		Parada p[] = {p1,p2,p3};
 		Linea l1 = new Linea("1", p);
 		
 		GD gd4 = new GD(-150.00, 150.00);
@@ -59,7 +59,6 @@ public class LineaTest {
 	
 	@Test
 	public void testAñadeParadaAlFinalValido(){
-		Parada p[] = {p1,p2,p3};
 		Linea l1 = new Linea("1", p);
 		
 		GD gd4 = new GD(-150.00, 150.00);
@@ -77,7 +76,6 @@ public class LineaTest {
 	
 	@Test
 	public void testAñadeParadaIntermediaValido(){
-		Parada p[] = {p1,p2,p3};
 		Linea l1 = new Linea("1", p);
 		
 		GD gd4 = new GD(-150.00, 150.00);
