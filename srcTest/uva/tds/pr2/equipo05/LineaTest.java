@@ -124,4 +124,23 @@ public class LineaTest {
 		assertEquals(p3, l1.getParadaFin());
 		assertArrayEquals(p, l1.getParadas());
 	}
+	
+	@Test
+	public void testExisteParadaCercanaUnaParadaCercanaValido(){
+		Linea l1 = new Linea("1", p);
+		
+		GD gd4 = new GD(-150.00, 150.00);
+		
+		Parada pa2[] = l1.getParadasCercanas(gd4);
+		
+		assertNotNull(l1);
+		assertNotNull(pa2);
+		assertTrue(l1.existeParadasCercanas(gd4));
+		assertTrue(pa2.length==1);
+		assertEquals(p2, pa2[0]);
+		assertEquals("1", l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(p, l1.getParadas());
+	}
 }
