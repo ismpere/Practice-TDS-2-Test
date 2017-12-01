@@ -89,5 +89,13 @@ public class Linea{
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * Elimina la parada intermedia de la linea
+	 * @param p
+	 */
+	public void removeParadaIntermedia(Parada p) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
