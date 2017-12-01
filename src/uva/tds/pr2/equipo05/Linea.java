@@ -97,5 +97,23 @@ public class Linea{
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * Devuelve una lista de paradas de la linea cercanas a una direccion
+	 * @param gd
+	 * @return paradas
+	 */
+	public Parada[] getParadasCercanas(GD gd) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	/**
+	 * Devuelve si hay parads cercanas de esa linea a una direccion
+	 * @param gd4
+	 * @return existen
+	 */
+	public boolean existeParadasCercanas(GD gd4) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 }
