@@ -12,16 +12,16 @@ public class Linea{
 	 * @param id
 	 * @param p
 	 */
-	public Linea(String id, Parada[] p) {
+	public Linea(int id, Parada[] p) {
 		// TODO Auto-generated constructor stub
 	}
 	/**
 	 * Devuelve el identificador de la linea
 	 * @return id
 	 */
-	public String getId() {
+	public int getId() {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 	/**
 	 * Devuelve las paradas de la linea
@@ -60,7 +60,7 @@ public class Linea{
 	 * Cambia el identificador de la linea
 	 * @param id
 	 */
-	public void setId(String id) {
+	public void setId(int id) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -108,10 +108,10 @@ public class Linea{
 	}
 	/**
 	 * Devuelve si hay parads cercanas de esa linea a una direccion
-	 * @param gd4
+	 * @param gd
 	 * @return existen
 	 */
-	public boolean existeParadasCercanas(GD gd4) {
+	public boolean existeParadasCercanas(GD gd) {
 		// TODO Auto-generated method stub
 		return false;
 	}
