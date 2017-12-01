@@ -126,10 +126,10 @@ public class LineaTest {
 	}
 	
 	@Test
-	public void testExisteParadaCercanaUnaParadaCercanaValido(){
+	public void testGetParadaCercanaUnaParadaCercanaValido(){
 		Linea l1 = new Linea("1", p);
 		
-		GD gd4 = new GD(-150.00, 150.00);
+		GD gd4 = new GD(-150.00, 150.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
 		
 		Parada pa2[] = l1.getParadasCercanas(gd4);
 		
@@ -138,6 +138,45 @@ public class LineaTest {
 		assertTrue(l1.existeParadasCercanas(gd4));
 		assertTrue(pa2.length==1);
 		assertEquals(p2, pa2[0]);
+		assertEquals("1", l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(p, l1.getParadas());
+	}
+	
+	@Test
+	public void testGetParadaCercanaVariasParadasCercanasValido(){
+		Linea l1 = new Linea("1", p);
+		
+		GD gd4 = new GD(-140.00, 140.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		
+		Parada pa2[] = l1.getParadasCercanas(gd4);
+		
+		Parada pa3[] = {p2, p3};
+		
+		assertNotNull(l1);
+		assertNotNull(pa2);
+		assertTrue(l1.existeParadasCercanas(gd4));
+		assertTrue(pa2.length==2);
+		assertEquals("1", l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(p, l1.getParadas());
+		assertArrayEquals(pa3, pa2);
+	}
+	
+	@Test
+	public void testGetParadaCercanaNingunaParadaCercanaValido(){
+		Linea l1 = new Linea("1", p);
+		
+		GD gd4 = new GD(-130.00, 130.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		
+		Parada pa2[] = l1.getParadasCercanas(gd4);
+		
+		assertNotNull(l1);
+		assertNotNull(pa2);
+		assertFalse(l1.existeParadasCercanas(gd4));
+		assertTrue(pa2.length==0);
 		assertEquals("1", l1.getId());
 		assertEquals(p1, l1.getParadaInicio());
 		assertEquals(p3, l1.getParadaFin());
