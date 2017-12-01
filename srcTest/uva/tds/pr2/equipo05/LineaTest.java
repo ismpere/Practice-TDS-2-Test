@@ -72,7 +72,6 @@ public class LineaTest {
 		assertEquals("1", l1.getId());
 		assertEquals(p1, l1.getParadaInicio());
 		assertEquals(p3, l1.getParadaFin());
-		assertEquals(p4, l1.getParadaAt(2));
 		assertArrayEquals(pa2, l1.getParadas());
 	}
 }
