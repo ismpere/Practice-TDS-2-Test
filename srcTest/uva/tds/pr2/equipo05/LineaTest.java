@@ -58,7 +58,43 @@ public class LineaTest {
 	}
 	
 	@Test
-	public void testAñadeParadaIntermedia(){
+	public void testAñadeParadaIntermediaValido(){
+		Parada p[] = {p1,p2,p3};
+		Linea l1 = new Linea("1", p);
+		
+		GD gd4 = new GD(-150.00, 150.00);
+		Parada p4 = new Parada("d", gd4);
+		
+		l1.addParada(p4, 2);
+		
+		Parada pa2[] = {p1, p4, p2, p3};
+		assertNotNull(l1);
+		assertEquals("1", l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(pa2, l1.getParadas());
+	}
+	
+	@Test
+	public void testAñadeParadaAlPrincipioValido(){
+		Parada p[] = {p1,p2,p3};
+		Linea l1 = new Linea("1", p);
+		
+		GD gd4 = new GD(-150.00, 150.00);
+		Parada p4 = new Parada("d", gd4);
+		
+		l1.addParada(p4, 1);
+		
+		Parada pa2[] = {p4, p1, p2, p3};
+		assertNotNull(l1);
+		assertEquals("1", l1.getId());
+		assertEquals(p4, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(pa2, l1.getParadas());
+	}
+	
+	@Test
+	public void testExisteParadaCercanaValido(){
 		Parada p[] = {p1,p2,p3};
 		Linea l1 = new Linea("1", p);
 		
