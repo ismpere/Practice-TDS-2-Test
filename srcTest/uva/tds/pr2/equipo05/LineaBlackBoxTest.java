@@ -32,5 +32,11 @@ public class LineaBlackBoxTest {
     public void testInicializaNoValidoParadasNulo(){
     	Linea l1 = new Linea(1, null);
     }
+    
+    @Test (expected = AssertionError.class)
+    public void testInicializaNoValidoDosParadas(){
+    	Parada p[] = {p1, p2};
+    	Linea l1 = new Linea(1, p);
+    }
 
 }
