@@ -133,5 +133,23 @@ public class Linea{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	/**
+	 * Devuelve las paradas con transbordo directo de this con l
+	 * @param l
+	 * @return paradas
+	 */
+	public Parada[] getParadasConTransbordoDirecto(Linea l) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	/**
+	 * Devuelve si hay transbordo directo entre this y l
+	 * @param l
+	 * @return existeTransbordoDirecto
+	 */
+	public boolean existeTransbordoDirecto(Linea l) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 }
