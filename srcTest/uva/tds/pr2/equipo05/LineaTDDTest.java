@@ -169,4 +169,30 @@ public class LineaTDDTest {
 		assertEquals(p3, l1.getParadaFin());
 		assertArrayEquals(p, l1.getParadas());
 	}
+	
+	@Test
+	public void testGetParadasConTransbordoDirectoValido(){
+		Linea l1 = new Linea(1, p);
+		
+		GD gd4 = new GD(-150.00, 150.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		Parada p4 = new Parada("d", gd4);
+		GD gd5 = new GD(-140.00, 140.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		Parada p5 = new Parada("d", gd4);
+		
+		Parada pa3[] = {p2, p4, p5};
+		Linea l2 = new Linea(2, pa3);
+		
+		Parada pa2[] = l1.getParadasConTransbordoDirecto(l2);
+		
+		assertNotNull(l1);
+		assertNotNull(l2);
+		assertNotNull(pa2);
+		assertTrue(l1.existeTransbordoDirecto(l2));
+		assertTrue(pa2.length==1);
+		assertEquals(p2, pa2[0]);
+		assertEquals(1, l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(p, l1.getParadas());
+	}
 }
