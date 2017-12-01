@@ -72,5 +72,22 @@ public class LineaBlackBoxTest {
     	
     	l1.setParadaInicio(null);
     }
+    @Test (expected = AssertionError.class)
+    public void testsetParadaFinNoValidoDemasiadoLejos(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	GD gd4 = new GD(-100.00, 100.00);
+    	Parada p4 = new Parada("d", gd4);
+    	
+    	l1.setParadaFin(p4);
+    }
+    @Test (expected = IllegalArgumentException.class)
+    public void testsetParadaFinNoValidoNulo(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	l1.setParadaFin(null);
+    }
 
 }
