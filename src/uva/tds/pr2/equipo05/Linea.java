@@ -80,5 +80,14 @@ public class Linea{
 		// TODO Auto-generated method stub
 		
 	}
+	/**
+	 * Añade la parada en la posicion seleccionada
+	 * @param p
+	 * @param i
+	 */
+	public void addParadaAt(Parada p, int i) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
