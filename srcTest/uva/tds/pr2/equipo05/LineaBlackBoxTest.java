@@ -12,7 +12,6 @@ public class LineaBlackBoxTest {
 	private GD gd2 = new GD (-178.99,178.99);
 	private GD gd3 = new GD (-177.99,177.99);
 	private Parada p1, p2, p3;
-	private Parada p[] = {p1, p2, p3};
 
 	@Before
     public void setUp() throws Exception {
@@ -27,6 +26,11 @@ public class LineaBlackBoxTest {
         p2 = null;	
         p3 = null;
         p = null;
+    }
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void testInicializaNoValidoParadasNulo(){
+    	Linea l1 = new Linea(1, null);
     }
 
 }
