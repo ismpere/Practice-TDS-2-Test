@@ -108,7 +108,7 @@ public class LineaTest {
 	}
 	
 	@Test
-	public void testEliminaParadaValido(){
+	public void testEliminaParadaIntermediaValido(){
 		GD gd4 = new GD(-150.00, 150.00);
 		Parada p4 = new Parada("d", gd4);
 		
@@ -116,7 +116,7 @@ public class LineaTest {
 		
 		Linea l1 = new Linea("1", pa2);
 		
-		l1.removeParada(p4);
+		l1.removeParadaIntermedia(p4);
 		
 		assertNotNull(l1);
 		assertEquals("1", l1.getId());
