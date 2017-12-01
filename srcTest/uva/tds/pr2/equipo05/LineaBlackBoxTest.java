@@ -38,6 +38,15 @@ public class LineaBlackBoxTest {
     	Linea l1 = new Linea(1, p);
     }
     
+    @Test (expected = AssertionError.class)
+    public void testInicializaNoValidoInicioYFinDemasiadoLejos(){
+    	GD gd4 = new GD(-100.00, 100.00);
+    	Parada p4 = new Parada("d", gd4);
+    	
+    	Parada p[] = {p1, p2, p4};
+    	Linea l1 = new Linea(1, p);
+    }
+    
     @Test (expected = IllegalArgumentException.class)
     public void testInicializaNoValidoParadaInicioNulo(){
     	Parada p[] = {null, p1, p2};
