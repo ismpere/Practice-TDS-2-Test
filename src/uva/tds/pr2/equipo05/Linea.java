@@ -52,7 +52,7 @@ public class Linea{
 	 * @param p
 	 * @param i
 	 */
-	public void addParada(Parada p, int i) {
+	public void addParadaIntermedia(Parada p) {
 		// TODO Auto-generated method stub
 		
 	}

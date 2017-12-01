@@ -1,6 +1,7 @@
 package uva.tds.pr2.equipo05;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 import org.junit.After;
 import org.junit.Before;
@@ -82,7 +83,7 @@ public class LineaTest {
 		GD gd4 = new GD(-150.00, 150.00);
 		Parada p4 = new Parada("d", gd4);
 		
-		l1.addParada(p4, 2);
+		l1.addParadaIntermedia(p4);
 		
 		Parada pa2[] = {p1, p4, p2, p3};
 		assertNotNull(l1);
