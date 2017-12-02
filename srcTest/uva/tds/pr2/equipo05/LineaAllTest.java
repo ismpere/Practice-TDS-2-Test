@@ -11,7 +11,7 @@ import org.junit.runners.Suite.SuiteClasses;
     LineaGetParadasTest.class})
 
 /**
- * Suite de clases de test para las getParadas*
+ * Suite de clases de test para todas las clases de test de Linea*
  * @author ismael
  * @author martorb
  */
