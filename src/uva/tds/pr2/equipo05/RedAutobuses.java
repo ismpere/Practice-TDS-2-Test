@@ -59,5 +59,10 @@ public class RedAutobuses {
 		return true;
 	}
 	
+	public boolean Contains(Linea linea){
+		// TODO Auto-generated constructor stub
+		return true;
+	}
+	
 	
 }
