@@ -77,12 +77,14 @@ public class RedAutobusesTDDTest {
 	@Test
 	public void testDeleteLineaValido() {
 		Linea[] lista_lineas={l1,l2,l3};
+		Linea[] lista_lineas2={l1,l2};
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		red.deleteLinea(l3);
 		
 		assertNotNull(red);
 		assertEquals(l1,red.getLinea(1));
 		assertEquals(l2,red.getLinea(2));
+		assertTrue(lista_lineas2.equals(red.getAllLineas()));  //assertEquals(Object[],Object[]) deprecated (?)
 		
 		fail("Not yet implemented");
 	}
@@ -91,7 +93,7 @@ public class RedAutobusesTDDTest {
 	@Test
 	public void testGetAllLineasValido() {
 		Linea[] lista_lineas={l1,l2};
-		Linea[] lista_lienas2;
+		Linea[] lista_lineas2;
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		lista_lineas2=red.getAllLineas();
 		
