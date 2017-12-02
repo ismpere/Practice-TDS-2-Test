@@ -151,5 +151,14 @@ public class Linea{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	/**
+	 * Devuelve si contiene una parada
+	 * @param p
+	 * @return contiene
+	 */
+	public boolean contains(Parada p) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 }
