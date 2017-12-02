@@ -33,7 +33,7 @@ public class LineaGetParadasCercanasTest {
     }
 
 	@Test
-	public void testGetParadaCercanaUnaParadaCercanaValido(){
+	public void testGetParadaCercanasUnaParadaCercanaValido(){
 		
 		GD gd4 = new GD(-150.00, 150.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
 		
@@ -51,7 +51,7 @@ public class LineaGetParadasCercanasTest {
 	}
 	
 	@Test
-	public void testGetParadaCercanaVariasParadasCercanasValido(){
+	public void testGetParadaCercanasVariasParadasCercanasValido(){
 		
 		GD gd4 = new GD(-140.00, 140.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
 		
@@ -71,7 +71,7 @@ public class LineaGetParadasCercanasTest {
 	}
 	
 	@Test
-	public void testGetParadaCercanaNingunaParadaCercanaValido(){
+	public void testGetParadaCercanasNingunaParadaCercanaValido(){
 		
 		GD gd4 = new GD(-130.00, 130.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
 		
