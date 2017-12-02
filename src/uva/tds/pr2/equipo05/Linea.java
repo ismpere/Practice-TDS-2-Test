@@ -13,7 +13,7 @@ public class Linea{
 	 * @param p Paradas de la linea
 	 * @assert.pre p.length>3
 	 * @assert.pre !Parada.existeAlgunaParadaRepetida(p)
-	 * @throws IllegalArgumentException si p=null || alguna de las paradas de p es null
+	 * @throws IllegalArgumentException si p==null || alguna de las paradas de p es null
 	 */
 	public Linea(int id, Parada[] p) {
 		// TODO Auto-generated constructor stub
@@ -54,7 +54,7 @@ public class Linea{
 	 * Añade una nueva parada a la Linea
 	 * @param p Parada a añadir
 	 * @assert.pre !contains(p)
-	 * @throws IllegalArgumentException si p=null
+	 * @throws IllegalArgumentException si p==null
 	 */
 	public void addParadaIntermedia(Parada p) {
 		// TODO Auto-generated method stub
@@ -73,7 +73,7 @@ public class Linea{
 	 * @param p Nueva parada Inicio
 	 * @assert.pre !contains(p)
 	 * @assert.pre p.getDistanciaAt(getParadaFin)<100
-	 * @throws IllegalArgumentException si p=null
+	 * @throws IllegalArgumentException si p==null
 	 */
 	public void setParadaInicio(Parada p) {
 		// TODO Auto-generated method stub
@@ -84,7 +84,7 @@ public class Linea{
 	 * @param p Nueva parada Fin
 	 * @assert.pre !contains(p)
 	 * @assert.pre p.getDistanciaAt(getParadaInicio)<100
-	 * @throws IllegalArgumentException si p=null
+	 * @throws IllegalArgumentException si p==null
 	 */
 	public void setParadaFin(Parada p) {
 		// TODO Auto-generated method stub
@@ -96,7 +96,7 @@ public class Linea{
 	 * @param i Posicion en la que se va a añadir
 	 * @assert.pre !contains(p)
 	 * @assert.pre i>1 && i<getParadas.length
-	 * @throws IllegalArgumentException si p=null
+	 * @throws IllegalArgumentException si p==null
 	 */
 	public void addParadaIntermediaAt(Parada p, int i) {
 		// TODO Auto-generated method stub
@@ -108,7 +108,7 @@ public class Linea{
 	 * @assert.pre contains(p)
 	 * @assert.pre getParadas.length>3
 	 * @assert.pre !p.equals(getParadaInicio) && !p.equals(getParadaFin)
-	 * @throws IllegalArgumentException si p=null
+	 * @throws IllegalArgumentException si p==null
 	 */
 	public void removeParadaIntermedia(Parada p) {
 		// TODO Auto-generated method stub
@@ -119,7 +119,7 @@ public class Linea{
 	 * La lista estara vacia si no hay ninguna parada cercana
 	 * @param gd Direccion desde la que queremos hallar las paradas cercanas
 	 * @return paradas cercanas a esa direccion
-	 * @throws IllegalArgumentException si gd=null
+	 * @throws IllegalArgumentException si gd==null
 	 */
 	public Parada[] getParadasCercanas(GD gd) {
 		// TODO Auto-generated method stub
@@ -129,7 +129,7 @@ public class Linea{
 	 * Devuelve si hay parads cercanas de esa linea a una direccion
 	 * @param gd Direccion desde la que queremos comprobar si hay paradas cercanas
 	 * @return existenParadasCercanas
-	 * @throws IllegalArgumentException si gd=null
+	 * @throws IllegalArgumentException si gd==null
 	 */
 	public boolean existeParadasCercanas(GD gd) {
 		// TODO Auto-generated method stub
@@ -141,7 +141,7 @@ public class Linea{
 	 * @param l Linea con la que queremos hallar las paradas con correspondencia
 	 * @return paradas con correspondencia de this con l
 	 * @assert.pre !this.equals(l)
-	 * @throws IllegalArgumentException si l=null
+	 * @throws IllegalArgumentException si l==null
 	 */
 	public Parada[] getParadasConCorrespondencia(Linea l) {
 		// TODO Auto-generated method stub
@@ -152,7 +152,7 @@ public class Linea{
 	 * @param l Linea con la que queremos hallar si hay correspondencia
 	 * @return hayCorrespondencia
 	 * @assert.pre !this.equals(l)
-	 * @throws IllegalArgumentException si l=null
+	 * @throws IllegalArgumentException si l==null
 	 */
 	public boolean existeCorrespondencia(Linea l) {
 		// TODO Auto-generated method stub
@@ -164,7 +164,7 @@ public class Linea{
 	 * @param l Linea con la que queremos hallar las paradas con transbordo directo
 	 * @return paradas con transbordo directo
 	 * @assert.pre !this.equals(l)
-	 * @throws IllegalArgumentException si l=null
+	 * @throws IllegalArgumentException si l==null
 	 */
 	public Parada[] getParadasConTransbordoDirecto(Linea l) {
 		// TODO Auto-generated method stub
@@ -175,7 +175,7 @@ public class Linea{
 	 * @param l Linea con la que queremos hallar si hay transbordo directo
 	 * @return existeTransbordoDirecto
 	 * @assert.pre !this.equals(l)
-	 * @throws IllegalArgumentException si l=null
+	 * @throws IllegalArgumentException si l==null
 	 */
 	public boolean existeTransbordoDirecto(Linea l) {
 		// TODO Auto-generated method stub
@@ -185,7 +185,7 @@ public class Linea{
 	 * Devuelve si la linea contiene una parada
 	 * @param p Parada a comprobar que contiene
 	 * @return contieneParada
-	 * @throws IllegalArgumentException si p=null
+	 * @throws IllegalArgumentException si p==null
 	 */
 	public boolean contains(Parada p) {
 		// TODO Auto-generated method stub

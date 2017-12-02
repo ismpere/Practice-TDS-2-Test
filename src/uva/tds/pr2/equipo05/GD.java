@@ -12,6 +12,8 @@ public class GD{
 	 * Cosntructor por defecto de GD
 	 * @param latitud
 	 * @param longitud
+	 * @assert.pre latitud>-180.00 && latitud<180.00
+	 * @assert.pre longitud>-180.00 && longitud<180.00
 	 * @throws IllegalArgumentException si latitud==null || longitud ==null
 	 */
 	public GD(double latitud, double longitud) {
@@ -34,19 +36,9 @@ public class GD{
 		return 0.0;
 	}
 	/**
-	 * Devuelve la distancia entre dos GD en metros
-	 * @param gd1
-	 * @param gd2
-	 * @return distancia en metros
-	 * @throws IllegalArgumentException si gd1==null || gd2==null
-	 */
-	public static double getDistanciaEntre(GD gd1, GD gd2) {
-		// TODO Auto-generated method stub
-		return 0.0;
-	}
-	/**
 	 * Cambia la latitud de la direccion 
-	 * @param latitud
+	 * @param latitud nueva
+	 * @assert.pre latitud>-180.00 && latitud<180.00
 	 */
 	public void setLatitud(double latitud) {
 		// TODO Auto-generated method stub
@@ -54,11 +46,22 @@ public class GD{
 	}
 	/**
 	 * Cambia la longitud de la direccion
-	 * @param longitud
+	 * @param longitud nueva
+	 * @assert.pre longitud>-180.00 && longitud<180.00
 	 */
 	public void setLongitud(double longitud) {
 		// TODO Auto-generated method stub
 		
+	}
+	/**
+	 * Devuelve la distancia de this a gd en metros
+	 * @param gd Direccion a la que queremos calcular la distancia desde this
+	 * @return distancia en metros
+	 * @throws IllegalArgumentException si gd=null
+	 */
+	public double getDistanciaAt(GD gd) {
+		// TODO Auto-generated method stub
+		return 0.0;
 	}
 	
 }
