@@ -63,6 +63,7 @@ public class LineaTDDTest {
 		
 		Parada pa2[] = {p4, p1, p2, p3};
 		assertNotNull(l1);
+		assertTrue(l1.contains(p4));
 		assertEquals(1, l1.getId());
 		assertEquals(p4, l1.getParadaInicio());
 		assertEquals(p3, l1.getParadaFin());
@@ -80,6 +81,7 @@ public class LineaTDDTest {
 		
 		Parada pa2[] = {p1, p2, p3, p4};
 		assertNotNull(l1);
+		assertTrue(l1.contains(p4));
 		assertEquals(1, l1.getId());
 		assertEquals(p1, l1.getParadaInicio());
 		assertEquals(p4, l1.getParadaFin());
@@ -97,6 +99,7 @@ public class LineaTDDTest {
 		
 		Parada pa2[] = {p1, p4, p2, p3};
 		assertNotNull(l1);
+		assertTrue(l1.contains(p4));
 		assertEquals(1, l1.getId());
 		assertEquals(p1, l1.getParadaInicio());
 		assertEquals(p3, l1.getParadaFin());
@@ -114,6 +117,7 @@ public class LineaTDDTest {
 		
 		Parada pa2[] = {p1, p2, p4, p3};
 		assertNotNull(l1);
+		assertTrue(l1.contains(p4));
 		assertEquals(1, l1.getId());
 		assertEquals(p1, l1.getParadaInicio());
 		assertEquals(p3, l1.getParadaFin());
@@ -132,6 +136,7 @@ public class LineaTDDTest {
 		l1.removeParadaIntermedia(p4);
 		
 		assertNotNull(l1);
+		assertFalse(l1.contains(p4));
 		assertEquals(1, l1.getId());
 		assertEquals(p1, l1.getParadaInicio());
 		assertEquals(p3, l1.getParadaFin());
