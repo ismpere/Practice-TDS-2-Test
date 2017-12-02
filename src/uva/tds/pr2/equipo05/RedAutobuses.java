@@ -16,6 +16,11 @@ public class RedAutobuses {
 		// TODO Auto-generated constructor stub
 	}
 	
+	/**
+	 * Devuelve una línea de la red a partir de su identificador
+	 * @param id Número que identifica la línea
+	 * @return línea buscada
+	 */
 	public Linea getLinea(int id){
 		// TODO Auto-generated constructor stub
 		return null;
