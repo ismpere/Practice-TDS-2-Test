@@ -26,6 +26,10 @@ public class RedAutobuses {
 		return null;
 	}
 	
+	/**
+	 * Añade una línea a la red 
+	 * @param linea Línea a añadir
+	 */
 	public void addLinea(Linea linea){
 		// TODO Auto-generated constructor stub
 	}
