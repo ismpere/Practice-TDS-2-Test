@@ -113,7 +113,7 @@ public class LineaTDDTest {
 		GD gd4 = new GD(-150.00, 150.00);
 		Parada p4 = new Parada("d", gd4);
 		
-		l1.addParadaAt(p4, 3);
+		l1.addParadaIntermediaAt(p4, 3);
 		
 		Parada pa2[] = {p1, p2, p4, p3};
 		assertNotNull(l1);

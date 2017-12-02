@@ -12,7 +12,7 @@ public class Linea{
 	 * @param id de la Linea
 	 * @param p Paradas de la linea
 	 * @assert.pre p.length>3
-	 * @assert.pre p[i]!=p[j] / i!=j Para todoas las paradas (No puede haber paradas repetidas)
+	 * @assert.pre !Parada.existeAlgunaParadaRepetida(p)
 	 * @throws IllegalArgumentException si p=null || alguna de las paradas de p es null
 	 */
 	public Linea(int id, Parada[] p) {
@@ -27,7 +27,7 @@ public class Linea{
 		return 0;
 	}
 	/**
-	 * Devuelve las paradas de la linea
+	 * Devuelve la lista de paradas de la linea
 	 * @return paradas de la Linea
 	 */
 	public Parada[] getParadas() {
@@ -140,7 +140,7 @@ public class Linea{
 	 * Esta lista estara vacia si no hay ninguna parada con correspondencia con l
 	 * @param l Linea con la que queremos hallar las paradas con correspondencia
 	 * @return paradas con correspondencia de this con l
-	 * @assert.pre !equals(l)
+	 * @assert.pre !this.equals(l)
 	 * @throws IllegalArgumentException si l=null
 	 */
 	public Parada[] getParadasConCorrespondencia(Linea l) {
@@ -151,7 +151,7 @@ public class Linea{
 	 * Devuelve si hay o no correspondencia de this con l
 	 * @param l Linea con la que queremos hallar si hay correspondencia
 	 * @return hayCorrespondencia
-	 * @assert.pre !equals(l)
+	 * @assert.pre !this.equals(l)
 	 * @throws IllegalArgumentException si l=null
 	 */
 	public boolean existeCorrespondencia(Linea l) {
@@ -163,7 +163,7 @@ public class Linea{
 	 * Esta lista estara vacia si no hay ninguna parada con transbordo directo
 	 * @param l Linea con la que queremos hallar las paradas con transbordo directo
 	 * @return paradas con transbordo directo
-	 * @assert.pre !equals(l)
+	 * @assert.pre !this.equals(l)
 	 * @throws IllegalArgumentException si l=null
 	 */
 	public Parada[] getParadasConTransbordoDirecto(Linea l) {
@@ -174,7 +174,7 @@ public class Linea{
 	 * Devuelve si hay transbordo directo entre this y l
 	 * @param l Linea con la que queremos hallar si hay transbordo directo
 	 * @return existeTransbordoDirecto
-	 * @assert.pre !equals(l)
+	 * @assert.pre !this.equals(l)
 	 * @throws IllegalArgumentException si l=null
 	 */
 	public boolean existeTransbordoDirecto(Linea l) {

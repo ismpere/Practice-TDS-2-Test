@@ -49,6 +49,12 @@ public class LineaBlackBoxTest {
     	Linea l1 = new Linea(1, p);
     }
     
+    @Test (expected = AssertionError.class)
+    public void testInicializaNoValidoParadasIguales(){
+    	Parada p[] = {p1, p2, p2};
+    	Linea l1 = new Linea(1, p);
+    }
+    
     @Test (expected = IllegalArgumentException.class)
     public void testInicializaNoValidoParadaInicioNulo(){
     	Parada p[] = {null, p1, p2};
@@ -133,49 +139,49 @@ public class LineaBlackBoxTest {
     	Parada p[] = {p1, p2, p3};
     	Linea l1 = new Linea(1, p);
     	
-    	l1.addParadaAt(null, 2);
+    	l1.addParadaIntermediaAt(null, 2);
     }
     @Test (expected = AssertionError.class)
     public void testaddParadaAtPosicionNoValidoPosicion0(){
     	Parada p[] = {p1, p2, p3};
     	Linea l1 = new Linea(1, p);
     	
-    	l1.addParadaAt(p1, 0);
+    	l1.addParadaIntermediaAt(p1, 0);
     }
     @Test (expected = AssertionError.class)
     public void testaddParadaAtPosicionNoValidoPosicionFin(){
     	Parada p[] = {p1, p2, p3};
     	Linea l1 = new Linea(1, p);
     	
-    	l1.addParadaAt(p1, p.length+1);
+    	l1.addParadaIntermediaAt(p1, p.length+1);
     }
     @Test (expected = AssertionError.class)
     public void testaddParadaAtPosicionNoValidoPosicionInicio(){
     	Parada p[] = {p1, p2, p3};
     	Linea l1 = new Linea(1, p);
     	
-    	l1.addParadaAt(p1, 1);
+    	l1.addParadaIntermediaAt(p1, 1);
     }
     @Test (expected = AssertionError.class)
     public void testaddParadaAtPosicionNoValidoPosicionNegativa(){
     	Parada p[] = {p1, p2, p3};
     	Linea l1 = new Linea(1, p);
     	
-    	l1.addParadaAt(p1, -1);
+    	l1.addParadaIntermediaAt(p1, -1);
     }
     @Test (expected = AssertionError.class)
     public void testaddParadaAtPosicionNoValidoPosicionGrande(){
     	Parada p[] = {p1, p2, p3};
     	Linea l1 = new Linea(1, p);
     	
-    	l1.addParadaAt(p1, 5);
+    	l1.addParadaIntermediaAt(p1, 5);
     }
     @Test (expected = AssertionError.class)
     public void testaddParadaAtPosicionNoValidoYaExiste(){
     	Parada p[] = {p1, p2, p3};
     	Linea l1 = new Linea(1, p);
     	
-    	l1.addParadaAt(p1, 2);
+    	l1.addParadaIntermediaAt(p1, 2);
     }
     @Test (expected = AssertionError.class)
     public void testEliminaParadaIntermediaNoValido3Paradas(){
