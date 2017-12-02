@@ -6,6 +6,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Implementacion de la clase de test de caja negra (no tiene todos) de la clase Linea
+ * @author ismael
+ * @author martorb
+ */
 public class LineaBlackBoxTest {
 
 	private GD gd1 = new GD (-179.99,179.99); //TODO las direcciones hay que ajustarlas, son aleatorias
