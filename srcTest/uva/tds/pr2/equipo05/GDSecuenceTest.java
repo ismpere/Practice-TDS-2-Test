@@ -4,12 +4,17 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * Implementacion de los test de secuencia de la clase GD
+ * @author ismpere
+ * @author martorb
+ */
 public class GDSecuenceTest {
 	
 	private static final double ERROR_ADMISIBLE = 0.01;
 
 	@Test
-	public void testSecuenciaAleatoriaDistanciasValido() {
+	public void testGDSecuenciaAleatoriaDistanciasValido() {
 		GD gd1 = new GD(-179.99,179.99);
 		
 		GD gd2 = new GD(-150.00,150.00);
@@ -33,7 +38,7 @@ public class GDSecuenceTest {
 	}
 	
 	@Test
-	public void testSecuenciaAleatoriaSettersValido(){
+	public void testGDSecuenciaAleatoriaSettersValido(){
 		GD gd1 = new GD(-179.99,179.99);
 		
 		double latitud1 = gd1.getLatitud();
