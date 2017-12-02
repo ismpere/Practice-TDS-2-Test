@@ -26,7 +26,7 @@ public class GDTest {
 		GD gd1 = new GD(-179.99, 179.99);
 		GD gd2 = new GD(179.99, -179.99);
 		
-		double distancia = GD.getDistanciaEntre(gd1, gd2);
+		double distancia = gd1.getDistanciaAt(gd2);
 		
 		assertNotNull(gd1);
 		assertNotNull(gd2);
@@ -90,13 +90,13 @@ public class GDTest {
 		GD gd1 = null;
 		GD gd2 = new GD(179.99, -179.99);
 		
-		GD.getDistanciaEntre(gd1, gd2);
+		gd1.getDistanciaAt(gd2);
 	}
 	@Test (expected = IllegalArgumentException.class)
 	public void testCalculaDistanciaEntreDosGDNoValidoSegundoNulo(){
 		GD gd1 = new GD(-179.99, 179.99);
 		GD gd2 = null;
 		
-		GD.getDistanciaEntre(gd1, gd2);
+		gd1.getDistanciaAt(gd2);
 	}
 }
