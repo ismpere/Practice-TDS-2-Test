@@ -12,7 +12,7 @@ public class Parada{
 	 * @param id Identificador de la parada
 	 * @param gd Direccion de la parada
 	 * @assert.pre id.length>0 && id.length<=50
-	 * @throws IllegalArgumentException si gd=null
+	 * @throws IllegalArgumentException si gd==null || id==null
 	 */
 	public Parada(String id, GD gd) {
 		// TODO Auto-generated constructor stub
@@ -39,6 +39,7 @@ public class Parada{
 	 * Cambia el id de la parada
 	 * @param id nuevo identificador
 	 * @assert.pre id.length>0 && id.length<=50
+	 * @throws IllegalArgumentException si id==null
 	 */
 	public void setId(String id) {
 		// TODO Auto-generated method stub
@@ -47,7 +48,7 @@ public class Parada{
 	/**
 	 * Cambia la direccion de la parada
 	 * @param gd Nueva direccion
-	 * @throws IllegalArgumentException si gd=null
+	 * @throws IllegalArgumentException si gd==null
 	 */
 	public void setGD(GD gd) {
 		// TODO Auto-generated method stub
@@ -58,7 +59,7 @@ public class Parada{
 	 * @param p Parada a la que calcular la distancia desde this
 	 * @return distancia entre las paradas
 	 * @assert.pre !this.equals(p)
-	 * @throws IllegalArgumentException si p=null
+	 * @throws IllegalArgumentException si p==null
 	 */
 	public double getDistanciaEntre(Parada p) {
 		// TODO Auto-generated method stub
