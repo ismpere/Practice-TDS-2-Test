@@ -84,7 +84,7 @@ public class RedAutobusesTDDTest {
 		assertNotNull(red);
 		assertEquals(l1,red.getLinea(1));
 		assertEquals(l2,red.getLinea(2));
-		assertTrue(lista_lineas2.equals(red.getAllLineas()));  //assertEquals(Object[],Object[]) deprecated (?)
+		assertArrayEquals(lista_lineas2,lista_lineas);
 		
 		fail("Not yet implemented");
 	}
@@ -97,7 +97,8 @@ public class RedAutobusesTDDTest {
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		lista_lineas2=red.getAllLineas();
 		
-		fail("Not yet implemented");
+		assertNotNull(red);
+		assertArrayEquals(lista_lineas2,lista_lineas);
 	}
 
 	
