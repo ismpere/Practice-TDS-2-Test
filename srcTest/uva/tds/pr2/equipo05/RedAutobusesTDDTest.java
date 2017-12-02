@@ -89,6 +89,17 @@ public class RedAutobusesTDDTest {
 
 
 	@Test
+	public void testGetAllLineasValido() {
+		Linea[] lista_lineas={l1,l2};
+		Linea[] lista_lienas2;
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		lista_lineas2=red.getAllLineas();
+		
+		fail("Not yet implemented");
+	}
+
+	
+	@Test
 	public void test() {
 		
 		
