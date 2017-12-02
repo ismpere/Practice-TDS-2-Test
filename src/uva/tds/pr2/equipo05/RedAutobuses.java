@@ -34,6 +34,10 @@ public class RedAutobuses {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public void deleteLinea(Linea linea){
+		// TODO Auto-generated constructor stub
+	}
+	
 	
 	
 	
