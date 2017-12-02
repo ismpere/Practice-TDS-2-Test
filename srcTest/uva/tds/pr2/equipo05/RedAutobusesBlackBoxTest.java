@@ -48,7 +48,7 @@ public class RedAutobusesBlackBoxTest {
 		p3= null;
 		l1= null;
 		l2= null;
-		l3=null;
+		l3= null;
 	}
 	
 	@Test (expected = AssertionError.class)
@@ -58,8 +58,10 @@ public class RedAutobusesBlackBoxTest {
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 	}
 	
-	@Test
-	public void testInicializaRedNoValidoSinLineas() {
+	@Test (expected = IllegalArgumentException.class)
+	public void testInicializaRedNoValidoSinListaLineas() {
+		
+		RedAutobuses red= new RedAutobuses(null);
 		fail("Not yet implemented");
 	}
 	
