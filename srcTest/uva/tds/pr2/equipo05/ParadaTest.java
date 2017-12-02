@@ -65,11 +65,26 @@ public class ParadaTest {
 		GD gd2 = new GD(179.99, -179.99);
 		Parada p2 = new Parada("2", gd2);
 		
-		double distancia = Parada.getDistanciaEntre(p1, p2);
+		double distancia = p1.getDistanciaEntre(p2);
 		
 		assertNotNull(p1);
 		assertNotNull(p2);
 		assertEquals(200.00, distancia, ERROR_ADMISIBLE); //TODO Es un valor aleatorio, comprobar al implementar
+	}
+	
+	@Test
+	public void testHayParadasRepetidasValido(){
+		p1 = new Parada("1", gd1);
+		GD gd2 = new GD(179.99, -179.99);
+		Parada p2 = new Parada("2", gd2);
+		
+		Parada p3[] = {p1, p2, p2};
+		
+		boolean repetidas = Parada.existeAlgunaParadaRepetida(p3);
+		
+		assertNotNull(p1);
+		assertNotNull(p2);
+		assertTrue(repetidas);
 	}
 	
 	@Test(expected = AssertionError.class)
@@ -93,14 +108,6 @@ public class ParadaTest {
 		p1 = new Parada("1", gd1);
 		Parada p2 = null;
 		
-		Parada.getDistanciaEntre(p1, p2);
+		p1.getDistanciaEntre(p2);
 	}
-	@Test(expected = IllegalArgumentException.class)
-	public void testCalculaDistanciaEntreParadasSegundaNulo(){
-		p1 = new Parada("1", gd1);
-		Parada p2 = null;
-		
-		Parada.getDistanciaEntre(p2, p1);
-	}
-	
 }
