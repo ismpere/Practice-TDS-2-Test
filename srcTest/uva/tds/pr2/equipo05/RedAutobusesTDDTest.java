@@ -56,9 +56,9 @@ public class RedAutobusesTDDTest {
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		
 		assertNotNull(red);
-		assertFalse(red.LineasRepetidas(lista_lineas));
-		assertTrue(red.Contains(l1));
-		assertTrue(red.Contains(l2));
+		assertFalse(red.lineasRepetidas(lista_lineas));
+		assertTrue(red.contains(l1));
+		assertTrue(red.contains(l2));
 	}
 	
 	@Test
@@ -66,9 +66,9 @@ public class RedAutobusesTDDTest {
 		Linea[] lista_lineas={l1,l2};
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		assertNotNull(red);
-		assertFalse(red.LineasRepetidas(lista_lineas));
-		assertTrue(red.Contains(l1));
-		assertTrue(red.Contains(l2));
+		assertFalse(red.lineasRepetidas(lista_lineas));
+		assertTrue(red.contains(l1));
+		assertTrue(red.contains(l2));
 		
 		assertEquals(l1,red.getLinea(1));
 		assertEquals(l2,red.getLinea(2));
@@ -82,10 +82,10 @@ public class RedAutobusesTDDTest {
 		red.addLinea(l3);
 		
 		assertNotNull(red);
-		assertFalse(red.LineasRepetidas(lista_lineas));
-		assertTrue(red.Contains(l1));
-		assertTrue(red.Contains(l2));
-		assertTrue(red.Contains(l3));
+		assertFalse(red.lineasRepetidas(lista_lineas));
+		assertTrue(red.contains(l1));
+		assertTrue(red.contains(l2));
+		assertTrue(red.contains(l3));
 	}
 	
 	@Test
@@ -96,10 +96,10 @@ public class RedAutobusesTDDTest {
 		red.deleteLinea(l3);
 		
 		assertNotNull(red);
-		assertFalse(red.LineasRepetidas(lista_lineas));
-		assertTrue(red.Contains(l1));
-		assertTrue(red.Contains(l2));
-		assertFalse(red.Contains(l3));
+		assertFalse(red.lineasRepetidas(lista_lineas));
+		assertTrue(red.contains(l1));
+		assertTrue(red.contains(l2));
+		assertFalse(red.contains(l3));
 	}
 
 
@@ -111,9 +111,9 @@ public class RedAutobusesTDDTest {
 		lista_lineas2=red.getAllLineas();
 		
 		assertNotNull(red);
-		assertFalse(red.LineasRepetidas(lista_lineas));
-		assertTrue(red.Contains(l1));
-		assertTrue(red.Contains(l2));
+		assertFalse(red.lineasRepetidas(lista_lineas));
+		assertTrue(red.contains(l1));
+		assertTrue(red.contains(l2));
 		assertArrayEquals(lista_lineas2,lista_lineas);
 	}
 	
