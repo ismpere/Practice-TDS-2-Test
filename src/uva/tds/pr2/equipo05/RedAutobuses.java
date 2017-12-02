@@ -54,9 +54,9 @@ public class RedAutobuses {
 		return null;
 	}
 	
-	public boolean noLineasRepetidas(Linea[] lista_lineas){
+	public boolean LineasRepetidas(Linea[] lista_lineas){
 		// TODO Auto-generated constructor stub
-		return false;
+		return true;
 	}
 	
 	

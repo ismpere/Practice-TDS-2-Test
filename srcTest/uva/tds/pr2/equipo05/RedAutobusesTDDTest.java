@@ -56,6 +56,7 @@ public class RedAutobusesTDDTest {
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		
 		assertNotNull(red);
+		assertFalse(red.LineasRepetidas(lista_lineas));
 		assertEquals(l1,red.getLinea(1));
 		assertEquals(l2,red.getLinea(2));
 	}
@@ -68,6 +69,7 @@ public class RedAutobusesTDDTest {
 		red.addLinea(l3);
 		
 		assertNotNull(red);
+		assertFalse(red.LineasRepetidas(lista_lineas));
 		assertEquals(l1,red.getLinea(1));
 		assertEquals(l2,red.getLinea(2));
 		assertEquals(l3,red.getLinea(3));
@@ -82,6 +84,7 @@ public class RedAutobusesTDDTest {
 		red.deleteLinea(l3);
 		
 		assertNotNull(red);
+		assertFalse(red.LineasRepetidas(lista_lineas));
 		assertEquals(l1,red.getLinea(1));
 		assertEquals(l2,red.getLinea(2));
 		assertArrayEquals(lista_lineas2,lista_lineas);
@@ -98,6 +101,7 @@ public class RedAutobusesTDDTest {
 		lista_lineas2=red.getAllLineas();
 		
 		assertNotNull(red);
+		assertFalse(red.LineasRepetidas(lista_lineas));
 		assertArrayEquals(lista_lineas2,lista_lineas);
 	}
 	
