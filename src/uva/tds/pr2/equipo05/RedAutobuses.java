@@ -53,15 +53,24 @@ public class RedAutobuses {
 		// TODO Auto-generated constructor stub
 		return null;
 	}
-	
+	/**
+	 * Comprueba si en una lista (array) existen líneas repetidas
+	 * @param lista_lineas lista a comprobar
+	 * @return hayLineaRepetida
+	 */
 	public boolean LineasRepetidas(Linea[] lista_lineas){
 		// TODO Auto-generated constructor stub
 		return true;
 	}
 	
+	/**
+	 * Comprueba si la red contiene una determinada línea
+	 * @param linea
+	 * @return contieneLinea
+	 */
 	public boolean Contains(Linea linea){
 		// TODO Auto-generated constructor stub
-		return true;
+		return false;
 	}
 	
 	
