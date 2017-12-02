@@ -42,7 +42,10 @@ public class RedAutobuses {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+	/**
+	 * Devuelve la lista (array) de todas las líneas de la red
+	 * @return Lista (array) que contiene todas las líenas de la red
+	 */
 	public Linea[] getAllLineas(){
 		// TODO Auto-generated constructor stub
 		return null;
