@@ -172,5 +172,43 @@ public class LineaBlackBoxTest {
     	
     	l1.addParadaAt(p1, 2);
     }
+    @Test (expected = AssertionError.class)
+    public void testEliminaParadaIntermediaNoValido3Paradas(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	l1.removeParadaIntermedia(p2);
+    }
+    @Test (expected = AssertionError.class)
+    public void testEliminaParadaIntermediaNoValidoParadaInicio(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	l1.removeParadaIntermedia(p1);
+    }
+    @Test (expected = AssertionError.class)
+    public void testEliminaParadaIntermediaNoValidoParadaFin(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	l1.removeParadaIntermedia(p3);
+    }
+    @Test (expected = AssertionError.class)
+    public void testEliminaParadaIntermediaNoValidoNoContieneParada(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	GD gd4 = new GD(-100.00, 100.00);
+    	Parada p4 = new Parada("d", gd4);
+    	
+    	l1.removeParadaIntermedia(p4);
+    }
+    @Test (expected = IllegalArgumentException.class)
+    public void testEliminaParadaIntermediaNoValidoParadaNulo(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	l1.removeParadaIntermedia(null);
+    }
 
 }
