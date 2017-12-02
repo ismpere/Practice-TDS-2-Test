@@ -26,6 +26,10 @@ public class RedAutobuses {
 		return null;
 	}
 	
+	public void addLinea(Linea linea){
+		// TODO Auto-generated constructor stub
+	}
+	
 	
 	
 	
