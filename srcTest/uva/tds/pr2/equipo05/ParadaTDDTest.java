@@ -10,7 +10,7 @@ import org.junit.Test;
  * @author ismael
  * @author martorb
  */
-public class ParadaTest {
+public class ParadaTDDTest {
 	
 	private static final double ERROR_ADMISIBLE = 0.01;
 	private GD gd1;
@@ -85,29 +85,5 @@ public class ParadaTest {
 		assertNotNull(p1);
 		assertNotNull(p2);
 		assertTrue(repetidas);
-	}
-	
-	@Test(expected = AssertionError.class)
-	public void testInicializaParadaNoValidoIdVacio(){
-		p1 = new Parada("", gd1);
-	}
-	@Test(expected = AssertionError.class)
-	public void testInicializaParadaNoValidoIdGrande(){
-		p1 = new Parada("Tengo-+Veinte-Letras", gd1);
-	}
-	@Test(expected = AssertionError.class)
-	public void testInicializaParadaNoValidoIdNulo(){
-		p1 = new Parada(null, gd1);
-	}
-	@Test(expected = IllegalArgumentException.class)
-	public void testInicializaParadaNoValidoGDNulo(){
-		p1 = new Parada("1", null);
-	}
-	@Test(expected = IllegalArgumentException.class)
-	public void testCalculaDistanciaEntreParadasPrimeraNulo(){
-		p1 = new Parada("1", gd1);
-		Parada p2 = null;
-		
-		p1.getDistanciaEntre(p2);
 	}
 }
