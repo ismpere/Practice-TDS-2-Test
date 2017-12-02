@@ -74,6 +74,26 @@ public class RedAutobusesTDDTest {
 		
 	}
 	
+	@Test
+	public void testDeleteLineaValido() {
+		Linea[] lista_lineas={l1,l2,l3};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		red.deleteLinea(l3);
+		
+		fail("Not yet implemented");
+	}
+
+
+	@Test
+	public void test() {
+		
+		
+		fail("Not yet implemented");
+	}
+
+	
+	
+	
 	
 
 
