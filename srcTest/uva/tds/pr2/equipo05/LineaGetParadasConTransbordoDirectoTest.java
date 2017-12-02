@@ -114,5 +114,15 @@ public class LineaGetParadasConTransbordoDirectoTest {
 	public void testGetParadasConTransbordoDirectoNoValidoLineaIgual(){
 		l1.getParadasConTransbordoDirecto(l1);
 	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testExisteTransbordoDirectoNoValidoLineaNulo(){
+		l1.existeTransbordoDirecto(null);
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testExisteTransbordoDirectoNoValidoLineaIgual(){
+		l1.existeTransbordoDirecto(l1);
+	}
 
 }

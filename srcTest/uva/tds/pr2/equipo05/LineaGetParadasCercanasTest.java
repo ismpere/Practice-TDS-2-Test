@@ -91,5 +91,10 @@ public class LineaGetParadasCercanasTest {
 	public void testGetParadasCercanasNoValidoGDNulo(){
 		l1.getParadasCercanas(null);
 	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testExistenParadasCercanasNoValidoGDNulo(){
+		l1.existeParadasCercanas(null);
+	}
 
 }
