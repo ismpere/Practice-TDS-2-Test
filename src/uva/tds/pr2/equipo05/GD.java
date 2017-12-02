@@ -12,6 +12,8 @@ public class GD{
 	 * Cosntructor por defecto de GD
 	 * @param latitud
 	 * @param longitud
+	 * @assert.pre latitud>-180.00 && latitud<180.00
+	 * @assert.pre longitud>-180.00 && longitud<180.00
 	 * @throws IllegalArgumentException si latitud==null || longitud ==null
 	 */
 	public GD(double latitud, double longitud) {
@@ -35,7 +37,8 @@ public class GD{
 	}
 	/**
 	 * Cambia la latitud de la direccion 
-	 * @param latitud
+	 * @param latitud nueva
+	 * @assert.pre latitud>-180.00 && latitud<180.00
 	 */
 	public void setLatitud(double latitud) {
 		// TODO Auto-generated method stub
@@ -43,7 +46,8 @@ public class GD{
 	}
 	/**
 	 * Cambia la longitud de la direccion
-	 * @param longitud
+	 * @param longitud nueva
+	 * @assert.pre longitud>-180.00 && longitud<180.00
 	 */
 	public void setLongitud(double longitud) {
 		// TODO Auto-generated method stub
@@ -51,9 +55,9 @@ public class GD{
 	}
 	/**
 	 * Devuelve la distancia de this a gd en metros
-	 * @param gd Direccion
+	 * @param gd Direccion a la que queremos calcular la distancia desde this
 	 * @return distancia en metros
-	 * @throws IllegalArgumentException si gd1==null
+	 * @throws IllegalArgumentException si gd=null
 	 */
 	public double getDistanciaAt(GD gd) {
 		// TODO Auto-generated method stub
