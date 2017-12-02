@@ -210,5 +210,13 @@ public class LineaBlackBoxTest {
     	
     	l1.removeParadaIntermedia(null);
     }
+    
+    @Test (expected = IllegalArgumentException.class)
+    public void testContainsParadaNoValidoParanaNulo(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	l1.contains(null);
+    }
 
 }
