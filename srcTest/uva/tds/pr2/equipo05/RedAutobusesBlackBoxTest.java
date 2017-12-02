@@ -16,7 +16,36 @@ import org.junit.Test;
  */
 public class RedAutobusesBlackBoxTest {
 
+	@Test
+	public void testInicializaRedNoValidoSolo2Lineas() {
+		fail("Not yet implemented");
+	}
 	
+	@Test
+	public void testInicializaRedNoValidoSinLineas() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testInicializaRedNoValidoLineasRepetidas() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testAddLineaNoValidoLineaNulo() {
+		fail("Not yet implemented");
+	}
+	
+	
+	@Test
+	public void testDeleteLineaNoValidoLineaNulo() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testDeleteLineaNoValidoLineaNoExisteEnRed() {
+		fail("Not yet implemented");
+	}
 	
 	@Test
 	public void test() {
