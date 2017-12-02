@@ -43,6 +43,11 @@ public class RedAutobuses {
 	}
 	
 	
+	public Linea[] getAllLineas(){
+		// TODO Auto-generated constructor stub
+		return null;
+	}
+	
 	
 	
 }
