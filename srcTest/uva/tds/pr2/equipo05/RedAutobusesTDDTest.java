@@ -57,8 +57,12 @@ public class RedAutobusesTDDTest {
 		
 		assertNotNull(red);
 		assertFalse(red.LineasRepetidas(lista_lineas));
+		assertTrue(red.Contains(l1));
+		assertTrue(red.Contains(l2));
+
 		assertEquals(l1,red.getLinea(1));
 		assertEquals(l2,red.getLinea(2));
+		
 	}
 	
 	@Test
@@ -73,7 +77,7 @@ public class RedAutobusesTDDTest {
 		assertEquals(l1,red.getLinea(1));
 		assertEquals(l2,red.getLinea(2));
 		assertEquals(l3,red.getLinea(3));
-		
+		assertTrue(red.Contains(l3));
 	}
 	
 	@Test
