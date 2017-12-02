@@ -80,6 +80,10 @@ public class RedAutobusesTDDTest {
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		red.deleteLinea(l3);
 		
+		assertNotNull(red);
+		assertEquals(l1,red.getLinea(1));
+		assertEquals(l2,red.getLinea(2));
+		
 		fail("Not yet implemented");
 	}
 
