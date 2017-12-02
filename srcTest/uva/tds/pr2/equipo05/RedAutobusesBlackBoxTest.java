@@ -72,9 +72,12 @@ public class RedAutobusesBlackBoxTest {
 		
 	}
 	
-	@Test
+	@Test (expected = AssertionError.class)
 	public void testGetLineaNoValidoNoExisteEnRed(){
-		fail("Not yet implemented");
+		
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		red.getLinea(3);
 	}
 	
 	@Test
