@@ -16,10 +16,12 @@ public class RedAutobuses {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Linea getLinea(String id){
+	public Linea getLinea(int id){
 		// TODO Auto-generated constructor stub
 		return null;
 	}
+	
+	
 	
 	
 }
