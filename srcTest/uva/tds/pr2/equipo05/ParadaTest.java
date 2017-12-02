@@ -65,7 +65,7 @@ public class ParadaTest {
 		GD gd2 = new GD(179.99, -179.99);
 		Parada p2 = new Parada("2", gd2);
 		
-		double distancia = Parada.getDistanciaEntre(p1, p2);
+		double distancia = p1.getDistanciaEntre(p2);
 		
 		assertNotNull(p1);
 		assertNotNull(p2);
@@ -93,14 +93,6 @@ public class ParadaTest {
 		p1 = new Parada("1", gd1);
 		Parada p2 = null;
 		
-		Parada.getDistanciaEntre(p1, p2);
+		p1.getDistanciaEntre(p2);
 	}
-	@Test(expected = IllegalArgumentException.class)
-	public void testCalculaDistanciaEntreParadasSegundaNulo(){
-		p1 = new Parada("1", gd1);
-		Parada p2 = null;
-		
-		Parada.getDistanciaEntre(p2, p1);
-	}
-	
 }

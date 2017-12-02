@@ -51,11 +51,10 @@ public class Parada{
 	}
 	/**
 	 * Devuelve la distancia en metros entre dos paradas
-	 * @param p1
-	 * @param p2
+	 * @param p
 	 * @return distancia
 	 */
-	public static double getDistanciaEntre(Parada p1, Parada p2) {
+	public double getDistanciaEntre(Parada p) {
 		// TODO Auto-generated method stub
 		return 0.0;
 	}
