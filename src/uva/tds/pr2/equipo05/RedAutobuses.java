@@ -34,6 +34,10 @@ public class RedAutobuses {
 		// TODO Auto-generated constructor stub
 	}
 	
+	/**
+	 * Elimina una línea de la red
+	 * @param linea Línea a eliminar
+	 */
 	public void deleteLinea(Linea linea){
 		// TODO Auto-generated constructor stub
 	}
