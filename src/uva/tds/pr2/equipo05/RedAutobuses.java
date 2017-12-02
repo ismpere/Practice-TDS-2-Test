@@ -10,7 +10,9 @@ public class RedAutobuses {
 	
 	/**
 	 * Constructor por defecto de la clase RedAutobuses
-	 * @param lista_lineas
+	 * @param lista_lineas Lista (array) que contiene las líenas iniciales de la red
+	 * @assert.pre lista_lineas.length>2
+	 * @throws IllegalArgumentException si lista_lineas==null || alguna de las lineas de la lista es null
 	 */
 	public RedAutobuses(Linea[] lista_lineas){
 		// TODO Auto-generated constructor stub
