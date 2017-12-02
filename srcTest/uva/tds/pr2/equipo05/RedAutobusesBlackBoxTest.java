@@ -51,9 +51,11 @@ public class RedAutobusesBlackBoxTest {
 		l3=null;
 	}
 	
-	@Test
+	@Test (expected = AssertionError.class)
 	public void testInicializaRedNoValidoSolo2Lineas() {
-		fail("Not yet implemented");
+		
+		Linea[] lista_lineas={l1};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
 	}
 	
 	@Test
