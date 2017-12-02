@@ -59,10 +59,19 @@ public class RedAutobusesTDDTest {
 		assertFalse(red.LineasRepetidas(lista_lineas));
 		assertTrue(red.Contains(l1));
 		assertTrue(red.Contains(l2));
-
+	}
+	
+	@Test
+	public void testGetLineaValido(){
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		assertNotNull(red);
+		assertFalse(red.LineasRepetidas(lista_lineas));
+		assertTrue(red.Contains(l1));
+		assertTrue(red.Contains(l2));
+		
 		assertEquals(l1,red.getLinea(1));
 		assertEquals(l2,red.getLinea(2));
-		
 	}
 	
 	@Test
@@ -74,26 +83,23 @@ public class RedAutobusesTDDTest {
 		
 		assertNotNull(red);
 		assertFalse(red.LineasRepetidas(lista_lineas));
-		assertEquals(l1,red.getLinea(1));
-		assertEquals(l2,red.getLinea(2));
-		assertEquals(l3,red.getLinea(3));
+		assertTrue(red.Contains(l1));
+		assertTrue(red.Contains(l2));
 		assertTrue(red.Contains(l3));
 	}
 	
 	@Test
 	public void testDeleteLineaValido() {
+		
 		Linea[] lista_lineas={l1,l2,l3};
-		Linea[] lista_lineas2={l1,l2};
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		red.deleteLinea(l3);
 		
 		assertNotNull(red);
 		assertFalse(red.LineasRepetidas(lista_lineas));
-		assertEquals(l1,red.getLinea(1));
-		assertEquals(l2,red.getLinea(2));
-		assertArrayEquals(lista_lineas2,lista_lineas);
-		
-		fail("Not yet implemented");
+		assertTrue(red.Contains(l1));
+		assertTrue(red.Contains(l2));
+		assertFalse(red.Contains(l3));
 	}
 
 
@@ -106,6 +112,8 @@ public class RedAutobusesTDDTest {
 		
 		assertNotNull(red);
 		assertFalse(red.LineasRepetidas(lista_lineas));
+		assertTrue(red.Contains(l1));
+		assertTrue(red.Contains(l2));
 		assertArrayEquals(lista_lineas2,lista_lineas);
 	}
 	
