@@ -64,9 +64,12 @@ public class RedAutobusesBlackBoxTest {
 		RedAutobuses red= new RedAutobuses(null);
 	}
 	
-	@Test
+	@Test (expected = AssertionError.class)
 	public void testInicializaRedNoValidoLineasRepetidas() {
-		fail("Not yet implemented");
+		
+		Linea[] lista_lineas={l1,l2,l1};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
 	}
 	
 	@Test
