@@ -58,5 +58,14 @@ public class Parada{
 		// TODO Auto-generated method stub
 		return 0.0;
 	}
+	/**
+	 * Devuelve si hay paradas repetidas en una lista de paradas
+	 * @param p lista de paradas
+	 * @return hayParadasRepetidas
+	 */
+	public static boolean existeAlgunaParadaRepetida(Parada[] p) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 }
