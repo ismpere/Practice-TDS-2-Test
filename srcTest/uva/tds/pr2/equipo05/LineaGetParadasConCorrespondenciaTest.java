@@ -104,5 +104,15 @@ public class LineaGetParadasConCorrespondenciaTest {
 		assertEquals(p3, l1.getParadaFin());
 		assertArrayEquals(p, l1.getParadas());
 	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testGetParadasConCorrespondenciaNoValidoLineaNulo(){
+		l1.getParadasConCorrespondencia(null);
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testGetParadasConCorrespondenciaNoValidoLineaIgual(){
+		l1.getParadasConCorrespondencia(l1);
+	}
 
 }

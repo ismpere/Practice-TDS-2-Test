@@ -104,5 +104,15 @@ public class LineaGetParadasConTransbordoDirectoTest {
 		assertEquals(p3, l1.getParadaFin());
 		assertArrayEquals(p, l1.getParadas());
 	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testGetParadasConTransbordoDirectoNoValidoLineaNulo(){
+		l1.getParadasConTransbordoDirecto(null);
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testGetParadasConTransbordoDirectoNoValidoLineaIgual(){
+		l1.getParadasConTransbordoDirecto(l1);
+	}
 
 }

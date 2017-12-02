@@ -33,7 +33,7 @@ public class LineaGetParadasCercanasTest {
     }
 
 	@Test
-	public void testGetParadaCercanasUnaParadaCercanaValido(){
+	public void testGetParadasCercanasUnaParadaCercanaValido(){
 		
 		GD gd4 = new GD(-150.00, 150.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
 		
@@ -42,7 +42,7 @@ public class LineaGetParadasCercanasTest {
 		assertNotNull(l1);
 		assertNotNull(pa2);
 		assertTrue(l1.existeParadasCercanas(gd4));
-		assertTrue(pa2.length==1);
+		assertEquals(1, pa2.length);
 		assertEquals(p2, pa2[0]);
 		assertEquals(1, l1.getId());
 		assertEquals(p1, l1.getParadaInicio());
@@ -51,7 +51,7 @@ public class LineaGetParadasCercanasTest {
 	}
 	
 	@Test
-	public void testGetParadaCercanasVariasParadasCercanasValido(){
+	public void testGetParadasCercanasVariasParadasCercanasValido(){
 		
 		GD gd4 = new GD(-140.00, 140.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
 		
@@ -62,7 +62,7 @@ public class LineaGetParadasCercanasTest {
 		assertNotNull(l1);
 		assertNotNull(pa2);
 		assertTrue(l1.existeParadasCercanas(gd4));
-		assertTrue(pa2.length==2);
+		assertEquals(2, pa2.length);
 		assertEquals(1, l1.getId());
 		assertEquals(p1, l1.getParadaInicio());
 		assertEquals(p3, l1.getParadaFin());
@@ -71,7 +71,7 @@ public class LineaGetParadasCercanasTest {
 	}
 	
 	@Test
-	public void testGetParadaCercanasNingunaParadaCercanaValido(){
+	public void testGetParadasCercanasNingunaParadaCercanaValido(){
 		
 		GD gd4 = new GD(-130.00, 130.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
 		
@@ -80,11 +80,16 @@ public class LineaGetParadasCercanasTest {
 		assertNotNull(l1);
 		assertNotNull(pa2);
 		assertFalse(l1.existeParadasCercanas(gd4));
-		assertTrue(pa2.length==0);
+		assertEquals(0, pa2.length);
 		assertEquals(1, l1.getId());
 		assertEquals(p1, l1.getParadaInicio());
 		assertEquals(p3, l1.getParadaFin());
 		assertArrayEquals(p, l1.getParadas());
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testGetParadasCercanasNoValidoGDNulo(){
+		l1.getParadasCercanas(null);
 	}
 
 }
