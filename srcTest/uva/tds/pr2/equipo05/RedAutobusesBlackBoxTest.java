@@ -32,6 +32,11 @@ public class RedAutobusesBlackBoxTest {
 	}
 	
 	@Test
+	public void testGetLineaNoValidoNoExisteEnRed(){
+		fail("Not yet implemented");
+	}
+	
+	@Test
 	public void testAddLineaNoValidoLineaNulo() {
 		fail("Not yet implemented");
 	}
