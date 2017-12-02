@@ -100,20 +100,5 @@ public class RedAutobusesTDDTest {
 		assertNotNull(red);
 		assertArrayEquals(lista_lineas2,lista_lineas);
 	}
-
-	
-	@Test
-	public void test() {
-		
-		
-		fail("Not yet implemented");
-	}
-
-	
-	
-	
-	
-
-
 	
 }
