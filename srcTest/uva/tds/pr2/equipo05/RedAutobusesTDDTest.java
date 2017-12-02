@@ -24,26 +24,29 @@ public class RedAutobusesTDDTest {
 	private Parada p1,p2,p3,p4,p5,p6;
 	private Parada p_1[] = {p1,p2,p3};
 	private Parada p_2[] = {p2,p3,p4};
+	private Parada p_3[] = {p4,p1,p2};
 	
-	private Linea l1, l2;
+	private Linea l1, l2,l3;
 
 	@Before
     public void setUp() throws Exception {
 		
-		Parada p1= new Parada("1",gd1);
-		Parada p2= new Parada("2",gd2);
-		Parada p3= new Parada("3",gd3);
-		Linea l1= new Linea(1,p_1);
-		Linea l2= new Linea(2,p_2);
+		p1= new Parada("1",gd1);
+		p2= new Parada("2",gd2);
+		p3= new Parada("3",gd3);
+		l1= new Linea(1,p_1);
+		l2= new Linea(2,p_2);
+		l3= new Linea(3,p_3);
 	}
 	
 	@After
 	public void tearDown() throws Exception{
-		Parada p1= null;
-		Parada p2= null;
-		Parada p3= null;
-		Linea l1= null;
-		Linea l2= null;
+		p1= null;
+		p2= null;
+		p3= null;
+		l1= null;
+		l2= null;
+		l3=null;
 	}
 	
 	@Test
@@ -55,6 +58,14 @@ public class RedAutobusesTDDTest {
 		assertNotNull(red);
 		assertEquals(l1,red.getLinea(1));
 		assertEquals(l2,red.getLinea(2));
+	}
+	
+	@Test
+	public void testAddLineaValido(){
+		
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		red.addLinea(l3);
 	}
 	
 
