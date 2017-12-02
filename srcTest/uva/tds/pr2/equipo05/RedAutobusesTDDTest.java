@@ -9,7 +9,7 @@ import uva.tds.pr2.equipo05.*;
 import org.junit.Test;
 /**
  * Implementacion de la clase de test de RedAutobuses
- * @author ismael
+ * @author ismpere
  * @author martorb
  */
 public class RedAutobusesTDDTest {
