@@ -72,6 +72,21 @@ public class ParadaTest {
 		assertEquals(200.00, distancia, ERROR_ADMISIBLE); //TODO Es un valor aleatorio, comprobar al implementar
 	}
 	
+	@Test
+	public void testHayParadasRepetidasValido(){
+		p1 = new Parada("1", gd1);
+		GD gd2 = new GD(179.99, -179.99);
+		Parada p2 = new Parada("2", gd2);
+		
+		Parada p3[] = {p1, p2, p2};
+		
+		boolean repetidas = Parada.existeAlgunaParadaRepetida(p3);
+		
+		assertNotNull(p1);
+		assertNotNull(p2);
+		assertTrue(repetidas);
+	}
+	
 	@Test(expected = AssertionError.class)
 	public void testInicializaParadaNoValidoIdVacio(){
 		p1 = new Parada("", gd1);
