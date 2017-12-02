@@ -6,6 +6,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Implementacion de los test para el metodo getParadasConCorrespondencia
+ * @author ismael
+ * @author martorb
+ */
 public class LineaGetParadasConCorrespondenciaTest {
 	
 	private GD gd1 = new GD (-179.99,179.99);
