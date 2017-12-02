@@ -66,7 +66,14 @@ public class RedAutobusesTDDTest {
 		Linea[] lista_lineas={l1,l2};
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		red.addLinea(l3);
+		
+		assertNotNull(red);
+		assertEquals(l1,red.getLinea(1));
+		assertEquals(l2,red.getLinea(2));
+		assertEquals(l3,red.getLinea(3));
+		
 	}
+	
 	
 
 
