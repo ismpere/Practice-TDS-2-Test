@@ -32,6 +32,24 @@ public class LineaBlackBoxTest {
         p3 = null;
     }
     
+    @Test
+    public void testNoContieneParadaValido(){
+    	Parada p[] = {p1, p3, p2};
+    	Linea l1 = new Linea(1, p);
+    	
+    	GD gd4 = new GD(-100.00, 100.00);
+    	Parada p4 = new Parada("d", gd4);
+		
+		boolean c = l1.contains(p4);
+
+		assertNotNull(l1);
+		assertFalse(c);
+		assertEquals(1, l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(p, l1.getParadas());
+    }
+    
     @Test (expected = IllegalArgumentException.class)
     public void testInicializaNoValidoParadasNulo(){
     	Linea l1 = new Linea(1, null);

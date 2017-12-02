@@ -71,6 +71,20 @@ public class LineaTDDTest {
 	}
 	
 	@Test
+	public void testContieneParadaValido(){
+		Linea l1 = new Linea(1, p);
+		
+		boolean c = l1.contains(p1);
+
+		assertNotNull(l1);
+		assertTrue(c);
+		assertEquals(1, l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(p, l1.getParadas());
+	}
+	
+	@Test
 	public void testSetParadaFinValido(){
 		Linea l1 = new Linea(1, p);
 		
