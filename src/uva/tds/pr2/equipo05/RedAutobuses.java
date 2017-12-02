@@ -12,7 +12,7 @@ public class RedAutobuses {
 	 * Constructor por defecto de la clase RedAutobuses
 	 * @param lista_lineas Lista (array) que contiene las líenas iniciales de la red
 	 * @assert.pre lista_lineas.length>1
-	 * @assert.pre noLineasRepetidas(lista_lineas)
+	 * @assert.pre !LineasRepetidas(lista_lineas)
 	 * @throws IllegalArgumentException si lista_lineas==null || alguna de las lineas de la lista es null
 	 */
 	public RedAutobuses(Linea[] lista_lineas){
