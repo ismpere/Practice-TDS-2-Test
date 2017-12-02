@@ -66,5 +66,21 @@ public class ParadaBlackBoxTest {
 		
 		p1.setGD(null);
 	}
-
+	@Test(expected = IllegalArgumentException.class)
+	public void testExistenParadasIgualesNoValidoParadasNulo(){
+		
+		Parada.existeAlgunaParadaRepetida(null);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testExistenParadasIgualesNoValidoUnaParadaNulo(){
+		Parada pa2[] = {null};
+		
+		Parada.existeAlgunaParadaRepetida(pa2);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testExistenParadasIgualesNoValidoAlgunaParadaNulo(){
+		Parada pa2[] = {p1, null};
+		
+		Parada.existeAlgunaParadaRepetida(pa2);
+	}
 }

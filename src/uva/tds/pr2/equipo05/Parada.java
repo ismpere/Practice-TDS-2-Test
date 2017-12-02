@@ -9,16 +9,18 @@ public class Parada{
 
 	/**
 	 * Constructor por defecto de la clase parada
-	 * @param id
-	 * @param gd1
+	 * @param id Identificador de la parada
+	 * @param gd Direccion de la parada
+	 * @assert.pre id.length>0 && id.length<=50
+	 * @throws IllegalArgumentException si gd=null
 	 */
-	public Parada(String id, GD gd1) {
+	public Parada(String id, GD gd) {
 		// TODO Auto-generated constructor stub
 	}
 	
 	/**
 	 * Devuelve identificador de la parada
-	 * @return Id
+	 * @return Id Identificador
 	 */
 	public String getId() {
 		// TODO Auto-generated method stub
@@ -26,8 +28,8 @@ public class Parada{
 	}
 
 	/**
-	 * Devuelve la posición de la parada
-	 * @return gd
+	 * Devuelve la direccion de la parada
+	 * @return gd direccion
 	 */
 	public GD getGD() {
 		// TODO Auto-generated method stub
@@ -35,24 +37,28 @@ public class Parada{
 	}
 	/**
 	 * Cambia el id de la parada
-	 * @param id
+	 * @param id nuevo identificador
+	 * @assert.pre id.length>0 && id.length<=50
 	 */
 	public void setId(String id) {
 		// TODO Auto-generated method stub
 		
 	}
 	/**
-	 * Cambia la posicion de la parada
-	 * @param gd1
+	 * Cambia la direccion de la parada
+	 * @param gd Nueva direccion
+	 * @throws IllegalArgumentException si gd=null
 	 */
-	public void setGD(GD gd1) {
+	public void setGD(GD gd) {
 		// TODO Auto-generated method stub
 		
 	}
 	/**
 	 * Devuelve la distancia en metros entre dos paradas
-	 * @param p
-	 * @return distancia
+	 * @param p Parada a la que calcular la distancia desde this
+	 * @return distancia entre las paradas
+	 * @assert.pre !this.equals(p)
+	 * @throws IllegalArgumentException si p=null
 	 */
 	public double getDistanciaEntre(Parada p) {
 		// TODO Auto-generated method stub
@@ -62,6 +68,7 @@ public class Parada{
 	 * Devuelve si hay paradas repetidas en una lista de paradas
 	 * @param p lista de paradas
 	 * @return hayParadasRepetidas
+	 * @throws IllegalArgumentException si alguna de las paradas es null
 	 */
 	public static boolean existeAlgunaParadaRepetida(Parada[] p) {
 		// TODO Auto-generated method stub
