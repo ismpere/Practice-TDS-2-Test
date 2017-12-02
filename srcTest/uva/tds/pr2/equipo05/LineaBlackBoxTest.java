@@ -78,7 +78,7 @@ public class LineaBlackBoxTest {
     	
     	l1.setParadaInicio(null);
     }
-    @Test (expected = IllegalArgumentException.class)
+    @Test (expected = AssertionError.class)
     public void testsetParadaInicioNoValidoYaExiste(){
     	Parada p[] = {p1, p2, p3};
     	Linea l1 = new Linea(1, p);
@@ -102,7 +102,7 @@ public class LineaBlackBoxTest {
     	
     	l1.setParadaFin(null);
     }
-    @Test (expected = IllegalArgumentException.class)
+    @Test (expected = AssertionError.class)
     public void testsetParadaFinNoValidoYaExiste(){
     	Parada p[] = {p1, p2, p3};
     	Linea l1 = new Linea(1, p);
@@ -116,12 +116,61 @@ public class LineaBlackBoxTest {
     	
     	l1.addParadaIntermedia(null);
     }
-    @Test (expected = IllegalArgumentException.class)
+    @Test (expected = AssertionError.class)
     public void testaddParadaIntermediaNoValidoYaExiste(){
     	Parada p[] = {p1, p2, p3};
     	Linea l1 = new Linea(1, p);
     	
     	l1.addParadaIntermedia(p1);
+    }
+    @Test (expected = IllegalArgumentException.class)
+    public void testaddParadaAtPosicionNoValidoNulo(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	l1.addParadaAt(null, 2);
+    }
+    @Test (expected = AssertionError.class)
+    public void testaddParadaAtPosicionNoValidoPosicion0(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	l1.addParadaAt(p1, 0);
+    }
+    @Test (expected = AssertionError.class)
+    public void testaddParadaAtPosicionNoValidoPosicionFin(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	l1.addParadaAt(p1, p.length+1);
+    }
+    @Test (expected = AssertionError.class)
+    public void testaddParadaAtPosicionNoValidoPosicionInicio(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	l1.addParadaAt(p1, 1);
+    }
+    @Test (expected = AssertionError.class)
+    public void testaddParadaAtPosicionNoValidoPosicionNegativa(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	l1.addParadaAt(p1, -1);
+    }
+    @Test (expected = AssertionError.class)
+    public void testaddParadaAtPosicionNoValidoPosicionGrande(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	l1.addParadaAt(p1, 5);
+    }
+    @Test (expected = AssertionError.class)
+    public void testaddParadaAtPosicionNoValidoYaExiste(){
+    	Parada p[] = {p1, p2, p3};
+    	Linea l1 = new Linea(1, p);
+    	
+    	l1.addParadaAt(p1, 2);
     }
 
 }
