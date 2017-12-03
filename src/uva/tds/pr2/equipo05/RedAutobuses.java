@@ -33,6 +33,7 @@ public class RedAutobuses {
 	/**
 	 * Añade una línea a la red 
 	 * @param linea Línea a añadir
+	 * @assert.pre !red.contains(linea)
 	 * @throws IllegalArgumentException si linea==null
 	 */
 	public void addLinea(Linea linea){
