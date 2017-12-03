@@ -23,7 +23,7 @@ public class RedAutobuses {
 	 * Devuelve una línea de la red a partir de su identificador
 	 * @param id Número que identifica la línea
 	 * @return línea buscada
-	 * @assert.pre red.contains(linea) && linea.getId()==id
+	 * @assert.post red.contains(linea) && linea.getId()==id
 	 */
 	public Linea getLinea(int id){
 		// TODO Auto-generated constructor stub
