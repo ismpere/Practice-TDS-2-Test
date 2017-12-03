@@ -105,6 +105,13 @@ public class RedAutobusesBlackBoxTest {
 		red.deleteLinea(l3);
 	}
 	
+	@Test (expected = AssertionError.class)
+	public void testDeleteLineaNoValidoQuedanMenosDeDosLineas() {
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		red.deleteLinea(l2);
+	}
+	
 	@Test
 	public void test() {
 		fail("Not yet implemented");
