@@ -71,7 +71,6 @@ public class RedAutobusesBlackBoxTest {
 		
 		Linea[] lista_lineas={l1,l2,l1};
 		RedAutobuses red= new RedAutobuses(lista_lineas);
-		
 	}
 	
 	@Test (expected = AssertionError.class)
@@ -117,16 +116,17 @@ public class RedAutobusesBlackBoxTest {
 		Boolean r=RedAutobuses.lineasRepetidas(null);
 	}
 
-
 	@Test (expected = IllegalArgumentException.class)
 	public void testLineasRepetidasNoValidoAlgunaLineaNula() {
 		Linea[] lista_lineas={l1,l2,null};
 		Boolean r=RedAutobuses.lineasRepetidas(lista_lineas);
 	}
 	
-	@Test
-	public void test() {
-		fail("Not yet implemented");
+	@Test (expected = IllegalArgumentException.class)
+	public void testContainsNoValidoLineaNulo() {
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		red.contains(null);
 	}
 
 }
