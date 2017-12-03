@@ -66,8 +66,8 @@ public class RedAutobusesSecuenceTest {
 		Linea[] lista_lineas={l1,l2,l3};
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		
-		red.addLinea(l3);
-		red.deleteLinea(l3);
+		red.addLinea(l2);
+		red.deleteLinea(l2);
 		
 		assertNotNull(red);
 		assertArrayEquals(lista_lineas, red.getAllLineas());
@@ -116,6 +116,31 @@ public class RedAutobusesSecuenceTest {
 		
 		red.deleteLinea(l3);
 		Linea l_no_ex=red.getLinea(3);
+	}
+	
+	@Test
+	public void testSecuenciaAleatoriaGetLineaPorIdCambiaLineaValido() {
+		Linea[] lista_lineas={l1,l2,l3};
+		Parada p_4[] = {p4,p3,p2};
+		Linea l4=new Linea(3,p_4);
+		
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		Linea l_3=red.getLinea(3);
+		red.deleteLinea(l3);
+		red.addLinea(l4);
+		assertFalse(l_3.equals(red.getLinea(3)));
+		
+	}
+	
+	@Test
+	public void testSecuenciaAleatoriaGetLineasConParadasCercanasValido() {
+		Linea[] lista_lineas={l2,l3};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
+		red.addLinea(l1);
+		red.deleteLinea(l2);
+		assertTrue(red.existenLineasConParadasCercanas(gd3, 200.00)); //cercana l1 que añadida, luego true
+		
 	}
 
 }
