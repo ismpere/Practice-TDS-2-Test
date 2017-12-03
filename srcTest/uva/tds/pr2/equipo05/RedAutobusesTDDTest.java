@@ -56,7 +56,7 @@ public class RedAutobusesTDDTest {
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		
 		assertNotNull(red);
-		assertFalse(red.lineasRepetidas(lista_lineas));
+		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
 		assertTrue(red.contains(l1));
 		assertTrue(red.contains(l2));
 	}
@@ -66,7 +66,7 @@ public class RedAutobusesTDDTest {
 		Linea[] lista_lineas={l1,l2};
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		assertNotNull(red);
-		assertFalse(red.lineasRepetidas(lista_lineas));
+		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
 		assertTrue(red.contains(l1));
 		assertTrue(red.contains(l2));
 		
@@ -82,7 +82,7 @@ public class RedAutobusesTDDTest {
 		red.addLinea(l3);
 		
 		assertNotNull(red);
-		assertFalse(red.lineasRepetidas(lista_lineas));
+		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
 		assertTrue(red.contains(l1));
 		assertTrue(red.contains(l2));
 		assertTrue(red.contains(l3));
@@ -96,7 +96,7 @@ public class RedAutobusesTDDTest {
 		red.deleteLinea(l3);
 		
 		assertNotNull(red);
-		assertFalse(red.lineasRepetidas(lista_lineas));
+		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
 		assertTrue(red.contains(l1));
 		assertTrue(red.contains(l2));
 		assertFalse(red.contains(l3));
@@ -111,10 +111,27 @@ public class RedAutobusesTDDTest {
 		lista_lineas2=red.getAllLineas();
 		
 		assertNotNull(red);
-		assertFalse(red.lineasRepetidas(lista_lineas));
+		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
 		assertTrue(red.contains(l1));
 		assertTrue(red.contains(l2));
 		assertArrayEquals(lista_lineas2,lista_lineas);
+	}
+	
+	@Test
+	public void testGetLineasConParadasCercanasValido(){
+		GD gd_busq= new GD(-170.00,170.00);  //TODO ubicación aleatoria, poner una valida que lo cumpla
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		Linea[] lineas_cercanas=red.getLineasConParadasCercanas(gd_busq, 100.00);
+		
+		assertNotNull(red);
+		assertTrue(lineas_cercanas.length>0);
+		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
+		assertFalse(RedAutobuses.lineasRepetidas(lineas_cercanas));
+		for(int i=0;i<lineas_cercanas.length;i++){
+			assertTrue(red.contains(lineas_cercanas[i]));
+			assertTrue(lineas_cercanas[i].existeParadasCercanas(gd_busq));
+		}
 	}
 	
 }
