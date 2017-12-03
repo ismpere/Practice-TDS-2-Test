@@ -128,4 +128,39 @@ public class LineaSecuenceTest {
 		assertArrayEquals(listaP1, pa2);
 		assertArrayEquals(listaP2, l1.getParadas());
 	}
+	
+	@Test
+	public void testSecuenciaAleatoriaGetParadas(){
+		Parada p[] = {p1,p2,p3};
+		Parada.existeAlgunaParadaRepetida(p);
+		Linea l1 = new Linea(1, p);
+		
+		GD gd_bus = new GD(-140.00, 140.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		
+		Parada pc[] = l1.getParadasCercanas(gd_bus);
+		
+		GD gd4 = new GD(-100.00, 100.00);
+    	Parada p4 = new Parada("d", gd4);
+    	GD gd5 = new GD(-110.00, 110.00);
+    	Parada p5 = new Parada("d", gd5);
+		
+		Parada pa3[] = {p1, p4, p5}; //TODO son paradas aleatorias, poner paradas que lo cumplan
+		Parada.existeAlgunaParadaRepetida(pa3);
+		Linea l2 = new Linea(2, pa3);
+		
+		Parada pcc[] = l1.getParadasConCorrespondencia(l2);
+		
+		Parada pct[] = l1.getParadasConTransbordoDirecto(l2);
+		
+		l1.addParadaIntermedia(p4);
+		
+		Parada pcc2[] = l1.getParadasConCorrespondencia(l2);
+		
+		assertNotNull(l1);
+		assertNotNull(l2);
+		assertNotNull(pc);
+		assertNotNull(pcc);
+		assertNotNull(pct);
+		assertNotNull(pcc2);
+	}
 }
