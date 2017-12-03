@@ -65,6 +65,7 @@ public class RedAutobuses {
 	 * @param direccion Punto dede el que se buscan líneas con parada cercana
 	 * @param radio (en metros) Distancia máxima desde la dirección indicada hasta alguna parada de las líneas buscadas
 	 * @return lineasEncontradas[]
+	 * @throws IllegalArgumentException si direccion==null
 	 */
 	public Linea[] getLineasConParadasCercanas(GD direccion, double radio){
 		return null;
