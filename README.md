@@ -4,32 +4,32 @@
 	
 	Clases que forman parte de la solución del proyecto:
 
-		GD ---------------------------------------- SLOC:   LLOC:
-		Linea-------------------------------------- SLOC:   LLOC: 
-		Parada------------------------------------- SLOC:   LLOC:
-		RedAutobuses------------------------------- SLOC:   LLOC:
+		GD ---------------------------------------- SLOC:19   LLOC:62
+		Linea-------------------------------------- SLOC:53   LLOC:167 
+		Parada------------------------------------- SLOC:21   LLOC:72
+		RedAutobuses------------------------------- SLOC:27   LLOC:100
 		
 
 	(test)
-		AllTest------------------------------------ SLOC:   LLOC: 
-		GDAllTest---------------------------------- SLOC:   LLOC: 
-		GDBlackBoxText----------------------------- SLOC:   LLOC: 
-		GDSecuenceTest----------------------------- SLOC:   LLOC: 
-		GDTDDTest---------------------------------- SLOC:   LLOC: 
-		LineaAllTest------------------------------- SLOC:   LLOC: 
-		LineaBlackBoxTest-------------------------- SLOC:   LLOC: 	
-		LineaGetParadasCercanasTest---------------- SLOC:   LLOC: 	
-		LineaGetParadasConCorrespondenciaTest------ SLOC:   LLOC: 
-		LineaGetParadasConTransbordoDirectTest----- SLOC:   LLOC: 
-		LineaGetParadasTest------------------------ SLOC:   LLOC: 
-		LineaSecuenceTest-------------------------- SLOC:   LLOC: 
-		LineaTDDTest------------------------------- SLOC:   LLOC: 
-		ParadaAllTest------------------------------ SLOC:   LLOC: 
-		ParadaBlackBoxTest------------------------- SLOC:   LLOC: 
-		ParadaSecuenceTest------------------------- SLOC:   LLOC:
-		ParadaTDDTest------------------------------ SLOC:   LLOC: 
-		RedAutobusesAllTest------------------------ SLOC:   LLOC: 
-		RedAutobusesBlackBoxTest------------------- SLOC:   LLOC: 
-		RedAutobusesGetLineasConParadasCercanasTest SLOC:   LLOC: 
-		RedAutobusesTDDTest------------------------ SLOC:   LLOC: 
+		AllTest------------------------------------ SLOC:12    LLOC:17 
+		GDAllTest---------------------------------- SLOC:11    LLOC:16 
+		GDBlackBoxText----------------------------- SLOC:62    LLOC:67 
+		GDSecuenceTest----------------------------- SLOC:37    LLOC:42 
+		GDTDDTest---------------------------------- SLOC:32    LLOC:37 
+		LineaAllTest------------------------------- SLOC:12    LLOC:17 
+		LineaBlackBoxTest-------------------------- SLOC:255   LLOC:260 	
+		LineaGetParadasCercanasTest---------------- SLOC:73    LLOC:78 	
+		LineaGetParadasConCorrespondenciaTest------ SLOC:103   LLOC:108 
+		LineaGetParadasConTransbordoDirectTest----- SLOC:103   LLOC:108 
+		LineaGetParadasTest------------------------ SLOC:11    LLOC:16 
+		LineaSecuenceTest-------------------------- SLOC:117   LLOC:122 
+		LineaTDDTest------------------------------- SLOC:212   LLOC:217 
+		ParadaAllTest------------------------------ SLOC:11    LLOC:16 
+		ParadaBlackBoxTest------------------------- SLOC:120   LLOC:125 
+		ParadaSecuenceTest------------------------- SLOC:45    LLOC:50
+		ParadaTDDTest------------------------------ SLOC:64    LLOC:69 
+		RedAutobusesAllTest------------------------ SLOC:12    LLOC:17 
+		RedAutobusesBlackBoxTest------------------- SLOC:100   LLOC:106 
+		RedAutobusesGetLineasConParadasCercanasTest SLOC:112   LLOC:117 
+		RedAutobusesTDDTest------------------------ SLOC:111   LLOC:116 
 
