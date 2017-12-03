@@ -89,9 +89,11 @@ public class RedAutobusesBlackBoxTest {
 	}
 	
 	
-	@Test
+	@Test (expected = IllegalArgumentException.class)
 	public void testDeleteLineaNoValidoLineaNulo() {
-		fail("Not yet implemented");
+		Linea[] lista_lineas={l1,l2,l3};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		red.deleteLinea(null);
 	}
 	
 	@Test
