@@ -52,7 +52,28 @@ public class RedAutobusesGetLineasConParadasCercanasTest{
 	
 	
 	@Test
-	public void test(){
-		fail("Not implemented yet");
+	public void testGetLineasConParadasCercanasValido1LineaCercana(){
+		GD gd_busq= new GD(-179.00,179.01);  //pos cercana a p1 pert. a l1
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		Linea[] lineas_cercanas=red.getLineasConParadasCercanas(gd_busq, 200.00);
+		
+		assertNotNull(red);
+		assertTrue(red.contains(l1));
+		assertTrue(red.contains(l2));
+		assertTrue(lineas_cercanas.length==1);
+		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
+		assertFalse(RedAutobuses.lineasRepetidas(lineas_cercanas));
+		assertTrue(lineas_cercanas[0].equals(l1));
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
