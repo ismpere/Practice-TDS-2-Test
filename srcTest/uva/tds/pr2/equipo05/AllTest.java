@@ -13,7 +13,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 /**
  * Suite de clases de test para todas las clases de test de Linea*
- * @author ismael
+ * @author ismpere
  * @author martorb
  */
 public class AllTest {
