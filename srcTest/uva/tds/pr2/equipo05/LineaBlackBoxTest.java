@@ -33,6 +33,28 @@ public class LineaBlackBoxTest {
     }
     
     @Test
+    public void testGetIdLineaValido(){
+    	Parada p[] = {p1, p3, p2};
+    	Linea l1 = new Linea(1, p);
+    	
+    	int id = l1.getId();
+    	
+    	assertNotNull(l1);
+    	assertEquals(1, id);
+    }
+    
+    @Test
+    public void testGetParadasLineaValido(){
+    	Parada p[] = {p1, p3, p2};
+    	Linea l1 = new Linea(1, p);
+    	
+    	Parada pa2[] = l1.getParadas();
+    	
+    	assertNotNull(l1);
+    	assertArrayEquals(p, pa2);
+    }
+    
+    @Test
     public void testNoContieneParadaValido(){
     	Parada p[] = {p1, p3, p2};
     	Linea l1 = new Linea(1, p);
