@@ -22,6 +22,26 @@ public class GDTDDTest {
 	}
 	
 	@Test
+	public void testGetLatitudGDValido(){
+		GD gd1 = new GD(-179.99, 179.99); //TODO las coordenadas son aleatorias, corregir cuando se implemente
+		
+		double latitud = gd1.getLatitud();
+		
+		assertNotNull(gd1);
+		assertEquals(-179.99, latitud, ERROR_ADMISIBLE);
+	}
+	
+	@Test
+	public void testGetLongitudGDValido(){
+		GD gd1 = new GD(-179.99, 179.99); //TODO las coordenadas son aleatorias, corregir cuando se implemente
+		
+		double longitud = gd1.getLongitud();
+		
+		assertNotNull(gd1);
+		assertEquals(-179.99, longitud, ERROR_ADMISIBLE);
+	}
+	
+	@Test
 	public void testSetLatitudSetLongitudValido(){
 		GD gd1 = new GD(-179.99, 179.99);
 		
