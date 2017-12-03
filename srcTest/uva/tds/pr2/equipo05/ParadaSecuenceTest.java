@@ -4,6 +4,11 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * Implementacion de la clase de test de secuencia de Parada
+ * @author ismpere
+ * @author martorb
+ */
 public class ParadaSecuenceTest {
 
 	private static final double ERROR_ADMISIBLE = 0.01;
@@ -59,7 +64,7 @@ public class ParadaSecuenceTest {
 		assertNotEquals(id1, p1.getId());
 		assertNotEquals(g1, p1.getGD());
 		assertEquals("c", p1.getId());
-		assertEquals(145.00, p1.getGD());
+		assertEquals(gd2, p1.getGD());
 	}
 		
 
