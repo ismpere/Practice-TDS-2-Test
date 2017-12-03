@@ -59,6 +59,11 @@ public class RedAutobuses {
 		// TODO Auto-generated constructor stub
 		return null;
 	}
+	
+	public Linea[] getLineasConParadasCercanas(GD direccion, double metros){
+		return null;
+	}
+	
 	/**
 	 * Comprueba si en una lista (array) existen líneas repetidas
 	 * @param lista_lineas lista a comprobar
