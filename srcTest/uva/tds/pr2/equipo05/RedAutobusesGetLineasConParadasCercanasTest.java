@@ -54,22 +54,35 @@ public class RedAutobusesGetLineasConParadasCercanasTest{
 		l2= null;
 	}
 	
-	
+	@Test
+	public void testNoExistenLineasConParadasCercanasValido(){
+		
+		GD gd_busq= new GD(-179.98,179.99);
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
+		boolean e = red.existenLineasConParadasCercanas(gd_busq, 200.00);
+		
+		Linea[] lcS = {l1};
+		
+		assertNotNull(red);
+		assertFalse(e);				
+	}
 	
 	@Test
 	public void testGetLineasConParadasCercanasValido1LineaCercana(){
 		GD gd_busq= new GD(-179.00,178.99);   //pos cercana a p1 pert. a l1
 		Linea[] lista_lineas={l1,l2};
 		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
 		Linea[] lineas_cercanas=red.getLineasConParadasCercanas(gd_busq, 200.00);
 		
+		Linea[] l = {l1};
+		
 		assertNotNull(red);
-		assertTrue(red.contains(l1));
-		assertTrue(red.contains(l2));
-		assertTrue(lineas_cercanas.length==1);
-		assertFalse(Linea.lineasRepetidas(lista_lineas));
-		assertFalse(Linea.lineasRepetidas(lineas_cercanas));
-		assertTrue(lineas_cercanas[0].equals(l1));
+		assertNotNull(lineas_cercanas);
+		assertTrue(red.existenLineasConParadasCercanas(gd_busq, 200.00));
+		assertArrayEquals(l, lineas_cercanas);
 	}
 	
 	@Test
@@ -77,16 +90,15 @@ public class RedAutobusesGetLineasConParadasCercanasTest{
 		GD gd_busq= new GD(-179.00,179.10);  //pos cercana a p3 y p4, de l1 y l2 resp.
 		Linea[] lista_lineas={l1,l2};
 		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
 		Linea[] lineas_cercanas=red.getLineasConParadasCercanas(gd_busq, 200.00);
 		
-		assertNotNull(red);
-		assertTrue(red.contains(l1));
-		assertTrue(red.contains(l2));
-		assertTrue(lineas_cercanas.length==2);
-		assertFalse(Linea.lineasRepetidas(lista_lineas));
-		assertFalse(Linea.lineasRepetidas(lineas_cercanas));
-		assertTrue((lineas_cercanas[0].equals(l1) && lineas_cercanas[1].equals(l2)) || (lineas_cercanas[1].equals(l1) && lineas_cercanas[0].equals(l2)));
+		Linea[] l = {l1,l2};
 		
+		assertNotNull(red);
+		assertNotNull(lineas_cercanas);
+		assertTrue(red.existenLineasConParadasCercanas(gd_busq, 200.00));
+		assertArrayEquals(l, lineas_cercanas);
 	}
 	
 	@Test
@@ -94,23 +106,31 @@ public class RedAutobusesGetLineasConParadasCercanasTest{
 		GD gd_busq= new GD(-100.00,200.00);  //pos lejana a todas las paradas
 		Linea[] lista_lineas={l1,l2};
 		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
 		Linea[] lineas_cercanas=red.getLineasConParadasCercanas(gd_busq, 200.00);
 		
 		assertNotNull(red);
-		assertTrue(red.contains(l1));
-		assertTrue(red.contains(l2));
-		assertTrue(lineas_cercanas.length==0);
-		assertFalse(Linea.lineasRepetidas(lista_lineas));
+		assertNotNull(lineas_cercanas);
+		assertFalse(red.existenLineasConParadasCercanas(gd_busq, 200.00));
+		assertEquals(0, lineas_cercanas.length);
 	
 	}
 	
+	@Test (expected = IllegalArgumentException.class)
+	public void testExistenLineasConParadasCercanasNoValidoGDNulo(){
+		
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
+		red.existenLineasConParadasCercanas(null, 200.00);			
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	@Test (expected = AssertionError.class)
+	public void testExistenLineasConParadasCercanasNoValidoRadioMenorQue0(){
+		GD gd_busq= new GD(-100.00,200.00);
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
+		red.existenLineasConParadasCercanas(gd_busq, -0.01);
+	}
 }

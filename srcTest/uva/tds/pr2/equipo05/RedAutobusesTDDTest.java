@@ -130,7 +130,7 @@ public class RedAutobusesTDDTest {
 		Linea[] lista_lineas={l1,l2};
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		
-		boolean e = red.existenLineasConParadasCercanas(gd_busq, 200.00);
+		boolean e = red.existenLineasConParadasCercanas(gd_busq, 0.01);
 		
 		Linea[] lcS = {l1};
 		
@@ -145,13 +145,13 @@ public class RedAutobusesTDDTest {
 		Linea[] lista_lineas={l1,l2};
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		
-		Linea[] lineas_cercanas=red.getLineasConParadasCercanas(gd_busq, 200.00);
+		Linea[] lineas_cercanas=red.getLineasConParadasCercanas(gd_busq, 0.01);
 		
 		Linea[] lcS = {l1};
 		
 		assertNotNull(red);
 		assertNotNull(lineas_cercanas);
-		assertTrue(red.existenLineasConParadasCercanas(gd_busq, 200.00));
+		assertTrue(red.existenLineasConParadasCercanas(gd_busq, 0.01));
 		assertArrayEquals(lcS, lineas_cercanas);		
 	}
 }
