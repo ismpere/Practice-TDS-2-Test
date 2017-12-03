@@ -23,6 +23,26 @@ public class ParadaBlackBoxTest {
     }
     
     @Test
+    public void testGetIdParadaValido(){
+    	p1 = new Parada("a", gd1);
+    	
+    	String id = p1.getId();
+    	
+    	assertNotNull(gd1);
+    	assertEquals("a", id);
+    }
+    
+    @Test
+    public void testGetGDParadaValido(){
+    	p1 = new Parada("a", gd1);
+    	
+    	GD gd = p1.getGD();
+    	
+    	assertNotNull(gd1);
+    	assertEquals(gd1, gd);
+    }
+    
+    @Test
 	public void testInicializaParadaValidoIdGrande() {
 		p1 = new Parada("CincoCincoCincoCincoCincoCincoCincoCincoCincoCinco", gd1);
 		
