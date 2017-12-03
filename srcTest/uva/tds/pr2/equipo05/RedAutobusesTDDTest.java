@@ -1,0 +1,139 @@
+package uva.tds.pr2.equipo05;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+
+import uva.tds.pr2.equipo05.*;
+import org.junit.Test;
+/**
+ * Implementacion de la clase de test TDD de RedAutobuses
+ * @author ismpere
+ * @author martorb
+ */
+public class RedAutobusesTDDTest {
+
+	private GD gd1 = new GD (-179.99,179.99);
+	private GD gd2 = new GD (-178.99,178.99);
+	private GD gd3 = new GD (-177.99,177.99);
+	private GD gd4 = new GD (-176.99,176.99);
+	private GD gd5 = new GD (-175.99,175.99);
+	private GD gd6 = new GD (-174.99,174.99);
+	
+	private Parada p1,p2,p3,p4,p5,p6;
+	private Parada p_1[] = {p1,p2,p3};
+	private Parada p_2[] = {p2,p3,p4};
+	private Parada p_3[] = {p4,p1,p2};
+	
+	private Linea l1, l2,l3;
+
+	@Before
+    public void setUp() throws Exception {
+		
+		p1= new Parada("1",gd1);
+		p2= new Parada("2",gd2);
+		p3= new Parada("3",gd3);
+		l1= new Linea(1,p_1);
+		l2= new Linea(2,p_2);
+		l3= new Linea(3,p_3);
+	}
+	
+	@After
+	public void tearDown() throws Exception{
+		p1= null;
+		p2= null;
+		p3= null;
+		l1= null;
+		l2= null;
+		l3=null;
+	}
+	
+	@Test
+	public void testInicializaRedValido() { 
+		
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
+		assertNotNull(red);
+		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
+		assertTrue(red.contains(l1));
+		assertTrue(red.contains(l2));
+	}
+	
+	@Test
+	public void testGetLineaValido(){
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		assertNotNull(red);
+		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
+		assertTrue(red.contains(l1));
+		assertTrue(red.contains(l2));
+		
+		assertEquals(l1,red.getLinea(1));
+		assertEquals(l2,red.getLinea(2));
+	}
+	
+	@Test
+	public void testAddLineaValido(){
+		
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		red.addLinea(l3);
+		
+		assertNotNull(red);
+		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
+		assertTrue(red.contains(l1));
+		assertTrue(red.contains(l2));
+		assertTrue(red.contains(l3));
+	}
+	
+	@Test
+	public void testDeleteLineaValido() {
+		
+		Linea[] lista_lineas={l1,l2,l3};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		red.deleteLinea(l3);
+		
+		assertNotNull(red);
+		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
+		assertTrue(red.contains(l1));
+		assertTrue(red.contains(l2));
+		assertFalse(red.contains(l3));
+	}
+
+
+	@Test
+	public void testGetAllLineasValido() {
+		Linea[] lista_lineas={l1,l2};
+		Linea[] lista_lineas2;
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		lista_lineas2=red.getAllLineas();
+		
+		assertNotNull(red);
+		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
+		assertTrue(red.contains(l1));
+		assertTrue(red.contains(l2));
+		assertArrayEquals(lista_lineas2,lista_lineas);
+	}
+	
+	@Test
+	public void testGetLineasConParadasCercanasValido(){
+		GD gd_busq= new GD(-170.00,170.00);  //TODO ubicación aleatoria, poner una valida que lo cumpla
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		Linea[] lineas_cercanas=red.getLineasConParadasCercanas(gd_busq, 100.00);
+		
+		assertNotNull(red);
+		assertTrue(red.contains(l1));
+		assertTrue(red.contains(l2));
+		assertTrue(lineas_cercanas.length>0);
+		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
+		assertFalse(RedAutobuses.lineasRepetidas(lineas_cercanas));
+		for(int i=0;i<lineas_cercanas.length;i++){
+			assertTrue(red.contains(lineas_cercanas[i]));
+			assertTrue(lineas_cercanas[i].existeParadasCercanas(gd_busq));
+		}
+	}
+	
+}
