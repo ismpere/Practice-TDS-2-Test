@@ -135,5 +135,13 @@ public class RedAutobusesBlackBoxTest {
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		red.contains(null);
 	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testGetLineasConParadasCercanasNoValidoGDNulo(){
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		Linea[] lineas_cercanas= red.getLineasConParadasCercanas(null, 100.00);
+	}
+	
 
 }
