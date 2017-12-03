@@ -60,6 +60,28 @@ public class RedAutobusesTDDTest {
 	}
 	
 	@Test
+	public void testContieneParadaValido(){
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
+		boolean c = red.contains(l1);
+		
+		assertNotNull(red);
+		assertTrue(c);
+	}
+	
+	@Test
+	public void testContieneParadaPorIdValido(){
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
+		boolean c = red.contains(1);
+		
+		assertNotNull(red);
+		assertTrue(c);
+	}
+	
+	@Test
 	public void testAddLineaValido(){
 		
 		Linea[] lista_lineas={l1,l2};
@@ -90,6 +112,18 @@ public class RedAutobusesTDDTest {
 	}
 	
 	@Test
+	public void testGetLineaPorIdValido(){
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
+		Linea l = red.getLinea(1);
+		
+		assertNotNull(red);
+		assertNotNull(l);
+		assertEquals(l1, l);
+	}
+	
+	@Test
 	public void testExistenLineasConParadasCercanasValido(){
 		
 		GD gd_busq= new GD(-179.98,179.99);
@@ -116,7 +150,8 @@ public class RedAutobusesTDDTest {
 		Linea[] lcS = {l1};
 		
 		assertNotNull(red);
-		assertNotNull(lineas_cercanas);		
+		assertNotNull(lineas_cercanas);
+		assertTrue(red.existenLineasConParadasCercanas(gd_busq, 200.00));
 		assertArrayEquals(lcS, lineas_cercanas);		
-	}	
+	}
 }
