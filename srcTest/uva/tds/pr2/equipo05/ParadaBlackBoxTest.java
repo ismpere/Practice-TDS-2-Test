@@ -55,6 +55,8 @@ public class ParadaBlackBoxTest {
 		assertNotNull(p1);
 		assertNotNull(p2);
 		assertFalse(repetidas);
+		
+		fail("El test pasa en verde ya que la fake implementacion de existeAlgunaParada siempre devuelve false");
 	}
 
 	@Test(expected = AssertionError.class)
