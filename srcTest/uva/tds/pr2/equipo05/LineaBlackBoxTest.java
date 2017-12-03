@@ -90,6 +90,8 @@ public class LineaBlackBoxTest {
 		assertNotNull(l1);
 		assertNotNull(l2);
 		assertFalse(repetidas);
+		
+		fail("El test no falla por si solo ya que la fake implementacion de lineasRepetidas devuelve siempre false");
 	}
     
     @Test (expected = IllegalArgumentException.class)
