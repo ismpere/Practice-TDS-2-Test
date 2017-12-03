@@ -21,6 +21,43 @@ public class ParadaBlackBoxTest {
         gd1 = null;
         p1 = null;
     }
+    
+    @Test
+	public void testInicializaParadaValidoIdGrande() {
+		p1 = new Parada("CincoCincoCincoCincoCincoCincoCincoCincoCincoCinco", gd1);
+		
+		assertNotNull(p1);
+		assertEquals("CincoCincoCincoCincoCincoCincoCincoCincoCincoCinco",p1.getId());
+		assertEquals(gd1,p1.getGD());
+	}
+    
+    @Test
+	public void testSetIdValidoIdGrande() {
+		p1 = new Parada("a", gd1);
+		
+		p1.setId("CincoCincoCincoCincoCincoCincoCincoCincoCincoCinco");
+		
+		assertNotNull(p1);
+		assertEquals("CincoCincoCincoCincoCincoCincoCincoCincoCincoCinco",p1.getId());
+		assertEquals(gd1,p1.getGD());
+	}
+    
+    @Test
+	public void testNoHayParadasRepetidasValido(){
+		p1 = new Parada("a", gd1);
+		GD gd2 = new GD(179.99, -179.99);
+		Parada p2 = new Parada("b", gd2);
+		
+		Parada p3[] = {p1, p2};
+		
+		boolean repetidas = Parada.existeAlgunaParadaRepetida(p3);
+		
+		assertNotNull(p1);
+		assertNotNull(p2);
+		assertFalse(repetidas);
+		
+		fail("El test pasa en verde ya que la fake implementacion de existeAlgunaParada siempre devuelve false");
+	}
 
 	@Test(expected = AssertionError.class)
 	public void testInicializaParadaNoValidoIdVacio(){
@@ -39,11 +76,17 @@ public class ParadaBlackBoxTest {
 		p1 = new Parada("a", null);
 	}
 	@Test(expected = IllegalArgumentException.class)
-	public void testCalculaDistanciaEntreParadasPrimeraNulo(){
+	public void testCalculaDistanciaEntreParadasNoValidoParadaNulo(){
 		p1 = new Parada("a", gd1);
 		Parada p2 = null;
 		
 		p1.getDistanciaEntre(p2);
+	}
+	@Test(expected = AssertionError.class)
+	public void testCalculaDistanciaEntreParadasNoValidoParadaIgual(){
+		p1 = new Parada("a", gd1);
+		
+		p1.getDistanciaEntre(p1);
 	}
 	@Test(expected = AssertionError.class)
 	public void testSetIdNoValidoIdVacio(){

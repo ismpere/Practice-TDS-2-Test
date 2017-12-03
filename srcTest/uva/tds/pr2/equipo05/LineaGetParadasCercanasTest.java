@@ -36,7 +36,37 @@ public class LineaGetParadasCercanasTest {
         p = null;
         l1 = null;
     }
-
+    
+    @Test
+	public void testExistenParadasCercanasValido(){
+		
+		GD gd4 = new GD(-150.00, 150.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		
+		boolean e = l1.existeParadasCercanas(gd4);
+		
+		assertNotNull(l1);
+		assertTrue(e);
+		assertEquals(1, l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(p, l1.getParadas());
+	}
+    
+    @Test
+	public void testNoExistenParadasCercanasValido(){
+		
+		GD gd4 = new GD(-140.00, 140.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		
+		boolean e = l1.existeParadasCercanas(gd4);
+		
+		assertNotNull(l1);
+		assertFalse(e);
+		assertEquals(1, l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(p, l1.getParadas());
+	}
+    
 	@Test
 	public void testGetParadasCercanasUnaParadaCercanaValido(){
 		

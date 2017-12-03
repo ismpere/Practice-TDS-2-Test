@@ -38,6 +38,48 @@ public class LineaGetParadasConCorrespondenciaTest {
     }
     
     @Test
+	public void testExistenParadasConCorrespondenciaValido(){
+		
+    	GD gd4 = new GD(-100.00, 100.00);
+    	Parada p4 = new Parada("d", gd4);
+		
+		Parada pa3[] = {p1, p4, p3}; //TODO son paradas aleatorias, poner paradas que lo cumplan
+		Linea l2 = new Linea(2, pa3);
+		
+		boolean e = l1.existeCorrespondencia(l2);
+		
+		assertNotNull(l1);
+		assertTrue(e);
+		assertEquals(1, l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(p, l1.getParadas());
+	}
+    
+    @Test
+	public void testNoExistenParadasConCorrespondenciaValido(){
+		
+    	GD gd4 = new GD(-100.00, 100.00);
+    	Parada p4 = new Parada("d", gd4);
+    	GD gd5 = new GD(-110.00, 110.00);
+    	Parada p5 = new Parada("d", gd5);
+    	GD gd6 = new GD(-115.00, 115.00);
+    	Parada p6 = new Parada("d", gd6);
+		
+		Parada pa3[] = {p4, p5, p6}; //TODO son paradas aleatorias, poner paradas que lo cumplan
+		Linea l2 = new Linea(2, pa3);
+		
+		boolean e = l1.existeCorrespondencia(l2);
+		
+		assertNotNull(l1);
+		assertFalse(e);
+		assertEquals(1, l1.getId());
+		assertEquals(p1, l1.getParadaInicio());
+		assertEquals(p3, l1.getParadaFin());
+		assertArrayEquals(p, l1.getParadas());
+	}
+    
+    @Test
 	public void testGetParadasConCorrespondenciaUnaParadaConCorrespondenciaValido(){
     	
     	GD gd4 = new GD(-100.00, 100.00);

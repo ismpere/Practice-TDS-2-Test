@@ -28,42 +28,42 @@ public class ParadaTDDTest {
     }
 
 	@Test
-	public void testInicializaParadasValido() {
-		p1 = new Parada("1", gd1);
+	public void testInicializaParadaValido() {
+		p1 = new Parada("a", gd1);
 		
 		assertNotNull(p1);
-		assertEquals(1,p1.getId());
+		assertEquals("a", p1.getId());
 		assertEquals(gd1,p1.getGD());
 	}
 	
 	@Test
 	public void testSetIDValido(){
-		p1 = new Parada("1", gd1);
+		p1 = new Parada("a", gd1);
 		
-		p1.setId("2");
+		p1.setId("b");
 		
 		assertNotNull(p1);
-		assertEquals(2,p1.getId());
+		assertEquals("b",p1.getId());
 		assertEquals(gd1,p1.getGD());
 	}
 	
 	@Test
 	public void testSetGDValido(){
-		p1 = new Parada("1", gd1);
+		p1 = new Parada("a", gd1);
 		GD gd2 = new GD(179.99, -179.99);
 		
 		p1.setGD(gd2);
 		
 		assertNotNull(p1);
-		assertEquals(2,p1.getId());
+		assertEquals("a",p1.getId());
 		assertEquals(gd2,p1.getGD());
 	}
 	
 	@Test
 	public void testCalculaDistanciaEntreParadasGDValido(){
-		p1 = new Parada("1", gd1);
+		p1 = new Parada("a", gd1);
 		GD gd2 = new GD(179.99, -179.99);
-		Parada p2 = new Parada("2", gd2);
+		Parada p2 = new Parada("b", gd2);
 		
 		double distancia = p1.getDistanciaEntre(p2);
 		
@@ -74,9 +74,9 @@ public class ParadaTDDTest {
 	
 	@Test
 	public void testHayParadasRepetidasValido(){
-		p1 = new Parada("1", gd1);
+		p1 = new Parada("a", gd1);
 		GD gd2 = new GD(179.99, -179.99);
-		Parada p2 = new Parada("2", gd2);
+		Parada p2 = new Parada("b", gd2);
 		
 		Parada p3[] = {p1, p2, p2};
 		
