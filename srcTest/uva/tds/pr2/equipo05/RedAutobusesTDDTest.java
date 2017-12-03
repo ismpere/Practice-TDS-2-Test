@@ -119,10 +119,10 @@ public class RedAutobusesTDDTest {
 	
 	@Test
 	public void testGetLineasConParadasCercanasValido(){
-		GD gd_busq= new GD(-170.00,170.00);  //TODO ubicación aleatoria, poner una valida que lo cumpla
+		GD gd_busq= new GD(-179.98,179.99);
 		Linea[] lista_lineas={l1,l2};
 		RedAutobuses red= new RedAutobuses(lista_lineas);
-		Linea[] lineas_cercanas=red.getLineasConParadasCercanas(gd_busq, 100.00);
+		Linea[] lineas_cercanas=red.getLineasConParadasCercanas(gd_busq, 200.00);
 		
 		assertNotNull(red);
 		assertTrue(red.contains(l1));
@@ -130,10 +130,10 @@ public class RedAutobusesTDDTest {
 		assertTrue(lineas_cercanas.length>0);
 		assertFalse(Linea.lineasRepetidas(lista_lineas));
 		assertFalse(Linea.lineasRepetidas(lineas_cercanas));
-		for(int i=0;i<lineas_cercanas.length;i++){
-			assertTrue(red.contains(lineas_cercanas[i]));
-			assertTrue(lineas_cercanas[i].existeParadasCercanas(gd_busq));
-		}
+		
+		assertEquals(lineas_cercanas[0],l1);
+		assertTrue(lineas_cercanas[0].existeParadasCercanas(gd_busq));
+		
 	}
 	
 }
