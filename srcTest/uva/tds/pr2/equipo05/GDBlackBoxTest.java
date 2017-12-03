@@ -5,6 +5,28 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class GDBlackBoxTest {
+	
+	private static final double ERROR_ADMISIBLE = 0.01;
+	
+	@Test
+	public void testGetLatitudGDValido(){
+		GD gd1 = new GD(-179.99, 179.99); //TODO las coordenadas son aleatorias, corregir cuando se implemente
+		
+		double latitud = gd1.getLatitud();
+		
+		assertNotNull(gd1);
+		assertEquals(-179.99, latitud, ERROR_ADMISIBLE);
+	}
+	
+	@Test
+	public void testGetLongitudGDValido(){
+		GD gd1 = new GD(-179.99, 179.99); //TODO las coordenadas son aleatorias, corregir cuando se implemente
+		
+		double longitud = gd1.getLongitud();
+		
+		assertNotNull(gd1);
+		assertEquals(-179.99, longitud, ERROR_ADMISIBLE);
+	}
 
 	@Test (expected = AssertionError.class)
 	public void testInicializaGDNoValidoLatitudInferior(){

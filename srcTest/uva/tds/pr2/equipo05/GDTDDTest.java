@@ -20,7 +20,7 @@ public class GDTDDTest {
 		assertEquals(-179.99, gd1.getLatitud(), ERROR_ADMISIBLE);
 		assertEquals(179.99, gd1.getLongitud(), ERROR_ADMISIBLE);
 	}
-	
+
 	@Test
 	public void testSetLatitudSetLongitudValido(){
 		GD gd1 = new GD(-179.99, 179.99);

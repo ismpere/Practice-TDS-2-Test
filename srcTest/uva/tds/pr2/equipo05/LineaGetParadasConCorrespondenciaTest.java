@@ -13,8 +13,8 @@ import org.junit.Test;
  */
 public class LineaGetParadasConCorrespondenciaTest {
 	
-	private GD gd1 = new GD (-179.99,179.99);
-	private GD gd2 = new GD (-178.99,178.99);
+	private GD gd1 = new GD (-179.99,179.99); //TODO son ubicaciones aleatorias, poner ubicaciones que
+	private GD gd2 = new GD (-178.99,178.99); //satisfagan estos test
 	private GD gd3 = new GD (-177.99,177.99);
 	private Parada p1, p2, p3;
 	private Parada p[] = {p1, p2, p3};
@@ -38,48 +38,6 @@ public class LineaGetParadasConCorrespondenciaTest {
     }
     
     @Test
-	public void testExistenParadasConCorrespondenciaValido(){
-		
-    	GD gd4 = new GD(-100.00, 100.00);
-    	Parada p4 = new Parada("d", gd4);
-		
-		Parada pa3[] = {p1, p4, p3}; //TODO son paradas aleatorias, poner paradas que lo cumplan
-		Linea l2 = new Linea(2, pa3);
-		
-		boolean e = l1.existeCorrespondencia(l2);
-		
-		assertNotNull(l1);
-		assertTrue(e);
-		assertEquals(1, l1.getId());
-		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p3, l1.getParadaFin());
-		assertArrayEquals(p, l1.getParadas());
-	}
-    
-    @Test
-	public void testNoExistenParadasConCorrespondenciaValido(){
-		
-    	GD gd4 = new GD(-100.00, 100.00);
-    	Parada p4 = new Parada("d", gd4);
-    	GD gd5 = new GD(-110.00, 110.00);
-    	Parada p5 = new Parada("d", gd5);
-    	GD gd6 = new GD(-115.00, 115.00);
-    	Parada p6 = new Parada("d", gd6);
-		
-		Parada pa3[] = {p4, p5, p6}; //TODO son paradas aleatorias, poner paradas que lo cumplan
-		Linea l2 = new Linea(2, pa3);
-		
-		boolean e = l1.existeCorrespondencia(l2);
-		
-		assertNotNull(l1);
-		assertFalse(e);
-		assertEquals(1, l1.getId());
-		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p3, l1.getParadaFin());
-		assertArrayEquals(p, l1.getParadas());
-	}
-    
-    @Test
 	public void testGetParadasConCorrespondenciaUnaParadaConCorrespondenciaValido(){
     	
     	GD gd4 = new GD(-100.00, 100.00);
@@ -92,15 +50,12 @@ public class LineaGetParadasConCorrespondenciaTest {
 		
 		Parada pcc[] = l1.getParadasConCorrespondencia(l2);
 		
+		Parada pccS[] = {p1};
+		
 		assertNotNull(l1);
 		assertNotNull(pcc);
 		assertTrue(l1.existeCorrespondencia(l2));
-		assertEquals(1, pcc.length);
-		assertEquals(p1, pcc[0]);
-		assertEquals(1, l1.getId());
-		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p3, l1.getParadaFin());
-		assertArrayEquals(p, l1.getParadas());
+		assertArrayEquals(pccS, pcc);
 	}
 	
 	@Test
@@ -114,17 +69,12 @@ public class LineaGetParadasConCorrespondenciaTest {
 		
 		Parada pcc[] = l1.getParadasConCorrespondencia(l2);
 		
-		Parada pa4[] = {p1, p3};
+		Parada pccS[] = {p1, p3};
 		
 		assertNotNull(l1);
 		assertNotNull(pcc);
 		assertTrue(l1.existeCorrespondencia(l2));
-		assertEquals(2, pcc.length);
-		assertEquals(1, l1.getId());
-		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p3, l1.getParadaFin());
-		assertArrayEquals(p, l1.getParadas());
-		assertArrayEquals(pa4, pcc);
+		assertArrayEquals(pccS, pcc);
 	}
 	
 	@Test
@@ -146,10 +96,27 @@ public class LineaGetParadasConCorrespondenciaTest {
 		assertNotNull(pcc);
 		assertFalse(l1.existeCorrespondencia(l2));
 		assertEquals(0, pcc.length);
-		assertEquals(1, l1.getId());
-		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p3, l1.getParadaFin());
-		assertArrayEquals(p, l1.getParadas());
+	}
+	
+	@Test
+	public void testNoExistenParadasConCorrespondenciaValido(){
+		
+    	GD gd4 = new GD(-100.00, 100.00);
+    	Parada p4 = new Parada("d", gd4);
+    	GD gd5 = new GD(-110.00, 110.00);
+    	Parada p5 = new Parada("d", gd5);
+    	GD gd6 = new GD(-115.00, 115.00);
+    	Parada p6 = new Parada("d", gd6);
+		
+		Parada pa3[] = {p4, p5, p6}; //TODO son paradas aleatorias, poner paradas que lo cumplan
+		Linea l2 = new Linea(2, pa3);
+		
+		boolean e = l1.existeCorrespondencia(l2);
+		
+		assertNotNull(l1);
+		assertFalse(e);
+		
+		fail("Hacemos que el test falle ya que la fake implementacion de existe.. devuelve siempre false");
 	}
 	
 	@Test (expected = IllegalArgumentException.class)

@@ -13,8 +13,8 @@ import org.junit.Test;
  */
 public class LineaGetParadasCercanasTest {
 	
-	private GD gd1 = new GD (-179.99,179.99);
-	private GD gd2 = new GD (-178.99,178.99);
+	private GD gd1 = new GD (-179.99,179.99); //TODO son ubicaciones aleatorias, poner ubicaciones que
+	private GD gd2 = new GD (-178.99,178.99); //satisfagan estos test
 	private GD gd3 = new GD (-177.99,177.99);
 	private Parada p1, p2, p3;
 	private Parada p[] = {p1, p2, p3};
@@ -37,22 +37,50 @@ public class LineaGetParadasCercanasTest {
         l1 = null;
     }
     
-    @Test
-	public void testExistenParadasCercanasValido(){
+	@Test
+	public void testGetParadasCercanasUnaParadaCercanaValido(){
 		
 		GD gd4 = new GD(-150.00, 150.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
 		
-		boolean e = l1.existeParadasCercanas(gd4);
+		Parada pc[] = l1.getParadasCercanas(gd4);
+		
+		Parada pcS[] = {p1};
 		
 		assertNotNull(l1);
-		assertTrue(e);
-		assertEquals(1, l1.getId());
-		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p3, l1.getParadaFin());
-		assertArrayEquals(p, l1.getParadas());
+		assertNotNull(pc);
+		assertTrue(l1.existeParadasCercanas(gd4));
+		assertArrayEquals(pcS, pc);
 	}
-    
-    @Test
+	
+	@Test
+	public void testGetParadasCercanasVariasParadasCercanasValido(){
+		
+		GD gd4 = new GD(-140.00, 140.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		
+		Parada pc[] = l1.getParadasCercanas(gd4);
+		
+		Parada pcS[] = {p2, p3};
+		
+		assertNotNull(l1);
+		assertNotNull(pc);
+		assertTrue(l1.existeParadasCercanas(gd4));
+		assertArrayEquals(pcS, pc);
+	}
+	
+	@Test
+	public void testGetParadasCercanasNingunaParadaCercanaValido(){
+		
+		GD gd4 = new GD(-130.00, 130.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		
+		Parada pc[] = l1.getParadasCercanas(gd4);
+		
+		assertNotNull(l1);
+		assertNotNull(pc);
+		assertFalse(l1.existeParadasCercanas(gd4));
+		assertEquals(0, pc.length);
+	}
+	
+	@Test
 	public void testNoExistenParadasCercanasValido(){
 		
 		GD gd4 = new GD(-140.00, 140.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
@@ -61,65 +89,8 @@ public class LineaGetParadasCercanasTest {
 		
 		assertNotNull(l1);
 		assertFalse(e);
-		assertEquals(1, l1.getId());
-		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p3, l1.getParadaFin());
-		assertArrayEquals(p, l1.getParadas());
-	}
-    
-	@Test
-	public void testGetParadasCercanasUnaParadaCercanaValido(){
 		
-		GD gd4 = new GD(-150.00, 150.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
-		
-		Parada pa2[] = l1.getParadasCercanas(gd4);
-		
-		assertNotNull(l1);
-		assertNotNull(pa2);
-		assertTrue(l1.existeParadasCercanas(gd4));
-		assertEquals(1, pa2.length);
-		assertEquals(p2, pa2[0]);
-		assertEquals(1, l1.getId());
-		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p3, l1.getParadaFin());
-		assertArrayEquals(p, l1.getParadas());
-	}
-	
-	@Test
-	public void testGetParadasCercanasVariasParadasCercanasValido(){
-		
-		GD gd4 = new GD(-140.00, 140.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
-		
-		Parada pa2[] = l1.getParadasCercanas(gd4);
-		
-		Parada pa3[] = {p2, p3};
-		
-		assertNotNull(l1);
-		assertNotNull(pa2);
-		assertTrue(l1.existeParadasCercanas(gd4));
-		assertEquals(2, pa2.length);
-		assertEquals(1, l1.getId());
-		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p3, l1.getParadaFin());
-		assertArrayEquals(p, l1.getParadas());
-		assertArrayEquals(pa3, pa2);
-	}
-	
-	@Test
-	public void testGetParadasCercanasNingunaParadaCercanaValido(){
-		
-		GD gd4 = new GD(-130.00, 130.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
-		
-		Parada pa2[] = l1.getParadasCercanas(gd4);
-		
-		assertNotNull(l1);
-		assertNotNull(pa2);
-		assertFalse(l1.existeParadasCercanas(gd4));
-		assertEquals(0, pa2.length);
-		assertEquals(1, l1.getId());
-		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p3, l1.getParadaFin());
-		assertArrayEquals(p, l1.getParadas());
+		fail("Hacemos que el test falle ya que la fake implementacion de existe.. devuelve siempre false");
 	}
 	
 	@Test (expected = IllegalArgumentException.class)
