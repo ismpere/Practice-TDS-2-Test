@@ -8,7 +8,7 @@ import org.junit.Test;
 
 /**
  * Implementacion de la clase de test de caja negra (no tiene todos) de la clase Linea
- * @author ismael
+ * @author ismpere
  * @author martorb
  */
 public class LineaBlackBoxTest {

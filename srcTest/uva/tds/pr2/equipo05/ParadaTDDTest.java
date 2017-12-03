@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 /**
  * Implementacion de la clase de test de Parada
- * @author ismael
+ * @author ismpere
  * @author martorb
  */
 public class ParadaTDDTest {
