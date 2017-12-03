@@ -80,9 +80,12 @@ public class RedAutobusesBlackBoxTest {
 		red.getLinea(3);
 	}
 	
-	@Test
+	@Test (expected = IllegalArgumentException.class)
 	public void testAddLineaNoValidoLineaNulo() {
-		fail("Not yet implemented");
+		
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		red.addLinea(null);
 	}
 	
 	
