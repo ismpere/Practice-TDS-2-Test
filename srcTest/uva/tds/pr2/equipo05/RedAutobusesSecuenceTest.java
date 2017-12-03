@@ -130,7 +130,7 @@ public class RedAutobusesSecuenceTest {
 		Linea l_3=red.getLinea(3);
 		red.deleteLinea(l3);
 		red.addLinea(l4);
-		assertNotEquals(l_3,red.getLinea(3));
+		assertNotEquals(l_3, red.getLinea(3));
 	}
 	
 	@Test
