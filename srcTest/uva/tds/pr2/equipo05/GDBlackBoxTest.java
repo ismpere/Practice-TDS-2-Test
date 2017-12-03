@@ -3,7 +3,11 @@ package uva.tds.pr2.equipo05;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
+/**
+ * Implementacion de la clase de test de caja negra de la clase GD
+ * @author ismpere
+ * @author martorb
+ */
 public class GDBlackBoxTest {
 	
 	private static final double ERROR_ADMISIBLE = 0.01;
