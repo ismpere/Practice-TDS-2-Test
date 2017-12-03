@@ -81,5 +81,17 @@ public class RedAutobuses {
 		// TODO Auto-generated constructor stub
 		return false;
 	}
+	/**
+	 * Devuelve si hay Lineas con paradas cercanas a una direccion con un radio de distancia maxima
+	 * @param gd Direccion
+	 * @param d Radio de distancia
+	 * @return existenLineasConparadasCercanas
+	 * @assert.pre d>=0
+	 * @throws IllegalArgumentException si gd==null
+	 */
+	public boolean existenLineasConParadasCercanas(GD gd, double d) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 		
 }
