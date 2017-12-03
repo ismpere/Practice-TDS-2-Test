@@ -200,7 +200,7 @@ public class Linea{
 	 */
 	public static boolean lineasRepetidas(Linea[] lista_lineas){
 		// TODO Auto-generated constructor stub
-		return true;
+		return false;
 	}
 	
 }

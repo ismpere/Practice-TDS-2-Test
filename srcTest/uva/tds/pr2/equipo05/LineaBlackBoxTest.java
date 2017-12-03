@@ -70,6 +70,28 @@ public class LineaBlackBoxTest {
 		fail("El test pasa en verde ya que la fake implementacion de contains devuelve siempre false");
     }
     
+    @Test
+	public void testNoHayLineasRepetidasValido(){
+    	Parada p[] = {p1, p3, p2};
+		Linea l1 = new Linea(1, p);
+		
+		GD gd4 = new GD(-150.00, 150.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		Parada p4 = new Parada("d", gd4);
+		GD gd5 = new GD(-140.00, 140.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		Parada p5 = new Parada("d", gd5);
+		
+		Parada pa3[] = {p2, p4, p5};
+		Linea l2 = new Linea(2, pa3);
+		
+		Linea l[] = {l1,l2};
+		
+		boolean repetidas = Linea.lineasRepetidas(l);
+		
+		assertNotNull(l1);
+		assertNotNull(l2);
+		assertFalse(repetidas);
+	}
+    
     @Test (expected = IllegalArgumentException.class)
     public void testInicializaNoValidoParadasNulo(){
     	Linea l1 = new Linea(1, null);
@@ -279,6 +301,22 @@ public class LineaBlackBoxTest {
 		Linea l1 = new Linea(1, p);
 		Linea[] lista_lineas={l1,null};
 		Boolean r=Linea.lineasRepetidas(lista_lineas);
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testHayLineasRepetidasNoValidoLineasNulo(){
+		
+		Linea.lineasRepetidas(null);
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testHayLineasRepetidasNoValidoAlgunaLineaNulo(){
+		Parada p[] = {p1, p2, p3};
+		Linea l1 = new Linea(1, p);
+		
+		Linea l[] = {l1,null};
+		
+		Linea.lineasRepetidas(l);
 	}
 
 }

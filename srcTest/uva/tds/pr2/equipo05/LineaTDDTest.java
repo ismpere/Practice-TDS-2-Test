@@ -259,4 +259,25 @@ public class LineaTDDTest {
 		assertTrue(l1.existeTransbordoDirecto(l2));
 		assertArrayEquals(pct, pa2);
 	}
+	
+	@Test
+	public void testHayLineasRepetidasValido(){
+		Linea l1 = new Linea(1, p);
+		
+		GD gd4 = new GD(-150.00, 150.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		Parada p4 = new Parada("d", gd4);
+		GD gd5 = new GD(-140.00, 140.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		Parada p5 = new Parada("d", gd5);
+		
+		Parada pa3[] = {p2, p4, p5};
+		Linea l2 = new Linea(2, pa3);
+		
+		Linea l[] = {l1,l2,l1};
+		
+		boolean repetidas = Linea.lineasRepetidas(l);
+		
+		assertNotNull(l1);
+		assertNotNull(l2);
+		assertTrue(repetidas);
+	}
 }
