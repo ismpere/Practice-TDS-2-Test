@@ -89,6 +89,13 @@ public class RedAutobusesBlackBoxTest {
 		red.addLinea(null);
 	}
 	
+	@Test (expected = AssertionError.class)
+	public void testAddLineaNoValidoLineaRepetida() {
+		
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		red.addLinea(l1);
+	}
 	
 	@Test (expected = IllegalArgumentException.class)
 	public void testDeleteLineaNoValidoLineaNulo() {
