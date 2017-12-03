@@ -35,4 +35,12 @@
 		RedAutobusesBlackBoxTest------------------- SLOC:100   LLOC:106 
 		RedAutobusesGetLineasConParadasCercanasTest SLOC:112   LLOC:117 
 		RedAutobusesTDDTest------------------------ SLOC:111   LLOC:116 
+		
+
+Aclaración sobre los test en las fixture:
+
+Al tener las clases sin la implementación final y usar direcciones gps aleatorias, en las fixture puede parecer que uno de los test está repetido con respecto a los test TDD o los test de BlackBox. ç
+Esto lo hemos hecho, porque consideramos que si llevamos el objeto a un estado concreto, queremos realizar todas las pruebas sobre el, a pesar de que ya hallamos comprobado que dichos métodos ya funcionan en las clases de test anteriores.
+
+Por esto, esos test en las fixture no tienen solo el sentido de comprobar que funcionan correctamente, sino que a mayores nos sirven para coprobar el estado al cual hemos llevado a dicho objeto, aunque hallamos creado un test muy parecido por la necesidad de hacer el desarrollo TDD, y así poder generar algún método que usamos en esos test.
 
