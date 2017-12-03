@@ -12,7 +12,7 @@ public class RedAutobuses {
 	 * Constructor por defecto de la clase RedAutobuses
 	 * @param lista_lineas Lista (array) que contiene las líenas iniciales de la red
 	 * @assert.pre lista_lineas.length>1
-	 * @assert.pre !lineasRepetidas(lista_lineas)
+	 * @assert.pre !Linea.lineasRepetidas(lista_lineas)
 	 * @throws IllegalArgumentException si lista_lineas==null || alguna de las lineas de la lista es null
 	 */
 	public RedAutobuses(Linea[] lista_lineas){
@@ -23,6 +23,7 @@ public class RedAutobuses {
 	 * Devuelve una línea de la red a partir de su identificador
 	 * @param id Número que identifica la línea
 	 * @return líneaBuscada
+	 * @assert.pre this.contains(id)
 	 * @assert.post red.contains(linea) && linea.getId()==id
 	 */
 	public Linea getLinea(int id){
@@ -43,7 +44,8 @@ public class RedAutobuses {
 	/**
 	 * Elimina una línea de la red
 	 * @param linea Línea a eliminar
-	 * @assert.pre red.contains(linea)
+	 * @assert.pre this.contains(linea)
+	 * @assert.pre getLineas.length>2
 	 * @assert.post !(red.contains(linea)) && red.getAllLineas.length>1
 	 * @throws IllegalArgumentException si linea==null
 	 */
@@ -90,6 +92,15 @@ public class RedAutobuses {
 	 * @throws IllegalArgumentException si gd==null
 	 */
 	public boolean existenLineasConParadasCercanas(GD gd, double d) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	/**
+	 * Devuelve si contiene una linea con identificador id
+	 * @param id identificador de la linea
+	 * @return contieneLineaConId
+	 */
+	public boolean contains(int id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
