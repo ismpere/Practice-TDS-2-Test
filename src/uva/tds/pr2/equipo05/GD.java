@@ -1,7 +1,5 @@
 package uva.tds.pr2.equipo05;
 
-import java.util.ArrayList;
-
 /**
  * Implementacion de la clase GD, que es una direccion en grados decimales
  * @author ismpere
