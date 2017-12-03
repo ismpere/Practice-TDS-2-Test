@@ -10,7 +10,7 @@ import org.junit.runners.Suite.SuiteClasses;
     RedAutobusesBlackBoxTest.class,RedAutobusesGetLineasConParadasCercanasTest.class})
 
 /**
- * Suite de clases de test para todas las clases de test de Linea*
+ * Suite de clases de test para todas las clases de test de RedAutobuses*
  * @author ismpere
  * @author martorb
  */
