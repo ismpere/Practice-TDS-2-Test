@@ -36,6 +36,7 @@ public class RedAutobusesBlackBoxTest {
 		p1= new Parada("1",gd1);
 		p2= new Parada("2",gd2);
 		p3= new Parada("3",gd3);
+		p4= new Parada("4",gd4);
 		l1= new Linea(1,p_1);
 		l2= new Linea(2,p_2);
 		l3= new Linea(3,p_3);
@@ -46,6 +47,7 @@ public class RedAutobusesBlackBoxTest {
 		p1= null;
 		p2= null;
 		p3= null;
+		p4= null;
 		l1= null;
 		l2= null;
 		l3= null;
@@ -96,9 +98,11 @@ public class RedAutobusesBlackBoxTest {
 		red.deleteLinea(null);
 	}
 	
-	@Test
+	@Test (expected = AssertionError.class)
 	public void testDeleteLineaNoValidoLineaNoExisteEnRed() {
-		fail("Not yet implemented");
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		red.deleteLinea(l3);
 	}
 	
 	@Test
