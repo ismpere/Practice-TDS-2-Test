@@ -8,7 +8,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({ 
     LineaTDDTest.class,
     LineaBlackBoxTest.class,
-    LineaGetParadasTest.class})
+    LineaGetParadasTest.class,
+    LineaSecuenceTest.class})
 
 /**
  * Suite de clases de test para todas las clases de test de Linea*
