@@ -33,6 +33,7 @@ public class RedAutobuses {
 	/**
 	 * Añade una línea a la red 
 	 * @param linea Línea a añadir
+	 * @throws IllegalArgumentException si linea==null
 	 */
 	public void addLinea(Linea linea){
 		// TODO Auto-generated constructor stub
@@ -43,6 +44,7 @@ public class RedAutobuses {
 	 * @param linea Línea a eliminar
 	 * @assert.pre red.contains(linea)
 	 * @assert.post !(red.contains(linea)) && red.getAllLineas.length>1
+	 * @throws IllegalArgumentException si linea==null
 	 */
 	public void deleteLinea(Linea linea){
 		// TODO Auto-generated constructor stub
@@ -60,6 +62,7 @@ public class RedAutobuses {
 	 * Comprueba si en una lista (array) existen líneas repetidas
 	 * @param lista_lineas lista a comprobar
 	 * @return hayLineaRepetida
+	 * @throws IllegalArgumentException si lista_lineas==null || alguna de las lineas de la lista es null
 	 */
 	public static boolean lineasRepetidas(Linea[] lista_lineas){
 		// TODO Auto-generated constructor stub
@@ -70,6 +73,7 @@ public class RedAutobuses {
 	 * Comprueba si la red contiene una determinada línea
 	 * @param linea
 	 * @return contieneLinea
+	 * @throws IllegalArgumentException si linea==null
 	 */
 	public boolean contains(Linea linea){
 		// TODO Auto-generated constructor stub
