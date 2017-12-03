@@ -125,6 +125,8 @@ public class RedAutobusesTDDTest {
 		Linea[] lineas_cercanas=red.getLineasConParadasCercanas(gd_busq, 100.00);
 		
 		assertNotNull(red);
+		assertTrue(red.contains(l1));
+		assertTrue(red.contains(l2));
 		assertTrue(lineas_cercanas.length>0);
 		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
 		assertFalse(RedAutobuses.lineasRepetidas(lineas_cercanas));
