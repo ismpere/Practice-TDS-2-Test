@@ -8,7 +8,7 @@ import org.junit.Before;
 import uva.tds.pr2.equipo05.*;
 import org.junit.Test;
 /**
- * Implementacion de la clase de test de RedAutobuses
+ * Implementacion de la clase de test TDD de RedAutobuses
  * @author ismpere
  * @author martorb
  */
