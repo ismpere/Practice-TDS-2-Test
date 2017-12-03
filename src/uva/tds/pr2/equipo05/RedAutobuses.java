@@ -42,7 +42,7 @@ public class RedAutobuses {
 	 * Elimina una línea de la red
 	 * @param linea Línea a eliminar
 	 * @assert.pre red.contains(linea)
-	 * @assert.post !red.contains(linea)
+	 * @assert.post !(red.contains(linea)) && red.getAllLineas.length>1
 	 */
 	public void deleteLinea(Linea linea){
 		// TODO Auto-generated constructor stub
