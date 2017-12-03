@@ -90,6 +90,21 @@ public class RedAutobusesTDDTest {
 	}
 	
 	@Test
+	public void testExistenLineasConParadasCercanasValido(){
+		
+		GD gd_busq= new GD(-179.98,179.99);
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
+		boolean e = red.existenLineasConParadasCercanas(gd_busq, 200.00);
+		
+		Linea[] lcS = {l1};
+		
+		assertNotNull(red);
+		assertTrue(e);				
+	}
+	
+	@Test
 	public void testGetLineasConParadasCercanasValido(){
 		
 		GD gd_busq= new GD(-179.98,179.99);
