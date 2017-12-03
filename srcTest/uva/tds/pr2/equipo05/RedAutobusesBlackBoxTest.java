@@ -117,6 +117,12 @@ public class RedAutobusesBlackBoxTest {
 		Boolean r=RedAutobuses.lineasRepetidas(null);
 	}
 
+
+	@Test (expected = IllegalArgumentException.class)
+	public void testLineasRepetidasNoValidoAlgunaLineaNula() {
+		Linea[] lista_lineas={l1,l2,null};
+		Boolean r=RedAutobuses.lineasRepetidas(lista_lineas);
+	}
 	
 	@Test
 	public void test() {
