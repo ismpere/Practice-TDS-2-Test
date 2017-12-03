@@ -7,7 +7,7 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses({ 
     RedAutobusesTDDTest.class,
-    RedAutobusesBlackBoxTest.class,})
+    RedAutobusesBlackBoxTest.class,RedAutobusesGetLineasConParadasCercanasTest.class})
 
 /**
  * Suite de clases de test para todas las clases de test de Linea*
