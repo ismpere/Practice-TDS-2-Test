@@ -51,6 +51,17 @@ public class RedAutobusesBlackBoxTest {
 		l3= null;
 	}
 	
+	@Test
+	public void testGetAllLineasValido(){
+		
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
+		Linea l[] = red.getAllLineas();
+		
+		assertArrayEquals(lista_lineas, l);
+	}
+	
 	@Test (expected = AssertionError.class)
 	public void testInicializaRedNoValidoSolo1Linea() {
 		

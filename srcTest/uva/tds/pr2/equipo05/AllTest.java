@@ -8,7 +8,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({ 
     GDAllTest.class,
     ParadaAllTest.class,
-    LineaAllTest.class}) //TODO falta la suite de RedAutobuses
+    LineaAllTest.class,
+    RedAutobusesAllTest.class})
 
 /**
  * Suite de clases de test para todas las clases de test de Linea*
