@@ -84,6 +84,15 @@ public class RedAutobuses {
 		return false;
 	}
 	/**
+	 * Devuelve si contiene una linea con identificador id
+	 * @param id identificador de la linea
+	 * @return contieneLineaConId
+	 */
+	public boolean contains(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	/**
 	 * Devuelve si hay Lineas con paradas cercanas a una direccion con un radio de distancia maxima
 	 * @param gd Direccion
 	 * @param d Radio de distancia
@@ -94,15 +103,5 @@ public class RedAutobuses {
 	public boolean existenLineasConParadasCercanas(GD gd, double d) {
 		// TODO Auto-generated method stub
 		return false;
-	}
-	/**
-	 * Devuelve si contiene una linea con identificador id
-	 * @param id identificador de la linea
-	 * @return contieneLineaConId
-	 */
-	public boolean contains(int id) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-		
+	}	
 }
