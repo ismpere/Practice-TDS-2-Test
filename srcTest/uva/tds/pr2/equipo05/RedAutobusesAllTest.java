@@ -8,7 +8,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({ 
     RedAutobusesTDDTest.class,
     RedAutobusesBlackBoxTest.class,
-    RedAutobusesGetLineasConParadasCercanasTest.class})
+    RedAutobusesGetLineasConParadasCercanasTest.class,
+    RedAutobusesSecuenceTest.class})
 
 /**
  * Suite de clases de test para todas las clases de test de RedAutobuses*
