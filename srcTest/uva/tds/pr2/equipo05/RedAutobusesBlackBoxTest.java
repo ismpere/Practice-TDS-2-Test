@@ -112,6 +112,12 @@ public class RedAutobusesBlackBoxTest {
 		red.deleteLinea(l2);
 	}
 	
+	@Test (expected = IllegalArgumentException.class)
+	public void testLineasRepetidasNoValidoListaVacia() {
+		Boolean r=RedAutobuses.lineasRepetidas(null);
+	}
+
+	
 	@Test
 	public void test() {
 		fail("Not yet implemented");

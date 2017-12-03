@@ -61,7 +61,7 @@ public class RedAutobuses {
 	 * @param lista_lineas lista a comprobar
 	 * @return hayLineaRepetida
 	 */
-	public boolean lineasRepetidas(Linea[] lista_lineas){
+	public static boolean lineasRepetidas(Linea[] lista_lineas){
 		// TODO Auto-generated constructor stub
 		return true;
 	}
