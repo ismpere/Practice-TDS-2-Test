@@ -80,6 +80,8 @@ public class RedAutobusesSecuenceTest {
 		
 		red.deleteLinea(l3);
 		assertFalse(red.contains(3));
+		
+		fail("El test no falla por si solo ya que la fake implementacion de contains devuelve siempre false");
 	}
 	
 	@Test (expected = AssertionError.class)
@@ -128,8 +130,7 @@ public class RedAutobusesSecuenceTest {
 		Linea l_3=red.getLinea(3);
 		red.deleteLinea(l3);
 		red.addLinea(l4);
-		assertFalse(l_3.equals(red.getLinea(3)));
-		
+		assertNotEquals(l_3, red.getLinea(3));
 	}
 	
 	@Test
@@ -139,8 +140,7 @@ public class RedAutobusesSecuenceTest {
 		
 		red.addLinea(l1);
 		red.deleteLinea(l2);
-		assertTrue(red.existenLineasConParadasCercanas(gd3, 200.00)); //cercana l1 que añadida, luego true
-		
+		assertTrue(red.existenLineasConParadasCercanas(gd3, 200.00)); //cercana l1 que añadida, luego true	
 	}
 
 }
