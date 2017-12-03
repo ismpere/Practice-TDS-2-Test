@@ -162,5 +162,6 @@ public class LineaSecuenceTest {
 		assertNotNull(pcc);
 		assertNotNull(pct);
 		assertNotNull(pcc2);
+		assertArrayEquals(pcc, pct); //TODO hay que poner valores para que esto se cumpla
 	}
 }
