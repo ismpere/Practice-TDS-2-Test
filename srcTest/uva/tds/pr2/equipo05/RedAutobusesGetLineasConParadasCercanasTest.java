@@ -66,7 +66,9 @@ public class RedAutobusesGetLineasConParadasCercanasTest{
 		Linea[] lcS = {l1};
 		
 		assertNotNull(red);
-		assertFalse(e);				
+		assertFalse(e);
+		
+		fail("Hacemos que falle ya que la fake implementacion de existen... devuelve siempre false");
 	}
 	
 	@Test
