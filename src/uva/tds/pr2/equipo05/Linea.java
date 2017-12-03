@@ -192,4 +192,15 @@ public class Linea{
 		return false;
 	}
 	
+	/**
+	 * Comprueba si en una lista (array) existen líneas repetidas
+	 * @param lista_lineas lista a comprobar
+	 * @return hayLineaRepetida
+	 * @throws IllegalArgumentException si lista_lineas==null || alguna de las lineas de la lista es null
+	 */
+	public static boolean lineasRepetidas(Linea[] lista_lineas){
+		// TODO Auto-generated constructor stub
+		return true;
+	}
+	
 }

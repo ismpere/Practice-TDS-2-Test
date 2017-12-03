@@ -67,8 +67,8 @@ public class RedAutobusesGetLineasConParadasCercanasTest{
 		assertTrue(red.contains(l1));
 		assertTrue(red.contains(l2));
 		assertTrue(lineas_cercanas.length==1);
-		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
-		assertFalse(RedAutobuses.lineasRepetidas(lineas_cercanas));
+		assertFalse(Linea.lineasRepetidas(lista_lineas));
+		assertFalse(Linea.lineasRepetidas(lineas_cercanas));
 		assertTrue(lineas_cercanas[0].equals(l1));
 	}
 	
@@ -83,8 +83,8 @@ public class RedAutobusesGetLineasConParadasCercanasTest{
 		assertTrue(red.contains(l1));
 		assertTrue(red.contains(l2));
 		assertTrue(lineas_cercanas.length==2);
-		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
-		assertFalse(RedAutobuses.lineasRepetidas(lineas_cercanas));
+		assertFalse(Linea.lineasRepetidas(lista_lineas));
+		assertFalse(Linea.lineasRepetidas(lineas_cercanas));
 		assertTrue((lineas_cercanas[0].equals(l1) && lineas_cercanas[1].equals(l2)) || (lineas_cercanas[1].equals(l1) && lineas_cercanas[0].equals(l2)));
 		
 	}
@@ -100,7 +100,7 @@ public class RedAutobusesGetLineasConParadasCercanasTest{
 		assertTrue(red.contains(l1));
 		assertTrue(red.contains(l2));
 		assertTrue(lineas_cercanas.length==0);
-		assertFalse(RedAutobuses.lineasRepetidas(lista_lineas));
+		assertFalse(Linea.lineasRepetidas(lista_lineas));
 	
 	}
 	

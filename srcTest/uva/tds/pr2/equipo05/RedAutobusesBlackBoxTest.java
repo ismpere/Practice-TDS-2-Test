@@ -20,10 +20,8 @@ public class RedAutobusesBlackBoxTest {
 	private GD gd2 = new GD (-178.99,178.99);
 	private GD gd3 = new GD (-177.99,177.99);
 	private GD gd4 = new GD (-176.99,176.99);
-	private GD gd5 = new GD (-175.99,175.99);
-	private GD gd6 = new GD (-174.99,174.99);
 	
-	private Parada p1,p2,p3,p4,p5,p6;
+	private Parada p1,p2,p3,p4;
 	private Parada p_1[] = {p1,p2,p3};
 	private Parada p_2[] = {p2,p3,p4};
 	private Parada p_3[] = {p4,p1,p2};
@@ -117,18 +115,7 @@ public class RedAutobusesBlackBoxTest {
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		red.deleteLinea(l2);
 	}
-	
-	@Test (expected = IllegalArgumentException.class)
-	public void testLineasRepetidasNoValidoListaVacia() {
-		Boolean r=RedAutobuses.lineasRepetidas(null);
-	}
-
-	@Test (expected = IllegalArgumentException.class)
-	public void testLineasRepetidasNoValidoAlgunaLineaNula() {
-		Linea[] lista_lineas={l1,l2,null};
-		Boolean r=RedAutobuses.lineasRepetidas(lista_lineas);
-	}
-	
+		
 	@Test (expected = IllegalArgumentException.class)
 	public void testContainsNoValidoLineaNulo() {
 		Linea[] lista_lineas={l1,l2};

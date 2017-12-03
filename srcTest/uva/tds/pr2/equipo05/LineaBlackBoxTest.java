@@ -267,5 +267,18 @@ public class LineaBlackBoxTest {
     	
     	l1.contains(null);
     }
+    
+	@Test (expected = IllegalArgumentException.class)
+	public void testLineasRepetidasNoValidoListaVacia() {
+		Boolean r=Linea.lineasRepetidas(null);
+	}
+
+	@Test (expected = IllegalArgumentException.class)
+	public void testLineasRepetidasNoValidoAlgunaLineaNula() {
+		Parada p[] = {p1, p2, p3};
+		Linea l1 = new Linea(1, p);
+		Linea[] lista_lineas={l1,null};
+		Boolean r=Linea.lineasRepetidas(lista_lineas);
+	}
 
 }
