@@ -5,7 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
+/**
+ * Implementacion de la clase de test de caja negra de la clase Parada
+ * @author ismpere
+ * @author martorb
+ */
 public class ParadaBlackBoxTest {
 	
 	private GD gd1;

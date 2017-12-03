@@ -4,7 +4,11 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.After;
 import org.junit.Before;
-
+/**
+ * Implementacion de los test por los que se ha hecho el desarrollo TDD de la clase Linea
+ * @author ismpere
+ * @author martorb
+ */
 public class LineaTDDTest {
 	
 	private GD gd1 = new GD (-179.99,179.99);
