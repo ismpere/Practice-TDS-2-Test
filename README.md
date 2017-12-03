@@ -7,7 +7,7 @@
 	
 	Clases que forman parte de la solución del proyecto:
 
-		GD ---------------------------------------- SLOC:19   LLOC:62
+		GD ---------------------------------------- SLOC:18   LLOC:61
 		Linea-------------------------------------- SLOC:53   LLOC:167 
 		Parada------------------------------------- SLOC:21   LLOC:72
 		RedAutobuses------------------------------- SLOC:27   LLOC:100
