@@ -122,11 +122,29 @@ public class RedAutobusesGetLineasConParadasCercanasTest{
 		Linea[] lista_lineas={l1,l2};
 		RedAutobuses red= new RedAutobuses(lista_lineas);
 		
-		red.existenLineasConParadasCercanas(null, 200.00);			
+		red.existenLineasConParadasCercanas(null, 0.01);			
 	}
 	
 	@Test (expected = AssertionError.class)
 	public void testExistenLineasConParadasCercanasNoValidoRadioMenorQue0(){
+		GD gd_busq= new GD(-100.00,200.00);
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
+		red.existenLineasConParadasCercanas(gd_busq, -0.01);
+	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testGetLineasConParadasCercanasNoValidoGDNulo(){
+		
+		Linea[] lista_lineas={l1,l2};
+		RedAutobuses red= new RedAutobuses(lista_lineas);
+		
+		red.getLineasConParadasCercanas(null, 0.01);			
+	}
+	
+	@Test (expected = AssertionError.class)
+	public void testGetLineasConParadasCercanasNoValidoRadioMenorQue0(){
 		GD gd_busq= new GD(-100.00,200.00);
 		Linea[] lista_lineas={l1,l2};
 		RedAutobuses red= new RedAutobuses(lista_lineas);
