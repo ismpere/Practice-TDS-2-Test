@@ -1,6 +1,9 @@
 *** Práctica realizada por Mario Torbado de la Rosa e Ismael Pérez Martín ***
 	
-	Tiempo total empleado en la realización de la práctica: 
+	Tiempo total empleado en la realización de la práctica: 19h 19m
+	
+	- Ismael Pérez (ismpere): 12h 40m
+	- Mario Torbado (martorb): 7h 39m 
 	
 	Clases que forman parte de la solución del proyecto:
 
