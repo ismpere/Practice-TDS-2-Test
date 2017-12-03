@@ -78,10 +78,6 @@ public class LineaTDDTest {
 
 		assertNotNull(l1);
 		assertTrue(c);
-		assertEquals(1, l1.getId());
-		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p3, l1.getParadaFin());
-		assertArrayEquals(p, l1.getParadas());
 	}
 	
 	@Test
@@ -156,6 +152,51 @@ public class LineaTDDTest {
 		assertEquals(p3, l1.getParadaFin());
 		assertArrayEquals(p, l1.getParadas());
 	}
+	
+	@Test
+	public void testExistenParadasCercanasValido(){
+		Linea l1 = new Linea(1, p);
+		
+		GD gd4 = new GD(-170.00, 170.00); //TODO son ubicaciones aleatorias, poner una valida que lo cumpla
+		
+		boolean e = l1.existeParadasCercanas(gd4);
+		
+		assertNotNull(l1);
+		assertTrue(e);
+	}
+	
+	@Test
+	public void testExistenParadasConCorrespondenciaValido(){
+		Linea l1 = new Linea(1, p);
+		
+    	GD gd4 = new GD(-100.00, 100.00);
+    	Parada p4 = new Parada("d", gd4);
+		
+		Parada pa3[] = {p1, p4, p3}; //TODO son paradas aleatorias, poner paradas que lo cumplan
+		Linea l2 = new Linea(2, pa3);
+		
+		boolean e = l1.existeCorrespondencia(l2);
+		
+		assertNotNull(l1);
+		assertNotNull(l2);
+		assertTrue(e);
+	}
+	
+    @Test
+	public void testExistenParadasConTransbordoDirectoValido(){
+    	Linea l1 = new Linea(1, p);
+		
+    	GD gd4 = new GD(-100.00, 100.00);
+    	Parada p4 = new Parada("d", gd4);
+		
+		Parada pa3[] = {p1, p4, p3}; //TODO son paradas aleatorias, poner paradas que lo cumplan
+		Linea l2 = new Linea(2, pa3);
+		
+		boolean e = l1.existeTransbordoDirecto(l2);
+		
+		assertNotNull(l1);
+		assertTrue(e);
+    }
 	
 	@Test
 	public void testGetParadasCercanasValido(){

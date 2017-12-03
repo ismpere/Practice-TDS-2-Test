@@ -66,10 +66,8 @@ public class LineaBlackBoxTest {
 
 		assertNotNull(l1);
 		assertFalse(c);
-		assertEquals(1, l1.getId());
-		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p3, l1.getParadaFin());
-		assertArrayEquals(p, l1.getParadas());
+		
+		fail("El test pasa en verde ya que la fake implementacion de contains devuelve siempre false");
     }
     
     @Test (expected = IllegalArgumentException.class)
