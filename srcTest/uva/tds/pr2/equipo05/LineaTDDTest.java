@@ -206,15 +206,12 @@ public class LineaTDDTest {
 		
 		Parada pa2[] = l1.getParadasCercanas(gd4);
 		
+		Parada pc[] = {p1};
+		
 		assertNotNull(l1);
 		assertNotNull(pa2);
 		assertTrue(l1.existeParadasCercanas(gd4));
-		assertEquals(1, pa2.length);
-		assertEquals(p2, pa2[0]);
-		assertEquals(1, l1.getId());
-		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p3, l1.getParadaFin());
-		assertArrayEquals(p, l1.getParadas());
+		assertArrayEquals(pc, pa2);
 	}
 	
 	@Test
@@ -231,16 +228,13 @@ public class LineaTDDTest {
 		
 		Parada pa2[] = l1.getParadasConCorrespondencia(l2);
 		
+		Parada pcc[] = {p2};
+		
 		assertNotNull(l1);
 		assertNotNull(l2);
 		assertNotNull(pa2);
 		assertTrue(l1.existeCorrespondencia(l2));
-		assertEquals(1, pa2.length);
-		assertEquals(p2, pa2[0]);
-		assertEquals(1, l1.getId());
-		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p3, l1.getParadaFin());
-		assertArrayEquals(p, l1.getParadas());
+		assertArrayEquals(pcc, pa2);
 	}
 	
 	@Test
@@ -257,15 +251,12 @@ public class LineaTDDTest {
 		
 		Parada pa2[] = l1.getParadasConTransbordoDirecto(l2);
 		
+		Parada pct[] = {p1};
+		
 		assertNotNull(l1);
 		assertNotNull(l2);
 		assertNotNull(pa2);
 		assertTrue(l1.existeTransbordoDirecto(l2));
-		assertEquals(1, pa2.length);
-		assertEquals(p2, pa2[0]);
-		assertEquals(1, l1.getId());
-		assertEquals(p1, l1.getParadaInicio());
-		assertEquals(p3, l1.getParadaFin());
-		assertArrayEquals(p, l1.getParadas());
+		assertArrayEquals(pct, pa2);
 	}
 }
