@@ -36,6 +36,12 @@
 		RedAutobusesGetLineasConParadasCercanasTest SLOC:112   LLOC:117 
 		RedAutobusesTDDTest------------------------ SLOC:111   LLOC:116 
 		
+	(test de cada clase)
+		GD----------------------------------------- SLOC:122   LLOC:142
+		Parada------------------------------------- SLOC:240   LLOC:260
+		Linea-------------------------------------- SLOC:886   LLOC:926
+		RedAutobuses------------------------------- SLOC:335   LLOC:356
+		
 
 
 
